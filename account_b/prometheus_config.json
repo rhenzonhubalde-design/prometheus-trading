@@ -1,0 +1,19 @@
+{
+  "account": "B",
+  "label": "Learning",
+  "ibkr_port": 4003,
+  "self_improving": true,
+  "ab_test": {
+    "group": "with_learning",
+    "description": "Treatment group — Analysis Agent enhanced with historical journal insights"
+  },
+  "journal": {
+    "runs_every_n_days": 7,
+    "last_run": null
+  },
+  "learning": {
+    "max_patterns_to_inject": 5,
+    "min_trades_for_pattern": 2,
+    "lookback_trades": 20
+  }
+}

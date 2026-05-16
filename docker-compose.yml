@@ -1,0 +1,41 @@
+services:
+
+  # Account A — Baseline paper account (existing)
+  ib-gateway-a:
+    image: ghcr.io/gnzsnz/ib-gateway:stable
+    restart: always
+    environment:
+      TWS_USERID: "rhenzon28-paper"
+      TWS_PASSWORD: "!105DEdgefield"
+      TRADING_MODE: paper
+      READ_ONLY_API: "no"
+      TWS_SETTINGS_PATH: /home/ibgateway/settings_a
+    ports:
+      - "127.0.0.1:4002:4002"
+    volumes:
+      - ./settings_a:/home/ibgateway/settings_a
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "4002"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # Account B — Learning paper account (DUQ064418)
+  ib-gateway-b:
+    image: ghcr.io/gnzsnz/ib-gateway:stable
+    restart: always
+    environment:
+      TWS_USERID: "rhenzon28-paper2"
+      TWS_PASSWORD: "!105DEdgefield"
+      TRADING_MODE: paper
+      READ_ONLY_API: "no"
+      TWS_SETTINGS_PATH: /home/ibgateway/settings_b
+    ports:
+      - "127.0.0.1:4003:4002"
+    volumes:
+      - ./settings_b:/home/ibgateway/settings_b
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "4002"]
+      interval: 30s
+      timeout: 10s
+      retries: 5

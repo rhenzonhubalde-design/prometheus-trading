@@ -1,0 +1,14 @@
+# Never commit these
+.env
+venv/
+__pycache__/
+*.pyc
+settings_a/
+settings_b/
+*.tar.gz
+
+# Keep data folder structure but not actual trade data
+phase2/data/*.json
+phase3/data/*.json
+account_a/data/*.json
+account_b/data/*.json

@@ -1,0 +1,1707 @@
+2026-05-15 07:01:30.873 INFO  [JTS-Main] - OvernightManager.dayInit: new values: dayOfTheWeek: 6 (Fri), YYYYMMofToday: 202605, YYYYMMDDofToday: 20260515, m_todayDate: 20260515, dueToChangeInTimezone: false
+2026-05-15 07:01:30.876 INFO  [JTS-Main] - Created on: 20260515
+2026-05-15 07:01:30.877 INFO  [JTS-Main] - ------------------------------- IB GATEWAY RESTART --------------------------------
+2026-05-15 07:01:30.880 INFO  [JTS-Main] - installer version: unknown, installer type: standalone, install dir: 'null', Jts dir: '/home/ibgateway/settings', VM options file: 'null'
+2026-05-15 07:01:30.880 INFO  [JTS-Main] - Verifying environment [entryPoint=IBGATEWAY_STANDALONE]...
+2026-05-15 07:01:30.926 INFO  [JTS-Main] - Install4jAutoUpdateService initialized [props=LauncherProperties[updateDownloadUrl=null,skipUpdateCheck=false,nightlyEnabled=false,channelNameArg=null,channelName=latest,channelChanged=false,jtsConfigDir=/home/ibgateway/settings,apiPort=null,sessionId=null,installDir=null,exeName=null]].
+2026-05-15 07:01:30.933 INFO  [JTS-Main] - PROXY Installed custom selector
+2026-05-15 07:01:30.935 INFO  [JTS-Main] - AB-DEBUG: ConManSettings is initialized from host = null and port = 0. [PEER] null:0
+2026-05-15 07:01:30.935 INFO  [JTS-Main] - AB-DEBUG: ConManSettings is initialized from peer = null. [HOST] null [PORT] 0
+2026-05-15 07:01:30.935 INFO  [JTS-Main] - AB-DEBUG: ConManSettings is initialized from peer = null. [HOST] null [PORT] 0
+2026-05-15 07:01:30.935 INFO  [JTS-Main] - AB-DEBUG: ConManSettings' PEER will not be initialized from Jts.ini file: /home/ibgateway/settings/jts.ini
+2026-05-15 07:01:30.941 INFO  [JTS-Main] - useSsl=true,FIX endPoint=null:4001
+2026-05-15 07:01:30.953 INFO  [JTS-Main] - LOCALE: Property locale_to_use=null JTS Locale=en_US  country=United States  variant=
+2026-05-15 07:01:30.954 INFO  [JTS-Main] - Region: Custom
+2026-05-15 07:01:30.955 WARN  [JTS-Main] - The locales jar directory resolved to '/home/ibgateway/settings/jars' ('installDir' system property is not set).
+2026-05-15 07:01:30.955 WARN  [JTS-Main] - The locales jar directory resolved to '/home/ibgateway/settings/jars' ('installDir' system property is not set).
+2026-05-15 07:01:30.955 INFO  [JTS-Main] - Locale from ini: en
+2026-05-15 07:01:30.957 INFO  [JTS-Main] - Locale=en_US  country=United States  variant=
+2026-05-15 07:01:30.961 INFO  [JTS-Main] - prohibiting class lookup [twslaunch.ji18n.LauncherLanguage]
+2026-05-15 07:01:30.964 INFO  [JTS-Main] - prohibiting class lookup [twslaunch.ji18n.LauncherLanguage_en]
+2026-05-15 07:01:30.964 INFO  [JTS-Main] - prohibiting class lookup [twslaunch.ji18n.LauncherLanguage_en_US]
+2026-05-15 07:01:30.965 INFO  [JTS-Main] - LOCALE:  type: launcher intended: en_US actual:  size: 512
+2026-05-15 07:01:30.966 INFO  [JTS-Main] - settings dir: '/home/ibgateway/settings'
+2026-05-15 07:01:31.119 ERROR [JTS-Main] - Error during FX Thread start up, this may result in problem described in bz87660 to reacquire
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at twslaunch.trader.common.g.l(g.java:988)
+	at ibgateway.GWClient.a(Unknown Source)
+	at ibgateway.GWClient.main(Unknown Source)
+	at ibcalpha.ibc.IbcTws.startGateway(Unknown Source)
+	at ibcalpha.ibc.IbcTws.startTwsOrGateway(Unknown Source)
+	at ibcalpha.ibc.IbcTws.load(Unknown Source)
+	at ibcalpha.ibc.IbcGateway.main(Unknown Source)
+Caused by: java.lang.UnsupportedOperationException: Unable to load glass GTK library.
+	at javafx.graphics/com.sun.glass.ui.gtk.GtkApplication.lambda$new$5(GtkApplication.java:176)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at javafx.graphics/com.sun.glass.ui.gtk.GtkApplication.<init>(GtkApplication.java:163)
+	at javafx.graphics/com.sun.glass.ui.gtk.GtkPlatformFactory.createApplication(GtkPlatformFactory.java:40)
+	at javafx.graphics/com.sun.glass.ui.Application.run(Application.java:145)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.startup(QuantumToolkit.java:290)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.startup(PlatformImpl.java:292)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.startup(PlatformImpl.java:162)
+	... 11 more
+2026-05-15 07:01:31.138 INFO  [JTS-Main] - LauncherFontUpdater: simulatehighdefscreen=false
+2026-05-15 07:01:31.146 INFO  [JTS-Main] - LauncherFontUpdater: Screen dimensions=1024x768
+2026-05-15 07:01:31.146 INFO  [JTS-Main] - LauncherFontUpdater: highres=false
+2026-05-15 07:01:31.146 INFO  [JTS-Main] - LauncherFontUpdater: FontSize=16
+2026-05-15 07:01:31.146 INFO  [JTS-Main] - initPreUI() - entry
+2026-05-15 07:01:31.160 INFO  [JTS-Main] - Build 10.45.1e, May 7, 2026 5:00:06 AM
+2026-05-15 07:01:31.215 INFO  [JTS-Main] - LookAndFeelChangedListener installed
+2026-05-15 07:01:31.219 INFO  [JTS-Main] - JtsLookAndFeel initialized
+2026-05-15 07:01:31.655 INFO  [JTS-Main] - Current LAF: TWS LAF
+2026-05-15 07:01:31.655 INFO  [JTS-Main] - initPreUI() - exit
+2026-05-15 07:01:31.659 INFO  [JTS-Main] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: null:0 (SSL)
+2026-05-15 07:01:32.782 INFO  [AWT-EventQueue-0] - Default timezone:Etc/UTC
+2026-05-15 07:01:32.788 INFO  [AWT-EventQueue-0] - Starting GstatMessageMgr...
+2026-05-15 07:01:32.798 WARN  [JTS-GstatMessageMgr-6] - Misc URLs have not been received. Resending request...
+2026-05-15 07:01:32.799 INFO  [JTS-GstatMessageMgr-6] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: null:0 (SSL)
+2026-05-15 07:01:32.852 INFO  [AWT-EventQueue-0] - Started on 20260515-07:01:32
+2026-05-15 07:01:32.852 INFO  [AWT-EventQueue-0] - Default timezone:Etc/UTC name:Coordinated Universal Time dst:0
+2026-05-15 07:01:32.852 INFO  [AWT-EventQueue-0] - java version = 17.0.16.0.101
+2026-05-15 07:01:32.852 INFO  [AWT-EventQueue-0] - sun.arch.data.model = 64
+2026-05-15 07:01:32.852 INFO  [AWT-EventQueue-0] - os = Linux
+2026-05-15 07:01:32.852 INFO  [AWT-EventQueue-0] - os version = 5.15.0-179-generic
+2026-05-15 07:01:32.852 INFO  [AWT-EventQueue-0] - os architecture = 32
+2026-05-15 07:01:32.852 INFO  [AWT-EventQueue-0] - runtime = OpenJDK Runtime Environment
+2026-05-15 07:01:32.852 INFO  [AWT-EventQueue-0] - vendor = Azul Systems, Inc.
+2026-05-15 07:01:32.852 INFO  [AWT-EventQueue-0] - vm name = OpenJDK 64-Bit Server VM
+2026-05-15 07:01:32.852 INFO  [AWT-EventQueue-0] - username = 'Unknown'
+2026-05-15 07:01:33.538 INFO  [AWT-EventQueue-0] - Stopping GstatMessageMgr...
+2026-05-15 07:01:33.540 INFO  [AWT-EventQueue-0] - Setting dir is /home/ibgateway/settings/
+2026-05-15 07:01:33.541 INFO  [AWT-EventQueue-0] - PROXY Cleared HTTP proxy: no valid proxy is present (passing on :0)
+2026-05-15 07:01:33.550 INFO  [AWT-EventQueue-0] - BaseIniFile.saveGatewayFixEndPoint() [host=ndc1.ibllc.com,port=4001]...
+2026-05-15 07:01:33.551 INFO  [AWT-EventQueue-0] - SPLASH Creating screen with 5 steps
+2026-05-15 07:01:33.620 INFO  [AWT-EventQueue-0] - SplashScreen: using ads manager
+2026-05-15 07:01:33.624 INFO  [AWT-EventQueue-0] - AdImageContainer: start build ads UI
+2026-05-15 07:01:33.636 INFO  [JTS-CachedThreadExecutor-7] - AdManager: NEXT_AD request https://api.ibkr.com/tws.proxy/info/next?platform=dTWS&size=1200x1000&lang=en&version=10451&build=latest
+2026-05-15 07:01:33.835 INFO  [JTS-CachedThreadExecutor-7] - AdManager: sending request with header X-USERNAME
+2026-05-15 07:01:34.005 INFO  [AWT-EventQueue-0] - initAutoEncryptionMenu(): autoEncryption set to true
+2026-05-15 07:01:34.021 INFO  [AWT-EventQueue-0] - Contacting ndc1.ibllc.com:4000 as user NOT PRINTED
+2026-05-15 07:01:34.038 INFO  [AWT-EventQueue-0] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: ndc1.ibllc.com:4000 (SSL)
+2026-05-15 07:01:34.050 INFO  [AWT-EventQueue-0] - UserCredentials.sessionId() [this=235923099,old=null,new=6a06c4ce.0027].
+2026-05-15 07:01:34.051 INFO  [AWT-EventQueue-0] - CONN CALC: Last connection attempt time is cleared!
+2026-05-15 07:01:34.051 INFO  [AWT-EventQueue-0] - CONN CALC: Last connection set as now:07:01:34:051
+2026-05-15 07:01:34.051 INFO  [AWT-EventQueue-0] - Prelogin delay:0
+2026-05-15 07:01:34.059 INFO  [JTS-Login-9] - Starting launcher login thread
+2026-05-15 07:01:34.061 INFO  [JTS-Login-9] - LauncherLoginThread.runLoginWithUI()[hotBackupStrategy=ON,loginAttempt=1,socketDelay=20000].
+2026-05-15 07:01:34.061 INFO  [JTS-Login-9] - SPLASH Connecting to server
+2026-05-15 07:01:34.090 INFO  [AWT-EventQueue-0] - Network monitor is activated
+2026-05-15 07:01:34.094 INFO  [JTS-Login-9] - ### startLogin startTime=1778828494050
+2026-05-15 07:01:34.098 INFO  [JTS-Login-9] - ### loginAttempt loginAttempt=1
+2026-05-15 07:01:34.098 INFO  [JTS-Login-9] - Connecting ndc1.ibllc.com:4001 (SSL) timeout=20000...
+2026-05-15 07:01:34.103 INFO  [JTS-Order-Audit-10] - Starting async queue thread
+2026-05-15 07:01:34.109 INFO  [JTS-Login-9] - ### onSocketOpenStart socketOpenStart=1778828494102; endPoint=ndc1.ibllc.com; port=4001
+2026-05-15 07:01:34.190 INFO  [JTS-Login-9] - ### onSocketOpenEnd socketOpenEnd=1778828494190
+2026-05-15 07:01:34.190 INFO  [JTS-Login-9] - Connected to ndc1.ibllc.com:4001 (SSL)/64.190.197.40 remote-ip on local port 0 socket local addrs:port /172.18.0.2:56910
+2026-05-15 07:01:34.191 INFO  [JTS-Login-9] - Updating machine info [connectionAddress=/172.18.0.2]...
+2026-05-15 07:01:34.192 INFO  [JTS-Login-9] - Creating unique random...
+2026-05-15 07:01:34.192 INFO  [JTS-Login-9] - id=631ff2c3
+2026-05-15 07:01:34.193 INFO  [JTS-Login-9] - Resolving MAC address...
+2026-05-15 07:01:34.195 INFO  [JTS-Login-9] - MACNetworkInfo created <631ff2c3|FA:D4:88:77:AA:95|172.18.0.2>.
+2026-05-15 07:01:34.196 INFO  [JTS-Login-9] - JTSAuthConnection.onConnected(): lastKnownCipherStatus=INSECURE
+2026-05-15 07:01:34.200 INFO  [JTS-Login-9] - Changing state for connection from PRELOGON to PRELOGON in C 1003476915: SessionSocket:1
+2026-05-15 07:01:34.200 INFO  [JTS-Login-9] - Authenticating
+2026-05-15 07:01:34.235 INFO  [JTS-CCPListenerS1-12] - Starting listener thread [sessionID=1]...
+2026-05-15 07:01:34.268 INFO  [JTS-Login-9] - AuthTimeoutMonitor-CCP: deactivate
+2026-05-15 07:01:34.268 INFO  [JTS-Login-9] - AuthTimeoutMonitor-CCP: timeout=20000
+2026-05-15 07:01:34.279 INFO  [JTS-Login-9] - AuthTimeoutMonitor-CCP: activate
+2026-05-15 07:01:34.281 INFO  [JTS-Login-9] - LOGIN_TIME_MONITOR	 false 07:01:34:280 since start = 0 thread delay = 0 global delay = 0 tag=null, cls=AuthDispatcher method=connect
+2026-05-15 07:01:34.285 INFO  [JTS-AuthTimeoutMonitorThread-CCP-14] - Starting auth timeout monitor thread for CCP
+2026-05-15 07:01:34.291 INFO  [JTS-Login-9] - SPLASH -0001 step 1 AuthDispatcher.connect
+2026-05-15 07:01:34.305 INFO  [JTS-Login-9] - Sending connect request
+2026-05-15 07:01:34.307 INFO  [JTS-AuthDispatcherS1-13] - Starting dispatcher thread [sessionID=1]...
+2026-05-15 07:01:34.308 INFO  [JTS-Login-9] - AuthDispatcher.initNSMsgVersionLimits: minVersion=38, maxVersion=50
+2026-05-15 07:01:34.311 INFO  [JTS-Login-9] - AuthDispatcher.NSConnectRequest: userSessionID=6a06c4ce.0027, beeDemoType=NULL
+2026-05-15 07:01:34.314 INFO  [JTS-Login-9] - ### onNsMsg loginMessageReq=1778828494311; brandNewUser=true
+2026-05-15 07:01:34.314 INFO  [JTS-Login-9] - mapProdToPaper: In NSConnectRequest: sending PAPER_CONNECT=0x2000
+2026-05-15 07:01:34.444 INFO  [JTS-Login-9] - SPLASH Authenticating
+2026-05-15 07:01:34.444 INFO  [JTS-CCPListenerS1-12] - Initial listener buffer size is 65536.
+2026-05-15 07:01:34.444 INFO  [JTS-CCPListenerS1-12] - Listener thread [sessionID=1] is ready to process messages.
+2026-05-15 07:01:34.448 INFO  [JTS-Login-9] - Terminating launcher login thread
+2026-05-15 07:01:34.459 INFO  [JTS-AuthDispatcherS1-13] - NSErrorResponse.INVALID_USERNAME_OR_BAD_IP
+2026-05-15 07:01:34.460 INFO  [JTS-AuthDispatcherS1-13] - Starting GstatMessageMgr...
+2026-05-15 07:01:34.462 WARN  [JTS-GstatMessageMgr-18] - Misc URLs have not been received. Resending request...
+2026-05-15 07:01:34.462 INFO  [JTS-GstatMessageMgr-18] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: ndc1.ibllc.com:4000 (SSL)
+2026-05-15 07:01:34.462 INFO  [JTS-AuthDispatcherS1-13] - Authorization failed: Invalid username or password. 
+
+Please check the "Caps Lock" key; passwords are case sensitive. 
+
+If you are in the process of opening an individual account, please contact 
+customer service to reset the password. 
+
+If you are in the process of opening any other type of account, please note 
+that the login is possible beginning the day after account approval.
+
+Example user name: trader777. MessageType: null. FailReason: 1
+2026-05-15 07:01:34.463 INFO  [JTS-MiscUlrsRequester-19] - Connecting ndc1.ibllc.com:4000 (SSL) timeout=10000...
+2026-05-15 07:01:34.463 INFO  [JTS-AuthDispatcherS1-13] - Disconnecting ndc1.ibllc.com:4001 (SSL) [disconnectDetails=DisconnectDetails[sessionID=1,endPoint=ndc1.ibllc.com:4001 (SSL),reason=DISCONNECT_AUTHORIZATION_FAILED,cause=null,systemMessage=null,keepSocketOpen=false]]...
+2026-05-15 07:01:34.465 INFO  [JTS-CCPListenerS1-12] - Socket or stream for connection ndc1.ibllc.com:4001 (SSL) was closed by another thread.
+2026-05-15 07:01:34.465 INFO  [JTS-AuthDispatcherS1-13] - Socket closed.
+2026-05-15 07:01:34.465 INFO  [JTS-AuthTimeoutMonitorThread-CCP-14] - Terminating auth timeout monitor thread for CCP
+2026-05-15 07:01:34.465 INFO  [JTS-AuthDispatcherS1-13] - AuthTimeoutMonitor-CCP: deactivate
+2026-05-15 07:01:34.466 INFO  [JTS-AuthDispatcherS1-13] - SocketTracker[name=name=CCP(ndc1.ibllc.com:4001 (SSL)),usesCcpConMan=false,lastReadTimestamp=1778828494457,lastReadDateTime=2026-05-15T07:01:34.457,lastFixSendTime=].
+2026-05-15 07:01:34.466 INFO  [JTS-AuthDispatcherS1-13] - Interrupting dispatcher [sessionID=1]...
+2026-05-15 07:01:34.466 INFO  [JTS-AuthDispatcherS1-13] - Interrupting listener [sessionID=1,disconnectSocket=true]...
+2026-05-15 07:01:34.472 INFO  [JTS-AuthDispatcherS1-13] - CONN CALC: Last connection attempt time is cleared!
+2026-05-15 07:01:34.475 INFO  [JTS-AuthDispatcherS1-13] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: ndc1.ibllc.com:4000 (SSL)
+2026-05-15 07:01:34.475 INFO  [JTS-AuthDispatcherS1-13] - Unable to reassign s_miscUrlsConnection to b 1440201600. The current b 5645178: SessionSocket:2 is not nulled out yet.
+2026-05-15 07:01:34.475 INFO  [JTS-MiscUlrsRequester-19] - Connected to ndc1.ibllc.com:4000 (SSL)/64.190.197.40 remote-ip on local port 0 socket local addrs:port /172.18.0.2:50820
+2026-05-15 07:01:34.475 INFO  [JTS-MiscUlrsRequester-19] - Updating machine info [connectionAddress=/172.18.0.2]...
+2026-05-15 07:01:34.475 INFO  [JTS-AuthDispatcherS1-13] - Reconnection time cleared: argClearBackoff=true base=0 range=5000 next=0 disconnected=0
+2026-05-15 07:01:34.475 INFO  [JTS-AuthDispatcherS1-13] - Dispatcher thread terminating [sessionID=1,interrupted=true]...
+2026-05-15 07:01:34.477 INFO  [JTS-CCPListenerS1-12] - Listener thread terminating [sessionID=1] [seen=49,totalShifted=49,moreAvailable=0]
+2026-05-15 07:01:34.477 INFO  [JTS-DisconnectedS1-20] - IBGateway connection to ccp disconnected.
+2026-05-15 07:01:34.483 INFO  [JTS-MISC URLsListenerS2-21] - Starting listener thread [sessionID=2]...
+2026-05-15 07:01:34.484 INFO  [JTS-MiscUlrsRequester-19] - Sending MiscUrls request
+2026-05-15 07:01:34.485 INFO  [JTS-MiscUlrsRequester-19] - SPLASH 0204 step 2 AuthDispatcher.send
+2026-05-15 07:01:34.486 INFO  [JTS-AuthDispatcherS2-22] - Starting dispatcher thread [sessionID=2]...
+2026-05-15 07:01:34.486 ERROR [JTS-CachedThreadExecutor-7] - AdManager: NEXT_AD service 500
+2026-05-15 07:01:34.487 ERROR [JTS-CachedThreadExecutor-7] - AdsManager: get next image failed with status 500
+2026-05-15 07:01:34.489 INFO  [JTS-AuthResponseMonitor-23] - Starting auth response monitor thread
+2026-05-15 07:01:34.490 INFO  [AWT-EventQueue-0] - AdImageContainer: display regular background image without ads
+2026-05-15 07:01:34.490 INFO  [AWT-EventQueue-0] - Splashscreen: should not show ads
+2026-05-15 07:01:34.502 ERROR [JTS-MiscUlrsRequester-19] - Cannot write to socket ndc1.ibllc.com:4000 (SSL). Service: JTS-AuthDispatcherS2-22. Error: class java.net.SocketException - Connection reset
+2026-05-15 07:01:34.503 INFO  [JTS-MiscUlrsRequester-19] - sendNSMessage error: Server disconnected, please try again
+2026-05-15 07:01:34.504 ERROR [JTS-MiscUlrsRequester-19] - Incorrect Misc URLs data ''
+2026-05-15 07:01:34.504 INFO  [JTS-MiscUlrsRequester-19] - Disconnecting ndc1.ibllc.com:4000 (SSL) [disconnectDetails=DisconnectDetails[sessionID=2,endPoint=ndc1.ibllc.com:4000 (SSL),reason=DISCONNECT_BY_DESIGN,cause=null,systemMessage=null,keepSocketOpen=false]]...
+2026-05-15 07:01:34.504 INFO  [JTS-MiscUlrsRequester-19] - Socket closed.
+2026-05-15 07:01:34.504 INFO  [JTS-MiscUlrsRequester-19] - SocketTracker[name=name=MISC URLs(ndc1.ibllc.com:4000 (SSL)),usesCcpConMan=false,lastReadTimestamp=0,lastReadDateTime=1970-01-01T00:00,lastFixSendTime=].
+2026-05-15 07:01:34.505 INFO  [JTS-MiscUlrsRequester-19] - Interrupting dispatcher [sessionID=2]...
+2026-05-15 07:01:34.506 INFO  [JTS-AuthDispatcherS2-22] - Dispatcher thread terminating [sessionID=2,interrupted=true]...
+2026-05-15 07:01:34.506 INFO  [JTS-AuthResponseMonitor-23] - Terminating auth response monitor thread
+2026-05-15 07:01:34.506 INFO  [JTS-MiscUlrsRequester-19] - Interrupting listener [sessionID=2,disconnectSocket=true]...
+2026-05-15 07:01:34.510 INFO  [JTS-MISC URLsListenerS2-21] - Initial listener buffer size is 0.
+2026-05-15 07:01:34.510 ERROR [JTS-MISC URLsListenerS2-21] - Connection is already closed. Terminating listener thread [sessionID=2]...
+2026-05-15 07:01:35.929 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 07:01:35.930 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=732,887KB HeapUsage: Max=786,432KB used=51,496KB committed=110,592KB NonHeapUsage: Max=0KB used=80,719KB committed=82,752KB
+2026-05-15 07:01:36.949 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.57% avg=0.57% 30 min avg=0.57% 10 min avg=0.57% 5 min avg=0.57% 1 min avg=0.57%
+GC:called=7 times CPU used=0.54%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=26 curr daemon=17
+2026-05-15 07:02:02.121 INFO  [JTS-Main] - ------------------------------- IB GATEWAY RESTART --------------------------------
+2026-05-15 07:02:02.125 INFO  [JTS-Main] - installer version: unknown, installer type: standalone, install dir: 'null', Jts dir: '/home/ibgateway/settings', VM options file: 'null'
+2026-05-15 07:02:02.125 INFO  [JTS-Main] - Verifying environment [entryPoint=IBGATEWAY_STANDALONE]...
+2026-05-15 07:02:02.163 INFO  [JTS-Main] - Install4jAutoUpdateService initialized [props=LauncherProperties[updateDownloadUrl=null,skipUpdateCheck=false,nightlyEnabled=false,channelNameArg=null,channelName=latest,channelChanged=false,jtsConfigDir=/home/ibgateway/settings,apiPort=null,sessionId=null,installDir=null,exeName=null]].
+2026-05-15 07:02:02.167 INFO  [JTS-Main] - PROXY Installed custom selector
+2026-05-15 07:02:02.168 INFO  [JTS-Main] - AB-DEBUG: ConManSettings is initialized from host = null and port = 0. [PEER] null:0
+2026-05-15 07:02:02.169 INFO  [JTS-Main] - AB-DEBUG: ConManSettings is initialized from peer = null. [HOST] null [PORT] 0
+2026-05-15 07:02:02.169 INFO  [JTS-Main] - AB-DEBUG: ConManSettings is initialized from peer = null. [HOST] null [PORT] 0
+2026-05-15 07:02:02.169 INFO  [JTS-Main] - AB-DEBUG: ConManSettings' PEER will not be initialized from Jts.ini file: /home/ibgateway/settings/jts.ini
+2026-05-15 07:02:02.172 INFO  [JTS-Main] - useSsl=true,FIX endPoint=ndc1.ibllc.com:4001
+2026-05-15 07:02:02.402 INFO  [JTS-Main] - Setting custom timezone: Etc/UTC
+2026-05-15 07:02:02.425 INFO  [JTS-Main] - LOCALE: Property locale_to_use=null JTS Locale=en_US  country=United States  variant=
+2026-05-15 07:02:02.427 INFO  [JTS-Main] - Region: Custom
+2026-05-15 07:02:02.428 WARN  [JTS-Main] - The locales jar directory resolved to '/home/ibgateway/settings/jars' ('installDir' system property is not set).
+2026-05-15 07:02:02.428 WARN  [JTS-Main] - The locales jar directory resolved to '/home/ibgateway/settings/jars' ('installDir' system property is not set).
+2026-05-15 07:02:02.428 INFO  [JTS-Main] - Locale from ini: en
+2026-05-15 07:02:02.429 INFO  [JTS-Main] - Locale=en_US  country=United States  variant=
+2026-05-15 07:02:02.433 INFO  [JTS-Main] - prohibiting class lookup [twslaunch.ji18n.LauncherLanguage]
+2026-05-15 07:02:02.436 INFO  [JTS-Main] - prohibiting class lookup [twslaunch.ji18n.LauncherLanguage_en]
+2026-05-15 07:02:02.436 INFO  [JTS-Main] - prohibiting class lookup [twslaunch.ji18n.LauncherLanguage_en_US]
+2026-05-15 07:02:02.437 INFO  [JTS-Main] - LOCALE:  type: launcher intended: en_US actual:  size: 512
+2026-05-15 07:02:02.437 INFO  [JTS-Main] - settings dir: '/home/ibgateway/settings'
+2026-05-15 07:02:02.575 ERROR [JTS-Main] - Error during FX Thread start up, this may result in problem described in bz87660 to reacquire
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at twslaunch.trader.common.g.l(g.java:988)
+	at ibgateway.GWClient.a(Unknown Source)
+	at ibgateway.GWClient.main(Unknown Source)
+	at ibcalpha.ibc.IbcTws.startGateway(Unknown Source)
+	at ibcalpha.ibc.IbcTws.startTwsOrGateway(Unknown Source)
+	at ibcalpha.ibc.IbcTws.load(Unknown Source)
+	at ibcalpha.ibc.IbcGateway.main(Unknown Source)
+Caused by: java.lang.UnsupportedOperationException: Unable to load glass GTK library.
+	at javafx.graphics/com.sun.glass.ui.gtk.GtkApplication.lambda$new$5(GtkApplication.java:176)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at javafx.graphics/com.sun.glass.ui.gtk.GtkApplication.<init>(GtkApplication.java:163)
+	at javafx.graphics/com.sun.glass.ui.gtk.GtkPlatformFactory.createApplication(GtkPlatformFactory.java:40)
+	at javafx.graphics/com.sun.glass.ui.Application.run(Application.java:145)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.startup(QuantumToolkit.java:290)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.startup(PlatformImpl.java:292)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.startup(PlatformImpl.java:162)
+	... 11 more
+2026-05-15 07:02:02.591 INFO  [JTS-Main] - LauncherFontUpdater: simulatehighdefscreen=false
+2026-05-15 07:02:02.594 INFO  [JTS-Main] - LauncherFontUpdater: Screen dimensions=1024x768
+2026-05-15 07:02:02.595 INFO  [JTS-Main] - LauncherFontUpdater: highres=false
+2026-05-15 07:02:02.595 INFO  [JTS-Main] - LauncherFontUpdater: FontSize=16
+2026-05-15 07:02:02.595 INFO  [JTS-Main] - initPreUI() - entry
+2026-05-15 07:02:02.604 INFO  [JTS-Main] - Build 10.45.1e, May 7, 2026 5:00:06 AM
+2026-05-15 07:02:02.638 INFO  [JTS-Main] - LookAndFeelChangedListener installed
+2026-05-15 07:02:02.641 INFO  [JTS-Main] - JtsLookAndFeel initialized
+2026-05-15 07:02:03.015 INFO  [JTS-Main] - Current LAF: TWS LAF
+2026-05-15 07:02:03.016 INFO  [JTS-Main] - initPreUI() - exit
+2026-05-15 07:02:03.019 INFO  [JTS-Main] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: null:0 (SSL)
+2026-05-15 07:02:03.533 INFO  [AWT-EventQueue-0] - Default timezone:Africa/Abidjan
+2026-05-15 07:02:03.534 INFO  [AWT-EventQueue-0] - Starting GstatMessageMgr...
+2026-05-15 07:02:03.543 WARN  [JTS-GstatMessageMgr-6] - Misc URLs have not been received. Resending request...
+2026-05-15 07:02:03.544 INFO  [JTS-GstatMessageMgr-6] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: null:0 (SSL)
+2026-05-15 07:02:03.585 INFO  [AWT-EventQueue-0] - Started on 20260515-07:02:03
+2026-05-15 07:02:03.585 INFO  [AWT-EventQueue-0] - Default timezone:Africa/Abidjan name:Greenwich Mean Time dst:0
+2026-05-15 07:02:03.585 INFO  [AWT-EventQueue-0] - java version = 17.0.16.0.101
+2026-05-15 07:02:03.585 INFO  [AWT-EventQueue-0] - sun.arch.data.model = 64
+2026-05-15 07:02:03.586 INFO  [AWT-EventQueue-0] - os = Linux
+2026-05-15 07:02:03.586 INFO  [AWT-EventQueue-0] - os version = 5.15.0-179-generic
+2026-05-15 07:02:03.586 INFO  [AWT-EventQueue-0] - os architecture = 32
+2026-05-15 07:02:03.586 INFO  [AWT-EventQueue-0] - runtime = OpenJDK Runtime Environment
+2026-05-15 07:02:03.586 INFO  [AWT-EventQueue-0] - vendor = Azul Systems, Inc.
+2026-05-15 07:02:03.586 INFO  [AWT-EventQueue-0] - vm name = OpenJDK 64-Bit Server VM
+2026-05-15 07:02:03.586 INFO  [AWT-EventQueue-0] - username = 'Unknown'
+2026-05-15 07:02:04.257 INFO  [AWT-EventQueue-0] - Stopping GstatMessageMgr...
+2026-05-15 07:02:04.259 INFO  [AWT-EventQueue-0] - Setting dir is /home/ibgateway/settings/
+2026-05-15 07:02:04.260 INFO  [AWT-EventQueue-0] - PROXY Cleared HTTP proxy: no valid proxy is present (passing on :0)
+2026-05-15 07:02:04.275 INFO  [AWT-EventQueue-0] - BaseIniFile.saveGatewayFixEndPoint() [host=ndc1.ibllc.com,port=4001]...
+2026-05-15 07:02:04.275 INFO  [AWT-EventQueue-0] - SPLASH Creating screen with 5 steps
+2026-05-15 07:02:04.323 INFO  [AWT-EventQueue-0] - SplashScreen: using ads manager
+2026-05-15 07:02:04.325 INFO  [AWT-EventQueue-0] - AdImageContainer: start build ads UI
+2026-05-15 07:02:04.335 INFO  [JTS-CachedThreadExecutor-7] - AdManager: NEXT_AD request https://api.ibkr.com/tws.proxy/info/next?platform=dTWS&size=1200x1000&lang=en&version=10451&build=latest
+2026-05-15 07:02:04.538 INFO  [JTS-CachedThreadExecutor-7] - AdManager: sending request with header X-USERNAME
+2026-05-15 07:02:04.683 INFO  [AWT-EventQueue-0] - initAutoEncryptionMenu(): autoEncryption set to true
+2026-05-15 07:02:04.696 INFO  [AWT-EventQueue-0] - Contacting ndc1.ibllc.com:4000 as user NOT PRINTED
+2026-05-15 07:02:04.715 INFO  [AWT-EventQueue-0] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: ndc1.ibllc.com:4000 (SSL)
+2026-05-15 07:02:04.739 INFO  [AWT-EventQueue-0] - UserCredentials.sessionId() [this=1078208474,old=null,new=6a06c4ec.02cb].
+2026-05-15 07:02:04.739 INFO  [AWT-EventQueue-0] - CONN CALC: Last connection attempt time is cleared!
+2026-05-15 07:02:04.739 INFO  [AWT-EventQueue-0] - CONN CALC: Last connection set as now:07:02:04:739
+2026-05-15 07:02:04.740 INFO  [AWT-EventQueue-0] - Prelogin delay:0
+2026-05-15 07:02:04.762 INFO  [JTS-Login-9] - Starting launcher login thread
+2026-05-15 07:02:04.762 INFO  [JTS-Login-9] - LauncherLoginThread.runLoginWithUI()[hotBackupStrategy=ON,loginAttempt=1,socketDelay=20000].
+2026-05-15 07:02:04.763 INFO  [JTS-Login-9] - SPLASH Connecting to server
+2026-05-15 07:02:04.769 INFO  [JTS-Login-9] - ### startLogin startTime=1778828524739
+2026-05-15 07:02:04.770 INFO  [JTS-Login-9] - ### loginAttempt loginAttempt=1
+2026-05-15 07:02:04.770 INFO  [JTS-Login-9] - Connecting ndc1.ibllc.com:4001 (SSL) timeout=20000...
+2026-05-15 07:02:04.773 INFO  [JTS-Login-9] - ### onSocketOpenStart socketOpenStart=1778828524770; endPoint=ndc1.ibllc.com; port=4001
+2026-05-15 07:02:04.776 INFO  [AWT-EventQueue-0] - Network monitor is activated
+2026-05-15 07:02:04.780 INFO  [JTS-Order-Audit-10] - Starting async queue thread
+2026-05-15 07:02:04.787 INFO  [JTS-Login-9] - ### onSocketOpenEnd socketOpenEnd=1778828524787
+2026-05-15 07:02:04.790 INFO  [JTS-Login-9] - Connected to ndc1.ibllc.com:4001 (SSL)/64.190.197.40 remote-ip on local port 0 socket local addrs:port /172.18.0.2:33184
+2026-05-15 07:02:04.794 INFO  [JTS-Login-9] - Updating machine info [connectionAddress=/172.18.0.2]...
+2026-05-15 07:02:04.795 INFO  [JTS-Login-9] - Creating unique random...
+2026-05-15 07:02:04.796 INFO  [JTS-Login-9] - id=772e8fe0
+2026-05-15 07:02:04.796 INFO  [JTS-Login-9] - Resolving MAC address...
+2026-05-15 07:02:04.797 INFO  [JTS-Login-9] - MACNetworkInfo created <772e8fe0|9E:19:39:A6:DD:6D|172.18.0.2>.
+2026-05-15 07:02:04.798 INFO  [JTS-Login-9] - JTSAuthConnection.onConnected(): lastKnownCipherStatus=INSECURE
+2026-05-15 07:02:04.799 INFO  [JTS-Login-9] - Changing state for connection from PRELOGON to PRELOGON in C 576535752: SessionSocket:1
+2026-05-15 07:02:04.799 INFO  [JTS-Login-9] - Authenticating
+2026-05-15 07:02:04.839 INFO  [JTS-CCPListenerS1-12] - Starting listener thread [sessionID=1]...
+2026-05-15 07:02:04.862 INFO  [JTS-Login-9] - AuthTimeoutMonitor-CCP: deactivate
+2026-05-15 07:02:04.863 INFO  [JTS-Login-9] - AuthTimeoutMonitor-CCP: timeout=20000
+2026-05-15 07:02:04.879 INFO  [JTS-Login-9] - AuthTimeoutMonitor-CCP: activate
+2026-05-15 07:02:04.881 INFO  [JTS-Login-9] - LOGIN_TIME_MONITOR	 false 07:02:04:880 since start = 0 thread delay = 0 global delay = 0 tag=null, cls=AuthDispatcher method=connect
+2026-05-15 07:02:04.882 INFO  [JTS-AuthTimeoutMonitorThread-CCP-14] - Starting auth timeout monitor thread for CCP
+2026-05-15 07:02:04.888 INFO  [JTS-Login-9] - SPLASH -0001 step 1 AuthDispatcher.connect
+2026-05-15 07:02:04.898 INFO  [JTS-Login-9] - Sending connect request
+2026-05-15 07:02:04.899 INFO  [JTS-Login-9] - AuthDispatcher.initNSMsgVersionLimits: minVersion=38, maxVersion=50
+2026-05-15 07:02:04.901 INFO  [JTS-Login-9] - AuthDispatcher.NSConnectRequest: userSessionID=6a06c4ec.02cb, beeDemoType=NULL
+2026-05-15 07:02:04.903 INFO  [JTS-Login-9] - ### onNsMsg loginMessageReq=1778828524901; brandNewUser=true
+2026-05-15 07:02:04.903 INFO  [JTS-Login-9] - mapProdToPaper: In NSConnectRequest: sending PAPER_CONNECT=0x2000
+2026-05-15 07:02:04.911 INFO  [JTS-AuthDispatcherS1-13] - Starting dispatcher thread [sessionID=1]...
+2026-05-15 07:02:05.021 INFO  [JTS-Login-9] - SPLASH Authenticating
+2026-05-15 07:02:05.022 INFO  [JTS-CCPListenerS1-12] - Initial listener buffer size is 65536.
+2026-05-15 07:02:05.022 INFO  [JTS-CCPListenerS1-12] - Listener thread [sessionID=1] is ready to process messages.
+2026-05-15 07:02:05.024 INFO  [JTS-Login-9] - Terminating launcher login thread
+2026-05-15 07:02:05.031 INFO  [JTS-AuthDispatcherS1-13] - NSErrorResponse.INVALID_USERNAME_OR_BAD_IP
+2026-05-15 07:02:05.032 INFO  [JTS-AuthDispatcherS1-13] - Starting GstatMessageMgr...
+2026-05-15 07:02:05.033 INFO  [JTS-AuthDispatcherS1-13] - Authorization failed: Invalid username or password. 
+
+Please check the "Caps Lock" key; passwords are case sensitive. 
+
+If you are in the process of opening an individual account, please contact 
+customer service to reset the password. 
+
+If you are in the process of opening any other type of account, please note 
+that the login is possible beginning the day after account approval.
+
+Example user name: trader777. MessageType: null. FailReason: 1
+2026-05-15 07:02:05.033 INFO  [JTS-AuthDispatcherS1-13] - Disconnecting ndc1.ibllc.com:4001 (SSL) [disconnectDetails=DisconnectDetails[sessionID=1,endPoint=ndc1.ibllc.com:4001 (SSL),reason=DISCONNECT_AUTHORIZATION_FAILED,cause=null,systemMessage=null,keepSocketOpen=false]]...
+2026-05-15 07:02:05.035 INFO  [JTS-AuthDispatcherS1-13] - Socket closed.
+2026-05-15 07:02:05.035 INFO  [JTS-AuthTimeoutMonitorThread-CCP-14] - Terminating auth timeout monitor thread for CCP
+2026-05-15 07:02:05.035 INFO  [JTS-CCPListenerS1-12] - Socket or stream for connection ndc1.ibllc.com:4001 (SSL) was closed by another thread.
+2026-05-15 07:02:05.035 INFO  [JTS-AuthDispatcherS1-13] - AuthTimeoutMonitor-CCP: deactivate
+2026-05-15 07:02:05.036 INFO  [JTS-AuthDispatcherS1-13] - SocketTracker[name=name=CCP(ndc1.ibllc.com:4001 (SSL)),usesCcpConMan=false,lastReadTimestamp=1778828525029,lastReadDateTime=2026-05-15T07:02:05.029,lastFixSendTime=].
+2026-05-15 07:02:05.036 INFO  [JTS-AuthDispatcherS1-13] - Interrupting dispatcher [sessionID=1]...
+2026-05-15 07:02:05.036 INFO  [JTS-AuthDispatcherS1-13] - Interrupting listener [sessionID=1,disconnectSocket=true]...
+2026-05-15 07:02:05.039 INFO  [JTS-AuthDispatcherS1-13] - CONN CALC: Last connection attempt time is cleared!
+2026-05-15 07:02:05.040 WARN  [JTS-GstatMessageMgr-18] - Misc URLs have not been received. Resending request...
+2026-05-15 07:02:05.040 INFO  [JTS-GstatMessageMgr-18] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: ndc1.ibllc.com:4000 (SSL)
+2026-05-15 07:02:05.054 INFO  [JTS-DisconnectedS1-20] - IBGateway connection to ccp disconnected.
+2026-05-15 07:02:05.054 INFO  [JTS-AuthDispatcherS1-13] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: ndc1.ibllc.com:4000 (SSL)
+2026-05-15 07:02:05.054 INFO  [JTS-AuthDispatcherS1-13] - Unable to reassign s_miscUrlsConnection to b 534785135. The current b 173431253 is not nulled out yet.
+2026-05-15 07:02:05.055 INFO  [JTS-AuthDispatcherS1-13] - Reconnection time cleared: argClearBackoff=true base=0 range=5000 next=0 disconnected=0
+2026-05-15 07:02:05.055 INFO  [JTS-CCPListenerS1-12] - Listener thread terminating [sessionID=1] [seen=49,totalShifted=49,moreAvailable=0]
+2026-05-15 07:02:05.056 INFO  [JTS-AuthDispatcherS1-13] - Dispatcher thread terminating [sessionID=1,interrupted=true]...
+2026-05-15 07:02:05.056 INFO  [JTS-MiscUlrsRequester-19] - Connecting ndc1.ibllc.com:4000 (SSL) timeout=10000...
+2026-05-15 07:02:05.064 ERROR [JTS-CachedThreadExecutor-7] - AdManager: NEXT_AD service 500
+2026-05-15 07:02:05.064 ERROR [JTS-CachedThreadExecutor-7] - AdsManager: get next image failed with status 500
+2026-05-15 07:02:05.065 INFO  [AWT-EventQueue-0] - AdImageContainer: display regular background image without ads
+2026-05-15 07:02:05.065 INFO  [AWT-EventQueue-0] - Splashscreen: should not show ads
+2026-05-15 07:02:05.069 INFO  [JTS-MiscUlrsRequester-19] - Connected to ndc1.ibllc.com:4000 (SSL)/64.190.197.40 remote-ip on local port 0 socket local addrs:port /172.18.0.2:39336
+2026-05-15 07:02:05.070 INFO  [JTS-MiscUlrsRequester-19] - Updating machine info [connectionAddress=/172.18.0.2]...
+2026-05-15 07:02:05.075 INFO  [JTS-MISC URLsListenerS2-21] - Starting listener thread [sessionID=2]...
+2026-05-15 07:02:05.077 INFO  [JTS-MiscUlrsRequester-19] - Sending MiscUrls request
+2026-05-15 07:02:05.077 INFO  [JTS-AuthDispatcherS2-22] - Starting dispatcher thread [sessionID=2]...
+2026-05-15 07:02:05.080 INFO  [JTS-AuthResponseMonitor-23] - Starting auth response monitor thread
+2026-05-15 07:02:05.095 ERROR [JTS-MiscUlrsRequester-19] - Cannot write to socket ndc1.ibllc.com:4000 (SSL). Service: JTS-AuthDispatcherS2-22. Error: class java.net.SocketException - Connection reset
+2026-05-15 07:02:05.095 INFO  [JTS-MiscUlrsRequester-19] - sendNSMessage error: Server disconnected, please try again
+2026-05-15 07:02:05.096 ERROR [JTS-MiscUlrsRequester-19] - Incorrect Misc URLs data ''
+2026-05-15 07:02:05.096 INFO  [JTS-MiscUlrsRequester-19] - Disconnecting ndc1.ibllc.com:4000 (SSL) [disconnectDetails=DisconnectDetails[sessionID=2,endPoint=ndc1.ibllc.com:4000 (SSL),reason=DISCONNECT_BY_DESIGN,cause=null,systemMessage=null,keepSocketOpen=false]]...
+2026-05-15 07:02:05.096 INFO  [JTS-MiscUlrsRequester-19] - Socket closed.
+2026-05-15 07:02:05.096 INFO  [JTS-MiscUlrsRequester-19] - SocketTracker[name=name=MISC URLs(ndc1.ibllc.com:4000 (SSL)),usesCcpConMan=false,lastReadTimestamp=0,lastReadDateTime=1970-01-01T00:00,lastFixSendTime=].
+2026-05-15 07:02:05.096 INFO  [JTS-MiscUlrsRequester-19] - Interrupting dispatcher [sessionID=2]...
+2026-05-15 07:02:05.097 INFO  [JTS-AuthDispatcherS2-22] - Dispatcher thread terminating [sessionID=2,interrupted=true]...
+2026-05-15 07:02:05.097 INFO  [JTS-AuthResponseMonitor-23] - Terminating auth response monitor thread
+2026-05-15 07:02:05.097 INFO  [JTS-MiscUlrsRequester-19] - Interrupting listener [sessionID=2,disconnectSocket=true]...
+2026-05-15 07:02:05.097 INFO  [JTS-MISC URLsListenerS2-21] - Initial listener buffer size is 0.
+2026-05-15 07:02:05.097 ERROR [JTS-MISC URLsListenerS2-21] - Connection is already closed. Terminating listener thread [sessionID=2]...
+2026-05-15 07:02:07.166 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 07:02:07.167 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=745,250KB HeapUsage: Max=786,432KB used=39,272KB committed=93,184KB NonHeapUsage: Max=0KB used=78,715KB committed=80,896KB
+2026-05-15 07:02:08.179 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.54% avg=0.54% 30 min avg=0.54% 10 min avg=0.54% 5 min avg=0.54% 1 min avg=0.54%
+GC:called=9 times CPU used=0.59%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=26 curr daemon=17
+2026-05-15 07:05:05.056 WARN  [JTS-GstatMessageMgr-18] - Misc URLs have not been received. Resending request...
+2026-05-15 07:05:05.058 INFO  [JTS-GstatMessageMgr-18] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: ndc1.ibllc.com:4000 (SSL)
+2026-05-15 07:05:05.058 INFO  [JTS-MiscUlrsRequester-25] - Connecting ndc1.ibllc.com:4000 (SSL) timeout=10000...
+2026-05-15 07:05:05.072 INFO  [JTS-MiscUlrsRequester-25] - Connected to ndc1.ibllc.com:4000 (SSL)/64.190.197.40 remote-ip on local port 0 socket local addrs:port /172.18.0.2:48144
+2026-05-15 07:05:05.073 INFO  [JTS-MiscUlrsRequester-25] - Updating machine info [connectionAddress=/172.18.0.2]...
+2026-05-15 07:05:05.073 INFO  [JTS-MISC URLsListenerS3-26] - Starting listener thread [sessionID=3]...
+2026-05-15 07:05:05.074 INFO  [JTS-MiscUlrsRequester-25] - Sending MiscUrls request
+2026-05-15 07:05:05.074 INFO  [JTS-MiscUlrsRequester-25] - SPLASH 180193 step 2 AuthDispatcher.send
+2026-05-15 07:05:05.074 INFO  [JTS-AuthDispatcherS3-27] - Starting dispatcher thread [sessionID=3]...
+2026-05-15 07:05:05.074 INFO  [JTS-AuthResponseMonitor-28] - Starting auth response monitor thread
+2026-05-15 07:05:05.090 ERROR [JTS-MiscUlrsRequester-25] - Cannot write to socket ndc1.ibllc.com:4000 (SSL). Service: JTS-AuthDispatcherS3-27. Error: class java.net.SocketException - Connection reset
+2026-05-15 07:05:05.091 INFO  [JTS-MiscUlrsRequester-25] - sendNSMessage error: Server disconnected, please try again
+2026-05-15 07:05:05.091 ERROR [JTS-MiscUlrsRequester-25] - Incorrect Misc URLs data ''
+2026-05-15 07:05:05.092 INFO  [JTS-MiscUlrsRequester-25] - Disconnecting ndc1.ibllc.com:4000 (SSL) [disconnectDetails=DisconnectDetails[sessionID=3,endPoint=ndc1.ibllc.com:4000 (SSL),reason=DISCONNECT_BY_DESIGN,cause=null,systemMessage=null,keepSocketOpen=false]]...
+2026-05-15 07:05:05.092 INFO  [JTS-MiscUlrsRequester-25] - Socket closed.
+2026-05-15 07:05:05.092 INFO  [JTS-MiscUlrsRequester-25] - SocketTracker[name=name=MISC URLs(ndc1.ibllc.com:4000 (SSL)),usesCcpConMan=false,lastReadTimestamp=0,lastReadDateTime=1970-01-01T00:00,lastFixSendTime=].
+2026-05-15 07:05:05.092 INFO  [JTS-MiscUlrsRequester-25] - Interrupting dispatcher [sessionID=3]...
+2026-05-15 07:05:05.093 INFO  [JTS-MiscUlrsRequester-25] - Interrupting listener [sessionID=3,disconnectSocket=true]...
+2026-05-15 07:05:05.093 INFO  [JTS-AuthDispatcherS3-27] - Dispatcher thread terminating [sessionID=3,interrupted=true]...
+2026-05-15 07:05:05.093 INFO  [JTS-AuthResponseMonitor-28] - Terminating auth response monitor thread
+2026-05-15 07:05:05.093 INFO  [JTS-MISC URLsListenerS3-26] - Initial listener buffer size is 0.
+2026-05-15 07:05:05.093 ERROR [JTS-MISC URLsListenerS3-26] - Connection is already closed. Terminating listener thread [sessionID=3]...
+2026-05-15 07:07:07.169 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 07:07:07.172 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=739,389KB HeapUsage: Max=786,432KB used=45,416KB committed=93,184KB NonHeapUsage: Max=0KB used=80,023KB committed=81,920KB
+2026-05-15 07:07:08.174 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.10% avg=0.12% 30 min avg=0.12% 10 min avg=0.12% 5 min avg=0.12% 1 min avg=0.11%
+GC:called=9 times CPU used=0.01%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 07:09:20.430 INFO  [JTS-Main] - ------------------------------- IB GATEWAY RESTART --------------------------------
+2026-05-15 07:09:20.434 INFO  [JTS-Main] - installer version: unknown, installer type: standalone, install dir: 'null', Jts dir: '/home/ibgateway/settings', VM options file: 'null'
+2026-05-15 07:09:20.434 INFO  [JTS-Main] - Verifying environment [entryPoint=IBGATEWAY_STANDALONE]...
+2026-05-15 07:09:20.464 INFO  [JTS-Main] - Install4jAutoUpdateService initialized [props=LauncherProperties[updateDownloadUrl=null,skipUpdateCheck=false,nightlyEnabled=false,channelNameArg=null,channelName=latest,channelChanged=false,jtsConfigDir=/home/ibgateway/settings,apiPort=null,sessionId=null,installDir=null,exeName=null]].
+2026-05-15 07:09:20.471 INFO  [JTS-Main] - PROXY Installed custom selector
+2026-05-15 07:09:20.472 INFO  [JTS-Main] - AB-DEBUG: ConManSettings is initialized from host = null and port = 0. [PEER] null:0
+2026-05-15 07:09:20.472 INFO  [JTS-Main] - AB-DEBUG: ConManSettings is initialized from peer = null. [HOST] null [PORT] 0
+2026-05-15 07:09:20.472 INFO  [JTS-Main] - AB-DEBUG: ConManSettings is initialized from peer = null. [HOST] null [PORT] 0
+2026-05-15 07:09:20.472 INFO  [JTS-Main] - AB-DEBUG: ConManSettings' PEER will not be initialized from Jts.ini file: /home/ibgateway/settings/jts.ini
+2026-05-15 07:09:20.486 INFO  [JTS-Main] - useSsl=true,FIX endPoint=ndc1.ibllc.com:4001
+2026-05-15 07:09:20.719 INFO  [JTS-Main] - Setting custom timezone: Africa/Abidjan
+2026-05-15 07:09:20.740 INFO  [JTS-Main] - LOCALE: Property locale_to_use=null JTS Locale=en_US  country=United States  variant=
+2026-05-15 07:09:20.741 INFO  [JTS-Main] - Region: Custom
+2026-05-15 07:09:20.742 WARN  [JTS-Main] - The locales jar directory resolved to '/home/ibgateway/settings/jars' ('installDir' system property is not set).
+2026-05-15 07:09:20.742 WARN  [JTS-Main] - The locales jar directory resolved to '/home/ibgateway/settings/jars' ('installDir' system property is not set).
+2026-05-15 07:09:20.742 INFO  [JTS-Main] - Locale from ini: en
+2026-05-15 07:09:20.743 INFO  [JTS-Main] - Locale=en_US  country=United States  variant=
+2026-05-15 07:09:20.748 INFO  [JTS-Main] - prohibiting class lookup [twslaunch.ji18n.LauncherLanguage]
+2026-05-15 07:09:20.750 INFO  [JTS-Main] - prohibiting class lookup [twslaunch.ji18n.LauncherLanguage_en]
+2026-05-15 07:09:20.751 INFO  [JTS-Main] - prohibiting class lookup [twslaunch.ji18n.LauncherLanguage_en_US]
+2026-05-15 07:09:20.752 INFO  [JTS-Main] - LOCALE:  type: launcher intended: en_US actual:  size: 512
+2026-05-15 07:09:20.753 INFO  [JTS-Main] - settings dir: '/home/ibgateway/settings'
+2026-05-15 07:09:20.872 ERROR [JTS-Main] - Error during FX Thread start up, this may result in problem described in bz87660 to reacquire
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at twslaunch.trader.common.g.l(g.java:988)
+	at ibgateway.GWClient.a(Unknown Source)
+	at ibgateway.GWClient.main(Unknown Source)
+	at ibcalpha.ibc.IbcTws.startGateway(Unknown Source)
+	at ibcalpha.ibc.IbcTws.startTwsOrGateway(Unknown Source)
+	at ibcalpha.ibc.IbcTws.load(Unknown Source)
+	at ibcalpha.ibc.IbcGateway.main(Unknown Source)
+Caused by: java.lang.UnsupportedOperationException: Unable to load glass GTK library.
+	at javafx.graphics/com.sun.glass.ui.gtk.GtkApplication.lambda$new$5(GtkApplication.java:176)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at javafx.graphics/com.sun.glass.ui.gtk.GtkApplication.<init>(GtkApplication.java:163)
+	at javafx.graphics/com.sun.glass.ui.gtk.GtkPlatformFactory.createApplication(GtkPlatformFactory.java:40)
+	at javafx.graphics/com.sun.glass.ui.Application.run(Application.java:145)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.startup(QuantumToolkit.java:290)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.startup(PlatformImpl.java:292)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.startup(PlatformImpl.java:162)
+	... 11 more
+2026-05-15 07:09:20.903 INFO  [JTS-Main] - LauncherFontUpdater: simulatehighdefscreen=false
+2026-05-15 07:09:20.907 INFO  [JTS-Main] - LauncherFontUpdater: Screen dimensions=1024x768
+2026-05-15 07:09:20.908 INFO  [JTS-Main] - LauncherFontUpdater: highres=false
+2026-05-15 07:09:20.908 INFO  [JTS-Main] - LauncherFontUpdater: FontSize=16
+2026-05-15 07:09:20.908 INFO  [JTS-Main] - initPreUI() - entry
+2026-05-15 07:09:20.934 INFO  [JTS-Main] - Build 10.45.1e, May 7, 2026 5:00:06 AM
+2026-05-15 07:09:20.972 INFO  [JTS-Main] - LookAndFeelChangedListener installed
+2026-05-15 07:09:20.975 INFO  [JTS-Main] - JtsLookAndFeel initialized
+2026-05-15 07:09:21.410 INFO  [JTS-Main] - Current LAF: TWS LAF
+2026-05-15 07:09:21.411 INFO  [JTS-Main] - initPreUI() - exit
+2026-05-15 07:09:21.414 INFO  [JTS-Main] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: null:0 (SSL)
+2026-05-15 07:09:22.010 INFO  [AWT-EventQueue-0] - Default timezone:Africa/Abidjan
+2026-05-15 07:09:22.014 INFO  [AWT-EventQueue-0] - Starting GstatMessageMgr...
+2026-05-15 07:09:22.022 WARN  [JTS-GstatMessageMgr-6] - Misc URLs have not been received. Resending request...
+2026-05-15 07:09:22.022 INFO  [JTS-GstatMessageMgr-6] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: null:0 (SSL)
+2026-05-15 07:09:22.052 INFO  [AWT-EventQueue-0] - Started on 20260515-07:09:22
+2026-05-15 07:09:22.053 INFO  [AWT-EventQueue-0] - Default timezone:Africa/Abidjan name:Greenwich Mean Time dst:0
+2026-05-15 07:09:22.053 INFO  [AWT-EventQueue-0] - java version = 17.0.16.0.101
+2026-05-15 07:09:22.053 INFO  [AWT-EventQueue-0] - sun.arch.data.model = 64
+2026-05-15 07:09:22.053 INFO  [AWT-EventQueue-0] - os = Linux
+2026-05-15 07:09:22.053 INFO  [AWT-EventQueue-0] - os version = 5.15.0-179-generic
+2026-05-15 07:09:22.053 INFO  [AWT-EventQueue-0] - os architecture = 32
+2026-05-15 07:09:22.053 INFO  [AWT-EventQueue-0] - runtime = OpenJDK Runtime Environment
+2026-05-15 07:09:22.053 INFO  [AWT-EventQueue-0] - vendor = Azul Systems, Inc.
+2026-05-15 07:09:22.053 INFO  [AWT-EventQueue-0] - vm name = OpenJDK 64-Bit Server VM
+2026-05-15 07:09:22.053 INFO  [AWT-EventQueue-0] - username = 'Unknown'
+2026-05-15 07:09:22.727 INFO  [AWT-EventQueue-0] - Stopping GstatMessageMgr...
+2026-05-15 07:09:22.730 INFO  [AWT-EventQueue-0] - Setting dir is /home/ibgateway/settings/
+2026-05-15 07:09:22.731 INFO  [AWT-EventQueue-0] - PROXY Cleared HTTP proxy: no valid proxy is present (passing on :0)
+2026-05-15 07:09:22.763 INFO  [AWT-EventQueue-0] - BaseIniFile.saveGatewayFixEndPoint() [host=ndc1.ibllc.com,port=4001]...
+2026-05-15 07:09:22.763 INFO  [AWT-EventQueue-0] - SPLASH Creating screen with 5 steps
+2026-05-15 07:09:22.814 INFO  [AWT-EventQueue-0] - SplashScreen: using ads manager
+2026-05-15 07:09:22.817 INFO  [AWT-EventQueue-0] - AdImageContainer: start build ads UI
+2026-05-15 07:09:22.833 INFO  [JTS-CachedThreadExecutor-7] - AdManager: NEXT_AD request https://api.ibkr.com/tws.proxy/info/next?platform=dTWS&size=1200x1000&lang=en&version=10451&build=latest
+2026-05-15 07:09:23.043 INFO  [JTS-CachedThreadExecutor-7] - AdManager: sending request with header X-USERNAME
+2026-05-15 07:09:23.125 INFO  [AWT-EventQueue-0] - initAutoEncryptionMenu(): autoEncryption set to true
+2026-05-15 07:09:23.134 INFO  [AWT-EventQueue-0] - Contacting ndc1.ibllc.com:4000 as user NOT PRINTED
+2026-05-15 07:09:23.157 INFO  [AWT-EventQueue-0] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: ndc1.ibllc.com:4000 (SSL)
+2026-05-15 07:09:23.185 INFO  [AWT-EventQueue-0] - UserCredentials.sessionId() [this=336675768,old=null,new=6a06c6a3.009e].
+2026-05-15 07:09:23.185 INFO  [AWT-EventQueue-0] - CONN CALC: Last connection attempt time is cleared!
+2026-05-15 07:09:23.186 INFO  [AWT-EventQueue-0] - CONN CALC: Last connection set as now:07:09:23:185
+2026-05-15 07:09:23.186 INFO  [AWT-EventQueue-0] - Prelogin delay:0
+2026-05-15 07:09:23.197 INFO  [JTS-Login-9] - Starting launcher login thread
+2026-05-15 07:09:23.198 INFO  [JTS-Login-9] - LauncherLoginThread.runLoginWithUI()[hotBackupStrategy=ON,loginAttempt=1,socketDelay=20000].
+2026-05-15 07:09:23.198 INFO  [JTS-Login-9] - SPLASH Connecting to server
+2026-05-15 07:09:23.206 INFO  [AWT-EventQueue-0] - Network monitor is activated
+2026-05-15 07:09:23.207 INFO  [JTS-Order-Audit-10] - Starting async queue thread
+2026-05-15 07:09:23.209 INFO  [JTS-Login-9] - ### startLogin startTime=1778828963185
+2026-05-15 07:09:23.209 INFO  [JTS-Login-9] - ### loginAttempt loginAttempt=1
+2026-05-15 07:09:23.210 INFO  [JTS-Login-9] - Connecting ndc1.ibllc.com:4001 (SSL) timeout=20000...
+2026-05-15 07:09:23.217 INFO  [JTS-Login-9] - ### onSocketOpenStart socketOpenStart=1778828963210; endPoint=ndc1.ibllc.com; port=4001
+2026-05-15 07:09:23.233 INFO  [JTS-Login-9] - ### onSocketOpenEnd socketOpenEnd=1778828963233
+2026-05-15 07:09:23.233 INFO  [JTS-Login-9] - Connected to ndc1.ibllc.com:4001 (SSL)/64.190.197.40 remote-ip on local port 0 socket local addrs:port /172.18.0.2:42830
+2026-05-15 07:09:23.234 INFO  [JTS-Login-9] - Updating machine info [connectionAddress=/172.18.0.2]...
+2026-05-15 07:09:23.234 INFO  [JTS-Login-9] - Creating unique random...
+2026-05-15 07:09:23.235 INFO  [JTS-Login-9] - id=fb5bf887
+2026-05-15 07:09:23.235 INFO  [JTS-Login-9] - Resolving MAC address...
+2026-05-15 07:09:23.236 INFO  [JTS-Login-9] - MACNetworkInfo created <fb5bf887|76:72:8E:72:B0:EB|172.18.0.2>.
+2026-05-15 07:09:23.237 INFO  [JTS-Login-9] - JTSAuthConnection.onConnected(): lastKnownCipherStatus=INSECURE
+2026-05-15 07:09:23.238 INFO  [JTS-Login-9] - Changing state for connection from PRELOGON to PRELOGON in C 1897706716: SessionSocket:1
+2026-05-15 07:09:23.238 INFO  [JTS-Login-9] - Authenticating
+2026-05-15 07:09:23.321 INFO  [JTS-CCPListenerS1-12] - Starting listener thread [sessionID=1]...
+2026-05-15 07:09:23.345 INFO  [JTS-Login-9] - AuthTimeoutMonitor-CCP: deactivate
+2026-05-15 07:09:23.346 INFO  [JTS-Login-9] - AuthTimeoutMonitor-CCP: timeout=20000
+2026-05-15 07:09:23.348 INFO  [JTS-Login-9] - AuthTimeoutMonitor-CCP: activate
+2026-05-15 07:09:23.348 INFO  [JTS-AuthTimeoutMonitorThread-CCP-14] - Starting auth timeout monitor thread for CCP
+2026-05-15 07:09:23.351 INFO  [JTS-Login-9] - LOGIN_TIME_MONITOR	 false 07:09:23:351 since start = 0 thread delay = 0 global delay = 0 tag=null, cls=AuthDispatcher method=connect
+2026-05-15 07:09:23.355 INFO  [JTS-Login-9] - SPLASH -0001 step 1 AuthDispatcher.connect
+2026-05-15 07:09:23.381 INFO  [JTS-Login-9] - Sending connect request
+2026-05-15 07:09:23.382 INFO  [JTS-Login-9] - AuthDispatcher.initNSMsgVersionLimits: minVersion=38, maxVersion=50
+2026-05-15 07:09:23.384 INFO  [JTS-Login-9] - AuthDispatcher.NSConnectRequest: userSessionID=6a06c6a3.009e, beeDemoType=NULL
+2026-05-15 07:09:23.385 INFO  [JTS-Login-9] - ### onNsMsg loginMessageReq=1778828963384; brandNewUser=true
+2026-05-15 07:09:23.386 INFO  [JTS-Login-9] - mapProdToPaper: In NSConnectRequest: sending PAPER_CONNECT=0x2000
+2026-05-15 07:09:23.387 INFO  [JTS-AuthDispatcherS1-13] - Starting dispatcher thread [sessionID=1]...
+2026-05-15 07:09:23.471 INFO  [JTS-Login-9] - SPLASH Authenticating
+2026-05-15 07:09:23.471 INFO  [JTS-CCPListenerS1-12] - Initial listener buffer size is 65536.
+2026-05-15 07:09:23.471 INFO  [JTS-CCPListenerS1-12] - Listener thread [sessionID=1] is ready to process messages.
+2026-05-15 07:09:23.472 INFO  [JTS-Login-9] - Terminating launcher login thread
+2026-05-15 07:09:23.487 INFO  [JTS-AuthDispatcherS1-13] - Received NS_REDIRECT
+2026-05-15 07:09:23.487 INFO  [JTS-AuthDispatcherS1-13] - ### onConmanRedirect
+2026-05-15 07:09:23.487 INFO  [JTS-AuthDispatcherS1-13] - Disconnecting ndc1.ibllc.com:4001 (SSL) [disconnectDetails=DisconnectDetails[sessionID=1,endPoint=ndc1.ibllc.com:4001 (SSL),reason=DISCONNECT_ON_REDIRECTION,cause=null,systemMessage=null,keepSocketOpen=false]]...
+2026-05-15 07:09:23.488 INFO  [JTS-AuthDispatcherS1-13] - Socket closed.
+2026-05-15 07:09:23.488 INFO  [JTS-AuthTimeoutMonitorThread-CCP-14] - Terminating auth timeout monitor thread for CCP
+2026-05-15 07:09:23.489 INFO  [JTS-AuthDispatcherS1-13] - AuthTimeoutMonitor-CCP: deactivate
+2026-05-15 07:09:23.489 INFO  [JTS-CCPListenerS1-12] - Socket or stream for connection ndc1.ibllc.com:4001 (SSL) was closed by another thread.
+2026-05-15 07:09:23.489 INFO  [JTS-AuthDispatcherS1-13] - SocketTracker[name=name=CCP(ndc1.ibllc.com:4001 (SSL)),usesCcpConMan=false,lastReadTimestamp=1778828963485,lastReadDateTime=2026-05-15T07:09:23.485,lastFixSendTime=].
+2026-05-15 07:09:23.489 INFO  [JTS-AuthDispatcherS1-13] - Interrupting dispatcher [sessionID=1]...
+2026-05-15 07:09:23.489 INFO  [JTS-AuthDispatcherS1-13] - Interrupting listener [sessionID=1,disconnectSocket=true]...
+2026-05-15 07:09:23.492 INFO  [JTS-DisconnectedS1-18] - IBGateway connection to ccp disconnected.
+2026-05-15 07:09:23.492 INFO  [JTS-AuthDispatcherS1-13] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: ndc1.ibllc.com:4000 (SSL)
+2026-05-15 07:09:23.493 INFO  [JTS-AuthDispatcherS1-13] - Redirecting to hdc1.ibllc.com:4001 (SSL)
+2026-05-15 07:09:23.494 INFO  [JTS-AuthDispatcherS1-13] - UserCredentials.sessionId() [this=336675768,old=6a06c6a3.009e,new=6a06c6a3.009e].
+2026-05-15 07:09:23.494 INFO  [JTS-MiscUlrsRequester-20] - Connecting ndc1.ibllc.com:4000 (SSL) timeout=10000...
+2026-05-15 07:09:23.495 INFO  [JTS-AuthDispatcherS1-13] - Prelogin delay:0
+2026-05-15 07:09:23.496 INFO  [JTS-AuthDispatcherS1-13] - Dispatcher thread terminating [sessionID=1,interrupted=true]...
+2026-05-15 07:09:23.497 INFO  [JTS-CCPListenerS1-12] - Listener thread terminating [sessionID=1] [seen=35,totalShifted=35,moreAvailable=0]
+2026-05-15 07:09:23.497 INFO  [JTS-Login-21] - Starting launcher login thread
+2026-05-15 07:09:23.498 INFO  [JTS-Login-21] - LauncherLoginThread.runLoginWithUI()[hotBackupStrategy=ON,loginAttempt=1,socketDelay=20000].
+2026-05-15 07:09:23.498 INFO  [JTS-Login-21] - SPLASH Connecting to server
+2026-05-15 07:09:23.498 INFO  [JTS-Login-21] - ### startLogin startTime=1778828963494
+2026-05-15 07:09:23.498 INFO  [JTS-Login-21] - ### loginAttempt loginAttempt=1
+2026-05-15 07:09:23.498 INFO  [JTS-Login-21] - AsyncDisconnectNotifiers: 1
+2026-05-15 07:09:23.498 INFO  [JTS-Login-21] - Connecting hdc1.ibllc.com:4001 (SSL) timeout=20000...
+2026-05-15 07:09:23.498 INFO  [JTS-Login-21] - ### onSocketOpenStart socketOpenStart=1778828963498; endPoint=hdc1.ibllc.com; port=4001
+2026-05-15 07:09:23.510 INFO  [JTS-MiscUlrsRequester-20] - Connected to ndc1.ibllc.com:4000 (SSL)/64.190.197.40 remote-ip on local port 0 socket local addrs:port /172.18.0.2:37006
+2026-05-15 07:09:23.511 INFO  [JTS-MiscUlrsRequester-20] - Updating machine info [connectionAddress=/172.18.0.2]...
+2026-05-15 07:09:23.512 INFO  [JTS-MISC URLsListenerS2-23] - Starting listener thread [sessionID=2]...
+2026-05-15 07:09:23.512 INFO  [JTS-MiscUlrsRequester-20] - Sending MiscUrls request
+2026-05-15 07:09:23.513 INFO  [JTS-AuthDispatcherS2-24] - Starting dispatcher thread [sessionID=2]...
+2026-05-15 07:09:23.517 INFO  [JTS-AuthResponseMonitor-25] - Starting auth response monitor thread
+2026-05-15 07:09:23.529 ERROR [JTS-MiscUlrsRequester-20] - Cannot write to socket ndc1.ibllc.com:4000 (SSL). Service: JTS-AuthDispatcherS2-24. Error: class java.net.SocketException - Connection reset
+2026-05-15 07:09:23.530 INFO  [JTS-MiscUlrsRequester-20] - sendNSMessage error: Server disconnected, please try again
+2026-05-15 07:09:23.531 ERROR [JTS-MiscUlrsRequester-20] - Incorrect Misc URLs data ''
+2026-05-15 07:09:23.531 INFO  [JTS-MiscUlrsRequester-20] - Disconnecting ndc1.ibllc.com:4000 (SSL) [disconnectDetails=DisconnectDetails[sessionID=2,endPoint=ndc1.ibllc.com:4000 (SSL),reason=DISCONNECT_BY_DESIGN,cause=null,systemMessage=null,keepSocketOpen=false]]...
+2026-05-15 07:09:23.531 INFO  [JTS-MiscUlrsRequester-20] - Socket closed.
+2026-05-15 07:09:23.531 INFO  [JTS-MiscUlrsRequester-20] - SocketTracker[name=name=MISC URLs(ndc1.ibllc.com:4000 (SSL)),usesCcpConMan=false,lastReadTimestamp=0,lastReadDateTime=1970-01-01T00:00,lastFixSendTime=].
+2026-05-15 07:09:23.531 INFO  [JTS-MiscUlrsRequester-20] - Interrupting dispatcher [sessionID=2]...
+2026-05-15 07:09:23.532 INFO  [JTS-MiscUlrsRequester-20] - Interrupting listener [sessionID=2,disconnectSocket=true]...
+2026-05-15 07:09:23.532 INFO  [JTS-AuthDispatcherS2-24] - Dispatcher thread terminating [sessionID=2,interrupted=true]...
+2026-05-15 07:09:23.532 INFO  [JTS-AuthResponseMonitor-25] - Terminating auth response monitor thread
+2026-05-15 07:09:23.532 INFO  [JTS-MISC URLsListenerS2-23] - Initial listener buffer size is 0.
+2026-05-15 07:09:23.532 ERROR [JTS-MISC URLsListenerS2-23] - Connection is already closed. Terminating listener thread [sessionID=2]...
+2026-05-15 07:09:23.557 INFO  [JTS-CachedThreadExecutor-7] - AdManager: NEXT_AD ad is not available
+2026-05-15 07:09:23.557 ERROR [JTS-CachedThreadExecutor-7] - AdsManager: get next image failed with status 404
+2026-05-15 07:09:23.558 INFO  [AWT-EventQueue-0] - AdImageContainer: display regular background image without ads
+2026-05-15 07:09:23.558 INFO  [AWT-EventQueue-0] - Splashscreen: should not show ads
+2026-05-15 07:09:23.800 INFO  [JTS-Login-21] - ### onSocketOpenEnd socketOpenEnd=1778828963800
+2026-05-15 07:09:23.800 INFO  [JTS-Login-21] - Connected to hdc1.ibllc.com:4001 (SSL)/103.38.91.3 remote-ip on local port 0 socket local addrs:port /172.18.0.2:51448
+2026-05-15 07:09:23.800 INFO  [JTS-Login-21] - Updating machine info [connectionAddress=/172.18.0.2]...
+2026-05-15 07:09:23.800 INFO  [JTS-Login-21] - JTSAuthConnection.onConnected(): lastKnownCipherStatus=INSECURE
+2026-05-15 07:09:23.801 INFO  [JTS-Login-21] - Changing state for connection from PRELOGON to PRELOGON in C 1897706716: SessionSocket:3
+2026-05-15 07:09:23.801 INFO  [JTS-Login-21] - Authenticating
+2026-05-15 07:09:23.801 INFO  [JTS-Login-21] - AuthTimeoutMonitor-CCP: deactivate
+2026-05-15 07:09:23.801 INFO  [JTS-Login-21] - AuthTimeoutMonitor-CCP: timeout=20000
+2026-05-15 07:09:23.801 INFO  [JTS-CCPListenerS3-27] - Starting listener thread [sessionID=3]...
+2026-05-15 07:09:23.803 INFO  [JTS-Login-21] - AuthTimeoutMonitor-CCP: activate
+2026-05-15 07:09:23.803 INFO  [JTS-Login-21] - SPLASH 0452 step 2 AuthDispatcher.connect
+2026-05-15 07:09:23.803 INFO  [JTS-Login-21] - Sending connect request
+2026-05-15 07:09:23.803 INFO  [JTS-Login-21] - AuthDispatcher.initNSMsgVersionLimits: minVersion=38, maxVersion=50
+2026-05-15 07:09:23.804 INFO  [JTS-AuthDispatcherS3-28] - Starting dispatcher thread [sessionID=3]...
+2026-05-15 07:09:23.804 INFO  [JTS-Login-21] - AuthDispatcher.NSConnectRequest: userSessionID=6a06c6a3.009e, beeDemoType=NULL
+2026-05-15 07:09:23.803 INFO  [JTS-AuthTimeoutMonitorThread-CCP-29] - Starting auth timeout monitor thread for CCP
+2026-05-15 07:09:23.804 INFO  [JTS-Login-21] - ### onNsMsg loginMessageReq=1778828963804; brandNewUser=true
+2026-05-15 07:09:23.804 INFO  [JTS-Login-21] - mapProdToPaper: In NSConnectRequest: sending PAPER_CONNECT=0x2000
+2026-05-15 07:09:24.692 INFO  [JTS-Login-21] - SPLASH Authenticating
+2026-05-15 07:09:24.692 INFO  [JTS-CCPListenerS3-27] - Initial listener buffer size is 65536.
+2026-05-15 07:09:24.692 INFO  [JTS-CCPListenerS3-27] - Listener thread [sessionID=3] is ready to process messages.
+2026-05-15 07:09:24.693 INFO  [JTS-Login-21] - Terminating launcher login thread
+2026-05-15 07:09:24.981 INFO  [JTS-AuthDispatcherS3-28] - SPLASH 1177 step 3 AuthDispatcher.processDataItr
+2026-05-15 07:09:24.982 INFO  [JTS-CCPListenerS3-27] - Socket for connection hdc1.ibllc.com:4001 (SSL) was closed by peer.
+2026-05-15 07:09:24.982 INFO  [JTS-AuthDispatcherS3-28] - NSErrorResponse.INVALID_USERNAME_OR_BAD_IP
+2026-05-15 07:09:24.983 INFO  [JTS-CCPListenerS3-27] - Listener thread terminating [sessionID=3] [seen=30,totalShifted=30,moreAvailable=0]
+2026-05-15 07:09:24.984 INFO  [JTS-AuthDispatcherS3-28] - Starting GstatMessageMgr...
+2026-05-15 07:09:24.985 INFO  [JTS-AuthDispatcherS3-28] - Authorization failed: Invalid username or password. 
+
+Please check the "Caps Lock" key; passwords are case sensitive. 
+
+If you are in the process of opening an individual account, please contact 
+customer service to reset the password. 
+
+If you are in the process of opening any other type of account, please note 
+that the login is possible beginning the day after account approval.
+
+Example user name: trader777. MessageType: null. FailReason: 1
+2026-05-15 07:09:24.985 INFO  [JTS-AuthDispatcherS3-28] - Disconnecting hdc1.ibllc.com:4001 (SSL) [disconnectDetails=DisconnectDetails[sessionID=3,endPoint=hdc1.ibllc.com:4001 (SSL),reason=DISCONNECT_AUTHORIZATION_FAILED,cause=null,systemMessage=null,keepSocketOpen=false]]...
+2026-05-15 07:09:24.985 INFO  [JTS-AuthDispatcherS3-28] - Socket closed.
+2026-05-15 07:09:24.985 INFO  [JTS-AuthDispatcherS3-28] - AuthTimeoutMonitor-CCP: deactivate
+2026-05-15 07:09:24.985 INFO  [JTS-AuthDispatcherS3-28] - SocketTracker[name=name=CCP(hdc1.ibllc.com:4001 (SSL)),usesCcpConMan=false,lastReadTimestamp=1778828964982,lastReadDateTime=2026-05-15T07:09:24.982,lastFixSendTime=].
+2026-05-15 07:09:24.986 INFO  [JTS-AuthDispatcherS3-28] - Interrupting dispatcher [sessionID=3]...
+2026-05-15 07:09:24.986 INFO  [JTS-AuthDispatcherS3-28] - Interrupting listener [sessionID=3,disconnectSocket=true]...
+2026-05-15 07:09:24.986 INFO  [JTS-AuthDispatcherS3-28] - CONN CALC: Last connection attempt time is cleared!
+2026-05-15 07:09:24.986 INFO  [JTS-AuthTimeoutMonitorThread-CCP-29] - Terminating auth timeout monitor thread for CCP
+2026-05-15 07:09:24.986 WARN  [JTS-GstatMessageMgr-34] - Misc URLs have not been received. Resending request...
+2026-05-15 07:09:24.986 INFO  [JTS-GstatMessageMgr-34] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: ndc1.ibllc.com:4000 (SSL)
+2026-05-15 07:09:24.987 INFO  [JTS-MiscUlrsRequester-36] - Connecting ndc1.ibllc.com:4000 (SSL) timeout=10000...
+2026-05-15 07:09:24.987 INFO  [JTS-AuthDispatcherS3-28] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: ndc1.ibllc.com:4000 (SSL)
+2026-05-15 07:09:24.987 INFO  [JTS-AuthDispatcherS3-28] - Unable to reassign s_miscUrlsConnection to b 2144020637. The current b 198457815 is not nulled out yet.
+2026-05-15 07:09:24.988 INFO  [JTS-AuthDispatcherS3-28] - Reconnection time cleared: argClearBackoff=true base=0 range=5000 next=0 disconnected=0
+2026-05-15 07:09:24.988 INFO  [JTS-AuthDispatcherS3-28] - Dispatcher thread terminating [sessionID=3,interrupted=true]...
+2026-05-15 07:09:24.988 INFO  [JTS-DisconnectedS3-35] - IBGateway connection to ccp disconnected.
+2026-05-15 07:09:25.007 INFO  [JTS-MiscUlrsRequester-36] - Connected to ndc1.ibllc.com:4000 (SSL)/64.190.197.40 remote-ip on local port 0 socket local addrs:port /172.18.0.2:37014
+2026-05-15 07:09:25.007 INFO  [JTS-MiscUlrsRequester-36] - Updating machine info [connectionAddress=/172.18.0.2]...
+2026-05-15 07:09:25.008 INFO  [JTS-MISC URLsListenerS4-37] - Starting listener thread [sessionID=4]...
+2026-05-15 07:09:25.009 INFO  [JTS-MiscUlrsRequester-36] - Sending MiscUrls request
+2026-05-15 07:09:25.009 INFO  [JTS-MiscUlrsRequester-36] - SPLASH -0001 step 1 AuthDispatcher.send
+2026-05-15 07:09:25.010 INFO  [JTS-AuthDispatcherS4-38] - Starting dispatcher thread [sessionID=4]...
+2026-05-15 07:09:25.019 INFO  [JTS-AuthResponseMonitor-39] - Starting auth response monitor thread
+2026-05-15 07:09:25.023 ERROR [JTS-MiscUlrsRequester-36] - Cannot write to socket ndc1.ibllc.com:4000 (SSL). Service: JTS-AuthDispatcherS4-38. Error: class java.net.SocketException - Connection reset
+2026-05-15 07:09:25.024 INFO  [JTS-MiscUlrsRequester-36] - sendNSMessage error: Server disconnected, please try again
+2026-05-15 07:09:25.024 ERROR [JTS-MiscUlrsRequester-36] - Incorrect Misc URLs data ''
+2026-05-15 07:09:25.024 INFO  [JTS-MiscUlrsRequester-36] - Disconnecting ndc1.ibllc.com:4000 (SSL) [disconnectDetails=DisconnectDetails[sessionID=4,endPoint=ndc1.ibllc.com:4000 (SSL),reason=DISCONNECT_BY_DESIGN,cause=null,systemMessage=null,keepSocketOpen=false]]...
+2026-05-15 07:09:25.024 INFO  [JTS-MiscUlrsRequester-36] - Socket closed.
+2026-05-15 07:09:25.024 INFO  [JTS-MiscUlrsRequester-36] - SocketTracker[name=name=MISC URLs(ndc1.ibllc.com:4000 (SSL)),usesCcpConMan=false,lastReadTimestamp=0,lastReadDateTime=1970-01-01T00:00,lastFixSendTime=].
+2026-05-15 07:09:25.024 INFO  [JTS-MiscUlrsRequester-36] - Interrupting dispatcher [sessionID=4]...
+2026-05-15 07:09:25.024 INFO  [JTS-MiscUlrsRequester-36] - Interrupting listener [sessionID=4,disconnectSocket=true]...
+2026-05-15 07:09:25.024 INFO  [JTS-AuthDispatcherS4-38] - Dispatcher thread terminating [sessionID=4,interrupted=true]...
+2026-05-15 07:09:25.024 INFO  [JTS-AuthResponseMonitor-39] - Terminating auth response monitor thread
+2026-05-15 07:09:25.028 INFO  [JTS-MISC URLsListenerS4-37] - Initial listener buffer size is 0.
+2026-05-15 07:09:25.028 ERROR [JTS-MISC URLsListenerS4-37] - Connection is already closed. Terminating listener thread [sessionID=4]...
+2026-05-15 07:09:25.468 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 07:09:25.469 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=738,943KB HeapUsage: Max=786,432KB used=45,440KB committed=84,992KB NonHeapUsage: Max=0KB used=81,000KB committed=83,008KB
+2026-05-15 07:09:26.483 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.55% avg=0.55% 30 min avg=0.55% 10 min avg=0.55% 5 min avg=0.55% 1 min avg=0.55%
+GC:called=9 times CPU used=0.57%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=26 curr daemon=17
+2026-05-15 07:12:24.987 WARN  [JTS-GstatMessageMgr-34] - Could not connect to GSTAT (GSTAT URL is not available).
+2026-05-15 07:14:25.472 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 07:14:25.476 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=733,346KB HeapUsage: Max=786,432KB used=51,584KB committed=84,992KB NonHeapUsage: Max=0KB used=82,097KB committed=83,968KB
+2026-05-15 07:14:26.478 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.12% 30 min avg=0.12% 10 min avg=0.12% 5 min avg=0.12% 1 min avg=0.10%
+GC:called=9 times CPU used=0.01%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 07:19:25.483 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 07:19:25.484 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=728,035KB HeapUsage: Max=786,432KB used=56,704KB committed=84,992KB NonHeapUsage: Max=0KB used=82,273KB committed=84,096KB
+2026-05-15 07:19:26.485 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.10% avg=0.11% 30 min avg=0.11% 10 min avg=0.11% 5 min avg=0.11% 1 min avg=0.11%
+GC:called=9 times CPU used=0.01%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 07:24:25.492 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 07:24:25.493 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=752,324KB HeapUsage: Max=786,432KB used=33,350KB committed=84,992KB NonHeapUsage: Max=0KB used=82,440KB committed=84,160KB
+2026-05-15 07:24:26.494 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.10% avg=0.11% 30 min avg=0.11% 10 min avg=0.10% 5 min avg=0.10% 1 min avg=0.10%
+GC:called=11 times CPU used=0.01%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 07:29:25.498 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 07:29:25.499 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=747,454KB HeapUsage: Max=786,432KB used=38,470KB committed=84,992KB NonHeapUsage: Max=0KB used=82,529KB committed=84,224KB
+2026-05-15 07:29:26.501 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.11% 30 min avg=0.11% 10 min avg=0.10% 5 min avg=0.10% 1 min avg=0.09%
+GC:called=11 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 07:34:25.509 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 07:34:25.510 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=741,939KB HeapUsage: Max=786,432KB used=43,590KB committed=84,992KB NonHeapUsage: Max=0KB used=82,729KB committed=84,352KB
+2026-05-15 07:34:26.511 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.10% 30 min avg=0.10% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=11 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 07:39:25.516 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 07:39:25.517 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=737,145KB HeapUsage: Max=786,432KB used=48,710KB committed=84,992KB NonHeapUsage: Max=0KB used=82,795KB committed=84,544KB
+2026-05-15 07:39:26.518 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.07% avg=0.10% 30 min avg=0.10% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.08%
+GC:called=11 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 07:44:25.527 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 07:44:25.528 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=732,420KB HeapUsage: Max=786,432KB used=53,830KB committed=84,992KB NonHeapUsage: Max=0KB used=82,883KB committed=84,608KB
+2026-05-15 07:44:26.529 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.10% 30 min avg=0.10% 10 min avg=0.09% 5 min avg=0.08% 1 min avg=0.09%
+GC:called=11 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 07:49:25.535 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 07:49:25.536 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=727,481KB HeapUsage: Max=786,432KB used=57,926KB committed=84,992KB NonHeapUsage: Max=0KB used=82,896KB committed=84,672KB
+2026-05-15 07:49:26.538 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.10% 30 min avg=0.09% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=11 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 07:54:25.547 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 07:54:25.548 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=752,080KB HeapUsage: Max=786,432KB used=33,327KB committed=84,992KB NonHeapUsage: Max=0KB used=82,919KB committed=84,672KB
+2026-05-15 07:54:26.549 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.07% avg=0.10% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=12 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 07:56:20.239 INFO  [JTS-Main] - ------------------------------- IB GATEWAY RESTART --------------------------------
+2026-05-15 07:56:20.243 INFO  [JTS-Main] - installer version: unknown, installer type: standalone, install dir: 'null', Jts dir: '/home/ibgateway/settings', VM options file: 'null'
+2026-05-15 07:56:20.244 INFO  [JTS-Main] - Verifying environment [entryPoint=IBGATEWAY_STANDALONE]...
+2026-05-15 07:56:20.274 INFO  [JTS-Main] - Install4jAutoUpdateService initialized [props=LauncherProperties[updateDownloadUrl=null,skipUpdateCheck=false,nightlyEnabled=false,channelNameArg=null,channelName=latest,channelChanged=false,jtsConfigDir=/home/ibgateway/settings,apiPort=null,sessionId=null,installDir=null,exeName=null]].
+2026-05-15 07:56:20.283 INFO  [JTS-Main] - PROXY Installed custom selector
+2026-05-15 07:56:20.287 INFO  [JTS-Main] - AB-DEBUG: ConManSettings is initialized from host = null and port = 0. [PEER] null:0
+2026-05-15 07:56:20.288 INFO  [JTS-Main] - AB-DEBUG: ConManSettings is initialized from peer = null. [HOST] null [PORT] 0
+2026-05-15 07:56:20.288 INFO  [JTS-Main] - AB-DEBUG: ConManSettings is initialized from peer = null. [HOST] null [PORT] 0
+2026-05-15 07:56:20.288 INFO  [JTS-Main] - AB-DEBUG: ConManSettings' PEER will not be initialized from Jts.ini file: /home/ibgateway/settings/jts.ini
+2026-05-15 07:56:20.292 INFO  [JTS-Main] - useSsl=true,FIX endPoint=ndc1.ibllc.com:4001
+2026-05-15 07:56:20.458 INFO  [JTS-Main] - Setting custom timezone: Africa/Abidjan
+2026-05-15 07:56:20.476 INFO  [JTS-Main] - LOCALE: Property locale_to_use=null JTS Locale=en_US  country=United States  variant=
+2026-05-15 07:56:20.477 INFO  [JTS-Main] - Region: Custom
+2026-05-15 07:56:20.478 WARN  [JTS-Main] - The locales jar directory resolved to '/home/ibgateway/settings/jars' ('installDir' system property is not set).
+2026-05-15 07:56:20.478 WARN  [JTS-Main] - The locales jar directory resolved to '/home/ibgateway/settings/jars' ('installDir' system property is not set).
+2026-05-15 07:56:20.478 INFO  [JTS-Main] - Locale from ini: en
+2026-05-15 07:56:20.479 INFO  [JTS-Main] - Locale=en_US  country=United States  variant=
+2026-05-15 07:56:20.488 INFO  [JTS-Main] - prohibiting class lookup [twslaunch.ji18n.LauncherLanguage]
+2026-05-15 07:56:20.491 INFO  [JTS-Main] - prohibiting class lookup [twslaunch.ji18n.LauncherLanguage_en]
+2026-05-15 07:56:20.491 INFO  [JTS-Main] - prohibiting class lookup [twslaunch.ji18n.LauncherLanguage_en_US]
+2026-05-15 07:56:20.492 INFO  [JTS-Main] - LOCALE:  type: launcher intended: en_US actual:  size: 512
+2026-05-15 07:56:20.493 INFO  [JTS-Main] - settings dir: '/home/ibgateway/settings'
+2026-05-15 07:56:20.601 ERROR [JTS-Main] - Error during FX Thread start up, this may result in problem described in bz87660 to reacquire
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at twslaunch.trader.common.g.l(g.java:988)
+	at ibgateway.GWClient.a(Unknown Source)
+	at ibgateway.GWClient.main(Unknown Source)
+	at ibcalpha.ibc.IbcTws.startGateway(Unknown Source)
+	at ibcalpha.ibc.IbcTws.startTwsOrGateway(Unknown Source)
+	at ibcalpha.ibc.IbcTws.load(Unknown Source)
+	at ibcalpha.ibc.IbcGateway.main(Unknown Source)
+Caused by: java.lang.UnsupportedOperationException: Unable to load glass GTK library.
+	at javafx.graphics/com.sun.glass.ui.gtk.GtkApplication.lambda$new$5(GtkApplication.java:176)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at javafx.graphics/com.sun.glass.ui.gtk.GtkApplication.<init>(GtkApplication.java:163)
+	at javafx.graphics/com.sun.glass.ui.gtk.GtkPlatformFactory.createApplication(GtkPlatformFactory.java:40)
+	at javafx.graphics/com.sun.glass.ui.Application.run(Application.java:145)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.startup(QuantumToolkit.java:290)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.startup(PlatformImpl.java:292)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.startup(PlatformImpl.java:162)
+	... 11 more
+2026-05-15 07:56:20.624 INFO  [JTS-Main] - LauncherFontUpdater: simulatehighdefscreen=false
+2026-05-15 07:56:20.627 INFO  [JTS-Main] - LauncherFontUpdater: Screen dimensions=1024x768
+2026-05-15 07:56:20.627 INFO  [JTS-Main] - LauncherFontUpdater: highres=false
+2026-05-15 07:56:20.627 INFO  [JTS-Main] - LauncherFontUpdater: FontSize=16
+2026-05-15 07:56:20.627 INFO  [JTS-Main] - initPreUI() - entry
+2026-05-15 07:56:20.651 INFO  [JTS-Main] - Build 10.45.1e, May 7, 2026 5:00:06 AM
+2026-05-15 07:56:20.685 INFO  [JTS-Main] - LookAndFeelChangedListener installed
+2026-05-15 07:56:20.686 INFO  [JTS-Main] - JtsLookAndFeel initialized
+2026-05-15 07:56:21.098 INFO  [JTS-Main] - Current LAF: TWS LAF
+2026-05-15 07:56:21.098 INFO  [JTS-Main] - initPreUI() - exit
+2026-05-15 07:56:21.101 INFO  [JTS-Main] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: null:0 (SSL)
+2026-05-15 07:56:21.617 INFO  [AWT-EventQueue-0] - Default timezone:Africa/Abidjan
+2026-05-15 07:56:21.618 INFO  [AWT-EventQueue-0] - Starting GstatMessageMgr...
+2026-05-15 07:56:21.626 WARN  [JTS-GstatMessageMgr-6] - Misc URLs have not been received. Resending request...
+2026-05-15 07:56:21.629 INFO  [JTS-GstatMessageMgr-6] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: null:0 (SSL)
+2026-05-15 07:56:21.652 INFO  [AWT-EventQueue-0] - Started on 20260515-07:56:21
+2026-05-15 07:56:21.652 INFO  [AWT-EventQueue-0] - Default timezone:Africa/Abidjan name:Greenwich Mean Time dst:0
+2026-05-15 07:56:21.652 INFO  [AWT-EventQueue-0] - java version = 17.0.16.0.101
+2026-05-15 07:56:21.652 INFO  [AWT-EventQueue-0] - sun.arch.data.model = 64
+2026-05-15 07:56:21.652 INFO  [AWT-EventQueue-0] - os = Linux
+2026-05-15 07:56:21.652 INFO  [AWT-EventQueue-0] - os version = 5.15.0-179-generic
+2026-05-15 07:56:21.652 INFO  [AWT-EventQueue-0] - os architecture = 32
+2026-05-15 07:56:21.652 INFO  [AWT-EventQueue-0] - runtime = OpenJDK Runtime Environment
+2026-05-15 07:56:21.652 INFO  [AWT-EventQueue-0] - vendor = Azul Systems, Inc.
+2026-05-15 07:56:21.653 INFO  [AWT-EventQueue-0] - vm name = OpenJDK 64-Bit Server VM
+2026-05-15 07:56:21.653 INFO  [AWT-EventQueue-0] - username = 'Unknown'
+2026-05-15 07:56:22.214 INFO  [AWT-EventQueue-0] - Stopping GstatMessageMgr...
+2026-05-15 07:56:22.216 INFO  [AWT-EventQueue-0] - Setting dir is /home/ibgateway/settings/
+2026-05-15 07:56:22.217 INFO  [AWT-EventQueue-0] - PROXY Cleared HTTP proxy: no valid proxy is present (passing on :0)
+2026-05-15 07:56:22.224 INFO  [AWT-EventQueue-0] - BaseIniFile.saveGatewayFixEndPoint() [host=ndc1.ibllc.com,port=4001]...
+2026-05-15 07:56:22.225 INFO  [AWT-EventQueue-0] - SPLASH Creating screen with 5 steps
+2026-05-15 07:56:22.260 INFO  [AWT-EventQueue-0] - SplashScreen: using ads manager
+2026-05-15 07:56:22.261 INFO  [AWT-EventQueue-0] - AdImageContainer: start build ads UI
+2026-05-15 07:56:22.270 INFO  [JTS-CachedThreadExecutor-7] - AdManager: NEXT_AD request https://api.ibkr.com/tws.proxy/info/next?platform=dTWS&size=1200x1000&lang=en&version=10451&build=latest
+2026-05-15 07:56:22.433 INFO  [JTS-CachedThreadExecutor-7] - AdManager: sending request with header X-USERNAME
+2026-05-15 07:56:22.536 INFO  [AWT-EventQueue-0] - initAutoEncryptionMenu(): autoEncryption set to true
+2026-05-15 07:56:22.547 INFO  [AWT-EventQueue-0] - Contacting ndc1.ibllc.com:4000 as user NOT PRINTED
+2026-05-15 07:56:22.559 INFO  [AWT-EventQueue-0] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: ndc1.ibllc.com:4000 (SSL)
+2026-05-15 07:56:22.567 INFO  [AWT-EventQueue-0] - UserCredentials.sessionId() [this=170589078,old=null,new=6a06d1a6.0230].
+2026-05-15 07:56:22.567 INFO  [AWT-EventQueue-0] - CONN CALC: Last connection attempt time is cleared!
+2026-05-15 07:56:22.567 INFO  [AWT-EventQueue-0] - CONN CALC: Last connection set as now:07:56:22:567
+2026-05-15 07:56:22.567 INFO  [AWT-EventQueue-0] - Prelogin delay:0
+2026-05-15 07:56:22.576 INFO  [JTS-Login-9] - Starting launcher login thread
+2026-05-15 07:56:22.576 INFO  [JTS-Login-9] - LauncherLoginThread.runLoginWithUI()[hotBackupStrategy=ON,loginAttempt=1,socketDelay=20000].
+2026-05-15 07:56:22.577 INFO  [JTS-Login-9] - SPLASH Connecting to server
+2026-05-15 07:56:22.578 INFO  [AWT-EventQueue-0] - Network monitor is activated
+2026-05-15 07:56:22.579 INFO  [JTS-Order-Audit-10] - Starting async queue thread
+2026-05-15 07:56:22.590 INFO  [JTS-Login-9] - ### startLogin startTime=1778831782566
+2026-05-15 07:56:22.590 INFO  [JTS-Login-9] - ### loginAttempt loginAttempt=1
+2026-05-15 07:56:22.590 INFO  [JTS-Login-9] - Connecting ndc1.ibllc.com:4001 (SSL) timeout=20000...
+2026-05-15 07:56:22.599 INFO  [JTS-Login-9] - ### onSocketOpenStart socketOpenStart=1778831782590; endPoint=ndc1.ibllc.com; port=4001
+2026-05-15 07:56:22.637 INFO  [JTS-Login-9] - ### onSocketOpenEnd socketOpenEnd=1778831782636
+2026-05-15 07:56:22.637 INFO  [JTS-Login-9] - Connected to ndc1.ibllc.com:4001 (SSL)/64.190.197.40 remote-ip on local port 0 socket local addrs:port /172.18.0.2:33412
+2026-05-15 07:56:22.639 INFO  [JTS-Login-9] - Updating machine info [connectionAddress=/172.18.0.2]...
+2026-05-15 07:56:22.640 INFO  [JTS-Login-9] - Creating unique random...
+2026-05-15 07:56:22.641 INFO  [JTS-Login-9] - id=21cb7392
+2026-05-15 07:56:22.642 INFO  [JTS-Login-9] - Resolving MAC address...
+2026-05-15 07:56:22.643 INFO  [JTS-Login-9] - MACNetworkInfo created <21cb7392|76:C0:36:80:C6:1A|172.18.0.2>.
+2026-05-15 07:56:22.644 INFO  [JTS-Login-9] - JTSAuthConnection.onConnected(): lastKnownCipherStatus=INSECURE
+2026-05-15 07:56:22.645 INFO  [JTS-Login-9] - Changing state for connection from PRELOGON to PRELOGON in C 696733666: SessionSocket:1
+2026-05-15 07:56:22.645 INFO  [JTS-Login-9] - Authenticating
+2026-05-15 07:56:22.673 INFO  [JTS-CCPListenerS1-12] - Starting listener thread [sessionID=1]...
+2026-05-15 07:56:22.681 INFO  [JTS-Login-9] - AuthTimeoutMonitor-CCP: deactivate
+2026-05-15 07:56:22.681 INFO  [JTS-Login-9] - AuthTimeoutMonitor-CCP: timeout=20000
+2026-05-15 07:56:22.693 INFO  [JTS-Login-9] - AuthTimeoutMonitor-CCP: activate
+2026-05-15 07:56:22.694 INFO  [JTS-Login-9] - LOGIN_TIME_MONITOR	 false 07:56:22:694 since start = 0 thread delay = 0 global delay = 0 tag=null, cls=AuthDispatcher method=connect
+2026-05-15 07:56:22.695 INFO  [JTS-AuthTimeoutMonitorThread-CCP-14] - Starting auth timeout monitor thread for CCP
+2026-05-15 07:56:22.699 INFO  [JTS-Login-9] - SPLASH -0001 step 1 AuthDispatcher.connect
+2026-05-15 07:56:22.742 INFO  [JTS-Login-9] - Sending connect request
+2026-05-15 07:56:22.748 INFO  [JTS-Login-9] - AuthDispatcher.initNSMsgVersionLimits: minVersion=38, maxVersion=50
+2026-05-15 07:56:22.750 INFO  [JTS-Login-9] - AuthDispatcher.NSConnectRequest: userSessionID=6a06d1a6.0230, beeDemoType=NULL
+2026-05-15 07:56:22.752 INFO  [JTS-Login-9] - ### onNsMsg loginMessageReq=1778831782750; brandNewUser=true
+2026-05-15 07:56:22.752 INFO  [JTS-Login-9] - mapProdToPaper: In NSConnectRequest: sending PAPER_CONNECT=0x2000
+2026-05-15 07:56:22.758 INFO  [JTS-AuthDispatcherS1-13] - Starting dispatcher thread [sessionID=1]...
+2026-05-15 07:56:22.883 INFO  [JTS-Login-9] - SPLASH Authenticating
+2026-05-15 07:56:22.883 INFO  [JTS-CCPListenerS1-12] - Initial listener buffer size is 65536.
+2026-05-15 07:56:22.883 INFO  [JTS-CCPListenerS1-12] - Listener thread [sessionID=1] is ready to process messages.
+2026-05-15 07:56:22.884 INFO  [JTS-Login-9] - Terminating launcher login thread
+2026-05-15 07:56:22.898 INFO  [JTS-AuthDispatcherS1-13] - SPLASH 0204 step 2 AuthDispatcher.processDataItr
+2026-05-15 07:56:22.899 INFO  [JTS-AuthDispatcherS1-13] - Received NS_REDIRECT
+2026-05-15 07:56:22.899 INFO  [JTS-AuthDispatcherS1-13] - ### onConmanRedirect
+2026-05-15 07:56:22.899 INFO  [JTS-AuthDispatcherS1-13] - Disconnecting ndc1.ibllc.com:4001 (SSL) [disconnectDetails=DisconnectDetails[sessionID=1,endPoint=ndc1.ibllc.com:4001 (SSL),reason=DISCONNECT_ON_REDIRECTION,cause=null,systemMessage=null,keepSocketOpen=false]]...
+2026-05-15 07:56:22.901 INFO  [JTS-AuthDispatcherS1-13] - Socket closed.
+2026-05-15 07:56:22.901 INFO  [JTS-AuthTimeoutMonitorThread-CCP-14] - Terminating auth timeout monitor thread for CCP
+2026-05-15 07:56:22.901 INFO  [JTS-CCPListenerS1-12] - Socket or stream for connection ndc1.ibllc.com:4001 (SSL) was closed by another thread.
+2026-05-15 07:56:22.902 INFO  [JTS-AuthDispatcherS1-13] - AuthTimeoutMonitor-CCP: deactivate
+2026-05-15 07:56:22.902 INFO  [JTS-AuthDispatcherS1-13] - SocketTracker[name=name=CCP(ndc1.ibllc.com:4001 (SSL)),usesCcpConMan=false,lastReadTimestamp=1778831782896,lastReadDateTime=2026-05-15T07:56:22.896,lastFixSendTime=].
+2026-05-15 07:56:22.902 INFO  [JTS-AuthDispatcherS1-13] - Interrupting dispatcher [sessionID=1]...
+2026-05-15 07:56:22.902 INFO  [JTS-AuthDispatcherS1-13] - Interrupting listener [sessionID=1,disconnectSocket=true]...
+2026-05-15 07:56:22.906 INFO  [JTS-DisconnectedS1-18] - IBGateway connection to ccp disconnected.
+2026-05-15 07:56:22.906 INFO  [JTS-AuthDispatcherS1-13] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: ndc1.ibllc.com:4000 (SSL)
+2026-05-15 07:56:22.908 INFO  [JTS-AuthDispatcherS1-13] - Redirecting to hdc1.ibllc.com:4001 (SSL)
+2026-05-15 07:56:22.908 INFO  [JTS-AuthDispatcherS1-13] - UserCredentials.sessionId() [this=170589078,old=6a06d1a6.0230,new=6a06d1a6.0230].
+2026-05-15 07:56:22.910 INFO  [JTS-AuthDispatcherS1-13] - Prelogin delay:0
+2026-05-15 07:56:22.911 INFO  [JTS-AuthDispatcherS1-13] - Dispatcher thread terminating [sessionID=1,interrupted=true]...
+2026-05-15 07:56:22.911 INFO  [JTS-CCPListenerS1-12] - Listener thread terminating [sessionID=1] [seen=35,totalShifted=35,moreAvailable=0]
+2026-05-15 07:56:22.912 INFO  [JTS-MiscUlrsRequester-20] - Connecting ndc1.ibllc.com:4000 (SSL) timeout=10000...
+2026-05-15 07:56:22.913 INFO  [JTS-Login-21] - Starting launcher login thread
+2026-05-15 07:56:22.913 INFO  [JTS-Login-21] - LauncherLoginThread.runLoginWithUI()[hotBackupStrategy=ON,loginAttempt=1,socketDelay=20000].
+2026-05-15 07:56:22.913 INFO  [JTS-Login-21] - SPLASH Connecting to server
+2026-05-15 07:56:22.914 INFO  [JTS-Login-21] - ### startLogin startTime=1778831782908
+2026-05-15 07:56:22.914 INFO  [JTS-Login-21] - ### loginAttempt loginAttempt=1
+2026-05-15 07:56:22.914 INFO  [JTS-Login-21] - AsyncDisconnectNotifiers: 1
+2026-05-15 07:56:22.914 INFO  [JTS-Login-21] - Connecting hdc1.ibllc.com:4001 (SSL) timeout=20000...
+2026-05-15 07:56:22.914 INFO  [JTS-Login-21] - ### onSocketOpenStart socketOpenStart=1778831782914; endPoint=hdc1.ibllc.com; port=4001
+2026-05-15 07:56:22.924 INFO  [JTS-MiscUlrsRequester-20] - Connected to ndc1.ibllc.com:4000 (SSL)/64.190.197.40 remote-ip on local port 0 socket local addrs:port /172.18.0.2:38146
+2026-05-15 07:56:22.924 INFO  [JTS-MiscUlrsRequester-20] - Updating machine info [connectionAddress=/172.18.0.2]...
+2026-05-15 07:56:22.925 INFO  [JTS-MISC URLsListenerS2-23] - Starting listener thread [sessionID=2]...
+2026-05-15 07:56:22.926 INFO  [JTS-MiscUlrsRequester-20] - Sending MiscUrls request
+2026-05-15 07:56:22.927 INFO  [JTS-AuthDispatcherS2-24] - Starting dispatcher thread [sessionID=2]...
+2026-05-15 07:56:22.927 INFO  [JTS-AuthResponseMonitor-25] - Starting auth response monitor thread
+2026-05-15 07:56:22.934 INFO  [JTS-CachedThreadExecutor-7] - AdManager: NEXT_AD ad is not available
+2026-05-15 07:56:22.934 ERROR [JTS-CachedThreadExecutor-7] - AdsManager: get next image failed with status 404
+2026-05-15 07:56:22.935 INFO  [AWT-EventQueue-0] - AdImageContainer: display regular background image without ads
+2026-05-15 07:56:22.935 INFO  [AWT-EventQueue-0] - Splashscreen: should not show ads
+2026-05-15 07:56:22.941 ERROR [JTS-MiscUlrsRequester-20] - Cannot write to socket ndc1.ibllc.com:4000 (SSL). Service: JTS-AuthDispatcherS2-24. Error: class java.net.SocketException - Connection reset
+2026-05-15 07:56:22.942 INFO  [JTS-MiscUlrsRequester-20] - sendNSMessage error: Server disconnected, please try again
+2026-05-15 07:56:22.942 ERROR [JTS-MiscUlrsRequester-20] - Incorrect Misc URLs data ''
+2026-05-15 07:56:22.943 INFO  [JTS-MiscUlrsRequester-20] - Disconnecting ndc1.ibllc.com:4000 (SSL) [disconnectDetails=DisconnectDetails[sessionID=2,endPoint=ndc1.ibllc.com:4000 (SSL),reason=DISCONNECT_BY_DESIGN,cause=null,systemMessage=null,keepSocketOpen=false]]...
+2026-05-15 07:56:22.943 INFO  [JTS-MiscUlrsRequester-20] - Socket closed.
+2026-05-15 07:56:22.943 INFO  [JTS-MiscUlrsRequester-20] - SocketTracker[name=name=MISC URLs(ndc1.ibllc.com:4000 (SSL)),usesCcpConMan=false,lastReadTimestamp=0,lastReadDateTime=1970-01-01T00:00,lastFixSendTime=].
+2026-05-15 07:56:22.943 INFO  [JTS-MiscUlrsRequester-20] - Interrupting dispatcher [sessionID=2]...
+2026-05-15 07:56:22.943 INFO  [JTS-AuthDispatcherS2-24] - Dispatcher thread terminating [sessionID=2,interrupted=true]...
+2026-05-15 07:56:22.943 INFO  [JTS-AuthResponseMonitor-25] - Terminating auth response monitor thread
+2026-05-15 07:56:22.943 INFO  [JTS-MiscUlrsRequester-20] - Interrupting listener [sessionID=2,disconnectSocket=true]...
+2026-05-15 07:56:22.946 INFO  [JTS-MISC URLsListenerS2-23] - Initial listener buffer size is 0.
+2026-05-15 07:56:22.946 ERROR [JTS-MISC URLsListenerS2-23] - Connection is already closed. Terminating listener thread [sessionID=2]...
+2026-05-15 07:56:23.200 INFO  [JTS-Login-21] - ### onSocketOpenEnd socketOpenEnd=1778831783199
+2026-05-15 07:56:23.200 INFO  [JTS-Login-21] - Connected to hdc1.ibllc.com:4001 (SSL)/103.38.91.3 remote-ip on local port 0 socket local addrs:port /172.18.0.2:49394
+2026-05-15 07:56:23.200 INFO  [JTS-Login-21] - Updating machine info [connectionAddress=/172.18.0.2]...
+2026-05-15 07:56:23.200 INFO  [JTS-Login-21] - JTSAuthConnection.onConnected(): lastKnownCipherStatus=INSECURE
+2026-05-15 07:56:23.200 INFO  [JTS-Login-21] - Changing state for connection from PRELOGON to PRELOGON in C 696733666: SessionSocket:3
+2026-05-15 07:56:23.200 INFO  [JTS-Login-21] - Authenticating
+2026-05-15 07:56:23.201 INFO  [JTS-Login-21] - AuthTimeoutMonitor-CCP: deactivate
+2026-05-15 07:56:23.201 INFO  [JTS-Login-21] - AuthTimeoutMonitor-CCP: timeout=20000
+2026-05-15 07:56:23.201 INFO  [JTS-CCPListenerS3-27] - Starting listener thread [sessionID=3]...
+2026-05-15 07:56:23.201 INFO  [JTS-Login-21] - AuthTimeoutMonitor-CCP: activate
+2026-05-15 07:56:23.201 INFO  [JTS-Login-21] - SPLASH 0303 step 3 AuthDispatcher.connect
+2026-05-15 07:56:23.201 INFO  [JTS-AuthTimeoutMonitorThread-CCP-29] - Starting auth timeout monitor thread for CCP
+2026-05-15 07:56:23.202 INFO  [JTS-Login-21] - Sending connect request
+2026-05-15 07:56:23.202 INFO  [JTS-Login-21] - AuthDispatcher.initNSMsgVersionLimits: minVersion=38, maxVersion=50
+2026-05-15 07:56:23.202 INFO  [JTS-Login-21] - AuthDispatcher.NSConnectRequest: userSessionID=6a06d1a6.0230, beeDemoType=NULL
+2026-05-15 07:56:23.202 INFO  [JTS-Login-21] - ### onNsMsg loginMessageReq=1778831783202; brandNewUser=true
+2026-05-15 07:56:23.203 INFO  [JTS-Login-21] - mapProdToPaper: In NSConnectRequest: sending PAPER_CONNECT=0x2000
+2026-05-15 07:56:23.205 INFO  [JTS-AuthDispatcherS3-28] - Starting dispatcher thread [sessionID=3]...
+2026-05-15 07:56:24.066 INFO  [JTS-CCPListenerS3-27] - Initial listener buffer size is 65536.
+2026-05-15 07:56:24.067 INFO  [JTS-CCPListenerS3-27] - Listener thread [sessionID=3] is ready to process messages.
+2026-05-15 07:56:24.067 INFO  [JTS-Login-21] - SPLASH Authenticating
+2026-05-15 07:56:24.067 INFO  [JTS-Login-21] - Terminating launcher login thread
+2026-05-15 07:56:24.360 INFO  [JTS-AuthDispatcherS3-28] - SPLASH 1159 step 4 AuthDispatcher.processDataItr
+2026-05-15 07:56:24.361 INFO  [JTS-AuthDispatcherS3-28] - NSErrorResponse.INVALID_USERNAME_OR_BAD_IP
+2026-05-15 07:56:24.362 INFO  [JTS-AuthDispatcherS3-28] - Starting GstatMessageMgr...
+2026-05-15 07:56:24.363 INFO  [JTS-CCPListenerS3-27] - Socket for connection hdc1.ibllc.com:4001 (SSL) was closed by peer.
+2026-05-15 07:56:24.364 INFO  [JTS-AuthDispatcherS3-28] - Authorization failed: Invalid username or password. 
+
+Please check the "Caps Lock" key; passwords are case sensitive. 
+
+If you are in the process of opening an individual account, please contact 
+customer service to reset the password. 
+
+If you are in the process of opening any other type of account, please note 
+that the login is possible beginning the day after account approval.
+
+Example user name: trader777. MessageType: null. FailReason: 1
+2026-05-15 07:56:24.364 INFO  [JTS-AuthDispatcherS3-28] - Disconnecting hdc1.ibllc.com:4001 (SSL) [disconnectDetails=DisconnectDetails[sessionID=3,endPoint=hdc1.ibllc.com:4001 (SSL),reason=DISCONNECT_AUTHORIZATION_FAILED,cause=null,systemMessage=null,keepSocketOpen=false]]...
+2026-05-15 07:56:24.364 INFO  [JTS-AuthDispatcherS3-28] - Socket closed.
+2026-05-15 07:56:24.364 INFO  [JTS-AuthDispatcherS3-28] - AuthTimeoutMonitor-CCP: deactivate
+2026-05-15 07:56:24.364 INFO  [JTS-AuthDispatcherS3-28] - SocketTracker[name=name=CCP(hdc1.ibllc.com:4001 (SSL)),usesCcpConMan=false,lastReadTimestamp=1778831784363,lastReadDateTime=2026-05-15T07:56:24.363,lastFixSendTime=].
+2026-05-15 07:56:24.364 WARN  [JTS-GstatMessageMgr-33] - Misc URLs have not been received. Resending request...
+2026-05-15 07:56:24.364 INFO  [JTS-AuthTimeoutMonitorThread-CCP-29] - Terminating auth timeout monitor thread for CCP
+2026-05-15 07:56:24.364 INFO  [JTS-GstatMessageMgr-33] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: ndc1.ibllc.com:4000 (SSL)
+2026-05-15 07:56:24.364 INFO  [JTS-AuthDispatcherS3-28] - Interrupting dispatcher [sessionID=3]...
+2026-05-15 07:56:24.365 INFO  [JTS-AuthDispatcherS3-28] - Interrupting listener [sessionID=3,disconnectSocket=true]...
+2026-05-15 07:56:24.365 INFO  [JTS-AuthDispatcherS3-28] - CONN CALC: Last connection attempt time is cleared!
+2026-05-15 07:56:24.366 INFO  [JTS-MiscUlrsRequester-34] - Connecting ndc1.ibllc.com:4000 (SSL) timeout=10000...
+2026-05-15 07:56:24.367 INFO  [JTS-DisconnectedS3-35] - IBGateway connection to ccp disconnected.
+2026-05-15 07:56:24.367 INFO  [JTS-AuthDispatcherS3-28] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: ndc1.ibllc.com:4000 (SSL)
+2026-05-15 07:56:24.367 INFO  [JTS-AuthDispatcherS3-28] - Unable to reassign s_miscUrlsConnection to b 2144020637. The current b 198457815 is not nulled out yet.
+2026-05-15 07:56:24.368 INFO  [JTS-AuthDispatcherS3-28] - Reconnection time cleared: argClearBackoff=true base=0 range=5000 next=0 disconnected=0
+2026-05-15 07:56:24.368 INFO  [JTS-AuthDispatcherS3-28] - Dispatcher thread terminating [sessionID=3,interrupted=true]...
+2026-05-15 07:56:24.369 INFO  [JTS-CCPListenerS3-27] - Listener thread terminating [sessionID=3] [seen=30,totalShifted=30,moreAvailable=0]
+2026-05-15 07:56:24.379 INFO  [JTS-MiscUlrsRequester-34] - Connected to ndc1.ibllc.com:4000 (SSL)/64.190.197.40 remote-ip on local port 0 socket local addrs:port /172.18.0.2:38152
+2026-05-15 07:56:24.380 INFO  [JTS-MiscUlrsRequester-34] - Updating machine info [connectionAddress=/172.18.0.2]...
+2026-05-15 07:56:24.383 INFO  [JTS-MISC URLsListenerS4-37] - Starting listener thread [sessionID=4]...
+2026-05-15 07:56:24.383 INFO  [JTS-MiscUlrsRequester-34] - Sending MiscUrls request
+2026-05-15 07:56:24.383 INFO  [JTS-MiscUlrsRequester-34] - SPLASH -0001 step 1 AuthDispatcher.send
+2026-05-15 07:56:24.384 INFO  [JTS-AuthDispatcherS4-38] - Starting dispatcher thread [sessionID=4]...
+2026-05-15 07:56:24.401 INFO  [JTS-AuthResponseMonitor-39] - Starting auth response monitor thread
+2026-05-15 07:56:24.417 ERROR [JTS-MiscUlrsRequester-34] - Cannot write to socket ndc1.ibllc.com:4000 (SSL). Service: JTS-AuthDispatcherS4-38. Error: class java.net.SocketException - Connection reset
+2026-05-15 07:56:24.418 INFO  [JTS-MiscUlrsRequester-34] - sendNSMessage error: Server disconnected, please try again
+2026-05-15 07:56:24.418 ERROR [JTS-MiscUlrsRequester-34] - Incorrect Misc URLs data ''
+2026-05-15 07:56:24.418 INFO  [JTS-MiscUlrsRequester-34] - Disconnecting ndc1.ibllc.com:4000 (SSL) [disconnectDetails=DisconnectDetails[sessionID=4,endPoint=ndc1.ibllc.com:4000 (SSL),reason=DISCONNECT_BY_DESIGN,cause=null,systemMessage=null,keepSocketOpen=false]]...
+2026-05-15 07:56:24.418 INFO  [JTS-MiscUlrsRequester-34] - Socket closed.
+2026-05-15 07:56:24.418 INFO  [JTS-MiscUlrsRequester-34] - SocketTracker[name=name=MISC URLs(ndc1.ibllc.com:4000 (SSL)),usesCcpConMan=false,lastReadTimestamp=0,lastReadDateTime=1970-01-01T00:00,lastFixSendTime=].
+2026-05-15 07:56:24.418 INFO  [JTS-MiscUlrsRequester-34] - Interrupting dispatcher [sessionID=4]...
+2026-05-15 07:56:24.418 INFO  [JTS-AuthDispatcherS4-38] - Dispatcher thread terminating [sessionID=4,interrupted=true]...
+2026-05-15 07:56:24.418 INFO  [JTS-AuthResponseMonitor-39] - Terminating auth response monitor thread
+2026-05-15 07:56:24.418 INFO  [JTS-MiscUlrsRequester-34] - Interrupting listener [sessionID=4,disconnectSocket=true]...
+2026-05-15 07:56:24.419 INFO  [JTS-MISC URLsListenerS4-37] - Initial listener buffer size is 0.
+2026-05-15 07:56:24.419 ERROR [JTS-MISC URLsListenerS4-37] - Connection is already closed. Terminating listener thread [sessionID=4]...
+2026-05-15 07:56:25.278 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 07:56:25.279 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=733,900KB HeapUsage: Max=786,432KB used=51,255KB committed=102,400KB NonHeapUsage: Max=0KB used=80,410KB committed=82,496KB
+2026-05-15 07:56:26.294 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.46% avg=0.46% 30 min avg=0.46% 10 min avg=0.46% 5 min avg=0.46% 1 min avg=0.46%
+GC:called=7 times CPU used=0.51%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=26 curr daemon=17
+2026-05-15 07:59:24.366 WARN  [JTS-GstatMessageMgr-33] - Could not connect to GSTAT (GSTAT URL is not available).
+2026-05-15 08:01:25.285 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 08:01:25.287 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=728,511KB HeapUsage: Max=786,432KB used=56,375KB committed=102,400KB NonHeapUsage: Max=0KB used=81,523KB committed=83,520KB
+2026-05-15 08:01:26.289 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.11% avg=0.13% 30 min avg=0.13% 10 min avg=0.13% 5 min avg=0.13% 1 min avg=0.12%
+GC:called=7 times CPU used=0.01%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 08:06:25.296 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 08:06:25.297 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=723,041KB HeapUsage: Max=786,432KB used=61,495KB committed=102,400KB NonHeapUsage: Max=0KB used=81,705KB committed=83,648KB
+2026-05-15 08:06:26.299 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.11% avg=0.11% 30 min avg=0.11% 10 min avg=0.11% 5 min avg=0.10% 1 min avg=0.10%
+GC:called=7 times CPU used=0.01%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 08:11:25.307 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 08:11:25.309 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=717,920KB HeapUsage: Max=786,432KB used=66,615KB committed=102,400KB NonHeapUsage: Max=0KB used=81,850KB committed=83,712KB
+2026-05-15 08:11:26.310 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.10% avg=0.11% 30 min avg=0.11% 10 min avg=0.10% 5 min avg=0.10% 1 min avg=0.10%
+GC:called=7 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 08:16:25.315 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 08:16:25.316 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=713,069KB HeapUsage: Max=786,432KB used=71,735KB committed=102,400KB NonHeapUsage: Max=0KB used=81,956KB committed=83,712KB
+2026-05-15 08:16:26.318 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.11% 30 min avg=0.11% 10 min avg=0.10% 5 min avg=0.10% 1 min avg=0.09%
+GC:called=7 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 08:21:25.323 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 08:21:25.324 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=750,972KB HeapUsage: Max=786,432KB used=34,563KB committed=102,400KB NonHeapUsage: Max=0KB used=82,177KB committed=83,840KB
+2026-05-15 08:21:26.326 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.10% 30 min avg=0.10% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=8 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 08:26:25.330 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 08:26:25.331 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=746,174KB HeapUsage: Max=786,432KB used=39,683KB committed=102,400KB NonHeapUsage: Max=0KB used=82,211KB committed=83,904KB
+2026-05-15 08:26:26.332 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.10% 30 min avg=0.10% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.08%
+GC:called=8 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 08:31:25.341 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 08:31:25.342 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=740,984KB HeapUsage: Max=786,432KB used=44,803KB committed=102,400KB NonHeapUsage: Max=0KB used=82,326KB committed=84,032KB
+2026-05-15 08:31:26.343 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.10% avg=0.10% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=8 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 08:36:25.348 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 08:36:25.349 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=736,186KB HeapUsage: Max=786,432KB used=49,923KB committed=102,400KB NonHeapUsage: Max=0KB used=82,347KB committed=84,032KB
+2026-05-15 08:36:26.351 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.10% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.08% 1 min avg=0.09%
+GC:called=8 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 08:41:25.358 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 08:41:25.359 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=731,516KB HeapUsage: Max=786,432KB used=54,019KB committed=102,400KB NonHeapUsage: Max=0KB used=82,374KB committed=84,032KB
+2026-05-15 08:41:26.360 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.10% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=8 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 08:46:25.364 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 08:46:25.365 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=726,648KB HeapUsage: Max=786,432KB used=59,139KB committed=102,400KB NonHeapUsage: Max=0KB used=82,402KB committed=84,160KB
+2026-05-15 08:46:26.367 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.10% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=8 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 08:51:25.373 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 08:51:25.374 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=721,528KB HeapUsage: Max=786,432KB used=64,259KB committed=102,400KB NonHeapUsage: Max=0KB used=82,444KB committed=84,224KB
+2026-05-15 08:51:26.375 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.08% 1 min avg=0.09%
+GC:called=8 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 08:56:25.383 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 08:56:25.384 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=716,800KB HeapUsage: Max=786,432KB used=69,379KB committed=102,400KB NonHeapUsage: Max=0KB used=82,500KB committed=84,288KB
+2026-05-15 08:56:26.385 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=8 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 09:01:25.395 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 09:01:25.397 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=711,862KB HeapUsage: Max=786,432KB used=74,499KB committed=102,400KB NonHeapUsage: Max=0KB used=82,521KB committed=84,288KB
+2026-05-15 09:01:26.398 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=8 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 09:06:25.402 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 09:06:25.403 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=749,025KB HeapUsage: Max=786,432KB used=36,382KB committed=102,400KB NonHeapUsage: Max=0KB used=82,569KB committed=84,288KB
+2026-05-15 09:06:26.404 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=9 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 09:11:25.412 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 09:11:25.413 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=744,167KB HeapUsage: Max=786,432KB used=41,502KB committed=102,400KB NonHeapUsage: Max=0KB used=82,593KB committed=84,288KB
+2026-05-15 09:11:26.415 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.08%
+GC:called=9 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 09:16:25.418 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 09:16:25.419 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=739,047KB HeapUsage: Max=786,432KB used=46,622KB committed=102,400KB NonHeapUsage: Max=0KB used=82,603KB committed=84,352KB
+2026-05-15 09:16:26.420 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=9 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 09:21:25.427 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 09:21:25.428 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=734,306KB HeapUsage: Max=786,432KB used=51,742KB committed=102,400KB NonHeapUsage: Max=0KB used=82,611KB committed=84,352KB
+2026-05-15 09:21:26.430 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=9 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 09:26:25.440 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 09:26:25.441 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=729,499KB HeapUsage: Max=786,432KB used=56,862KB committed=102,400KB NonHeapUsage: Max=0KB used=82,617KB committed=84,352KB
+2026-05-15 09:26:26.442 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=9 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 09:31:25.453 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 09:31:25.455 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=724,711KB HeapUsage: Max=786,432KB used=60,958KB committed=102,400KB NonHeapUsage: Max=0KB used=82,635KB committed=84,352KB
+2026-05-15 09:31:26.456 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=9 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 09:36:25.460 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 09:36:25.461 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=719,591KB HeapUsage: Max=786,432KB used=66,078KB committed=102,400KB NonHeapUsage: Max=0KB used=82,650KB committed=84,352KB
+2026-05-15 09:36:26.462 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=9 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 09:41:25.472 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 09:41:25.472 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=714,850KB HeapUsage: Max=786,432KB used=71,198KB committed=102,400KB NonHeapUsage: Max=0KB used=82,651KB committed=84,352KB
+2026-05-15 09:41:26.474 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.08%
+GC:called=9 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 09:46:25.478 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 09:46:25.479 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=710,113KB HeapUsage: Max=786,432KB used=76,318KB committed=102,400KB NonHeapUsage: Max=0KB used=82,652KB committed=84,352KB
+2026-05-15 09:46:26.480 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=9 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 09:51:25.491 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 09:51:25.492 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=749,952KB HeapUsage: Max=786,432KB used=36,479KB committed=102,400KB NonHeapUsage: Max=0KB used=82,671KB committed=84,416KB
+2026-05-15 09:51:26.493 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.10% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=10 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 09:56:25.498 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 09:56:25.500 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=745,009KB HeapUsage: Max=786,432KB used=40,575KB committed=102,400KB NonHeapUsage: Max=0KB used=82,728KB committed=84,480KB
+2026-05-15 09:56:26.501 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.08%
+GC:called=10 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 10:01:25.507 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 10:01:25.508 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=739,957KB HeapUsage: Max=786,432KB used=45,695KB committed=102,400KB NonHeapUsage: Max=0KB used=82,751KB committed=84,480KB
+2026-05-15 10:01:26.511 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=10 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 10:06:25.521 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 10:06:25.522 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=734,837KB HeapUsage: Max=786,432KB used=50,815KB committed=102,400KB NonHeapUsage: Max=0KB used=82,762KB committed=84,480KB
+2026-05-15 10:06:26.524 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.07% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.08%
+GC:called=10 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 10:11:25.532 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 10:11:25.533 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=730,496KB HeapUsage: Max=786,432KB used=55,935KB committed=102,400KB NonHeapUsage: Max=0KB used=82,785KB committed=84,480KB
+2026-05-15 10:11:26.534 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=10 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 10:16:25.544 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 10:16:25.545 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=725,376KB HeapUsage: Max=786,432KB used=60,031KB committed=102,400KB NonHeapUsage: Max=0KB used=82,785KB committed=84,480KB
+2026-05-15 10:16:26.549 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.07% avg=0.09% 30 min avg=0.09% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=10 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 10:21:25.555 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 10:21:25.556 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=720,433KB HeapUsage: Max=786,432KB used=65,151KB committed=102,400KB NonHeapUsage: Max=0KB used=82,789KB committed=84,480KB
+2026-05-15 10:21:26.558 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.10% avg=0.09% 30 min avg=0.09% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.09%
+GC:called=10 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 10:26:25.571 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 10:26:25.572 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=715,313KB HeapUsage: Max=786,432KB used=70,271KB committed=102,400KB NonHeapUsage: Max=0KB used=82,817KB committed=84,480KB
+2026-05-15 10:26:26.573 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.08% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=10 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 10:31:25.579 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 10:31:25.580 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=710,614KB HeapUsage: Max=786,432KB used=75,391KB committed=102,400KB NonHeapUsage: Max=0KB used=82,837KB committed=84,544KB
+2026-05-15 10:31:26.581 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.09% 30 min avg=0.08% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=10 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 10:36:25.588 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 10:36:25.590 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=705,920KB HeapUsage: Max=786,432KB used=79,487KB committed=102,400KB NonHeapUsage: Max=0KB used=82,850KB committed=84,544KB
+2026-05-15 10:36:26.592 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.10% avg=0.09% 30 min avg=0.08% 10 min avg=0.09% 5 min avg=0.08% 1 min avg=0.09%
+GC:called=10 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 10:41:25.600 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 10:41:25.601 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=748,029KB HeapUsage: Max=786,432KB used=37,486KB committed=102,400KB NonHeapUsage: Max=0KB used=82,853KB committed=84,544KB
+2026-05-15 10:41:26.602 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.08% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.09%
+GC:called=11 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 10:46:25.611 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 10:46:25.612 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=742,909KB HeapUsage: Max=786,432KB used=42,606KB committed=102,400KB NonHeapUsage: Max=0KB used=82,868KB committed=84,544KB
+2026-05-15 10:46:26.613 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=11 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 10:51:25.622 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 10:51:25.623 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=738,242KB HeapUsage: Max=786,432KB used=47,726KB committed=102,400KB NonHeapUsage: Max=0KB used=82,873KB committed=84,544KB
+2026-05-15 10:51:26.624 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=11 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 10:56:25.633 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 10:56:25.634 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=733,585KB HeapUsage: Max=786,432KB used=52,846KB committed=102,400KB NonHeapUsage: Max=0KB used=82,873KB committed=84,544KB
+2026-05-15 10:56:26.635 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.07% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=11 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 11:01:25.647 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 11:01:25.648 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=728,640KB HeapUsage: Max=786,432KB used=56,942KB committed=102,400KB NonHeapUsage: Max=0KB used=82,875KB committed=84,608KB
+2026-05-15 11:01:26.650 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=11 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 11:06:25.655 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 11:06:25.656 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=723,452KB HeapUsage: Max=786,432KB used=62,062KB committed=102,400KB NonHeapUsage: Max=0KB used=82,919KB committed=84,672KB
+2026-05-15 11:06:26.658 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.08%
+GC:called=11 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 11:11:25.668 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 11:11:25.668 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=718,333KB HeapUsage: Max=786,432KB used=67,182KB committed=102,400KB NonHeapUsage: Max=0KB used=82,919KB committed=84,672KB
+2026-05-15 11:11:26.670 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=11 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 11:16:25.677 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 11:16:25.677 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=713,743KB HeapUsage: Max=786,432KB used=72,302KB committed=102,400KB NonHeapUsage: Max=0KB used=82,937KB committed=84,672KB
+2026-05-15 11:16:26.679 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.08%
+GC:called=11 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 11:21:25.688 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 11:21:25.689 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=709,117KB HeapUsage: Max=786,432KB used=76,398KB committed=102,400KB NonHeapUsage: Max=0KB used=82,938KB committed=84,672KB
+2026-05-15 11:21:26.691 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.08% 1 min avg=0.09%
+GC:called=11 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 11:26:25.696 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 11:26:25.700 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=704,064KB HeapUsage: Max=786,432KB used=81,518KB committed=102,400KB NonHeapUsage: Max=0KB used=82,949KB committed=84,672KB
+2026-05-15 11:26:26.701 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.08%
+GC:called=11 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 11:31:25.703 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 11:31:25.704 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=747,987KB HeapUsage: Max=786,432KB used=37,486KB committed=102,400KB NonHeapUsage: Max=0KB used=82,954KB committed=84,672KB
+2026-05-15 11:31:26.705 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=12 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 11:36:25.713 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 11:36:25.713 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=742,867KB HeapUsage: Max=786,432KB used=42,606KB committed=102,400KB NonHeapUsage: Max=0KB used=82,958KB committed=84,672KB
+2026-05-15 11:36:26.715 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=12 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 11:41:25.721 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 11:41:25.722 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=738,705KB HeapUsage: Max=786,432KB used=47,726KB committed=102,400KB NonHeapUsage: Max=0KB used=82,972KB committed=84,672KB
+2026-05-15 11:41:26.724 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=12 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 11:46:25.728 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 11:46:25.728 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=733,651KB HeapUsage: Max=786,432KB used=51,822KB committed=102,400KB NonHeapUsage: Max=0KB used=83,002KB committed=84,736KB
+2026-05-15 11:46:26.729 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=12 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 11:51:25.737 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 11:51:25.737 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=728,598KB HeapUsage: Max=786,432KB used=56,942KB committed=102,400KB NonHeapUsage: Max=0KB used=83,014KB committed=84,736KB
+2026-05-15 11:51:26.738 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.10% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=12 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 11:56:25.749 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 11:56:25.750 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=723,479KB HeapUsage: Max=786,432KB used=62,062KB committed=102,400KB NonHeapUsage: Max=0KB used=83,023KB committed=84,736KB
+2026-05-15 11:56:26.751 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=12 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 12:01:25.759 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 12:01:25.760 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=718,843KB HeapUsage: Max=786,432KB used=67,182KB committed=102,400KB NonHeapUsage: Max=0KB used=83,024KB committed=84,736KB
+2026-05-15 12:01:26.761 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.10%
+GC:called=12 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 12:06:25.770 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 12:06:25.771 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=714,195KB HeapUsage: Max=786,432KB used=71,278KB committed=102,400KB NonHeapUsage: Max=0KB used=83,040KB committed=84,800KB
+2026-05-15 12:06:26.772 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.10% 1 min avg=0.09%
+GC:called=12 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 12:11:25.782 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 12:11:25.782 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=709,075KB HeapUsage: Max=786,432KB used=76,398KB committed=102,400KB NonHeapUsage: Max=0KB used=83,063KB committed=84,800KB
+2026-05-15 12:11:26.784 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=12 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 12:16:25.796 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 12:16:25.798 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=703,955KB HeapUsage: Max=786,432KB used=81,518KB committed=102,400KB NonHeapUsage: Max=0KB used=83,088KB committed=84,800KB
+2026-05-15 12:16:26.800 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=12 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 12:21:25.806 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 12:21:25.807 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=748,930KB HeapUsage: Max=786,432KB used=36,489KB committed=102,400KB NonHeapUsage: Max=0KB used=83,088KB committed=84,800KB
+2026-05-15 12:21:26.810 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=13 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 12:26:25.817 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 12:26:25.818 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=744,834KB HeapUsage: Max=786,432KB used=41,609KB committed=102,400KB NonHeapUsage: Max=0KB used=83,099KB committed=84,800KB
+2026-05-15 12:26:26.819 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.08%
+GC:called=13 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 12:31:25.828 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 12:31:25.829 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=739,714KB HeapUsage: Max=786,432KB used=45,705KB committed=102,400KB NonHeapUsage: Max=0KB used=83,099KB committed=84,800KB
+2026-05-15 12:31:26.830 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.09%
+GC:called=13 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 12:36:25.842 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 12:36:25.842 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=734,663KB HeapUsage: Max=786,432KB used=50,825KB committed=102,400KB NonHeapUsage: Max=0KB used=83,103KB committed=84,800KB
+2026-05-15 12:36:26.844 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=13 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 12:41:25.852 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 12:41:25.853 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=729,474KB HeapUsage: Max=786,432KB used=55,945KB committed=102,400KB NonHeapUsage: Max=0KB used=83,130KB committed=84,864KB
+2026-05-15 12:41:26.854 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.08% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=13 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 12:46:25.862 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 12:46:25.863 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=725,378KB HeapUsage: Max=786,432KB used=61,065KB committed=102,400KB NonHeapUsage: Max=0KB used=83,135KB committed=84,864KB
+2026-05-15 12:46:26.864 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.09% 30 min avg=0.08% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=13 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 12:51:25.873 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 12:51:25.873 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=720,258KB HeapUsage: Max=786,432KB used=65,161KB committed=102,400KB NonHeapUsage: Max=0KB used=83,138KB committed=84,864KB
+2026-05-15 12:51:26.875 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.08% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.09%
+GC:called=13 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 12:56:25.881 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 12:56:25.882 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=715,207KB HeapUsage: Max=786,432KB used=70,281KB committed=102,400KB NonHeapUsage: Max=0KB used=83,138KB committed=84,864KB
+2026-05-15 12:56:26.883 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.08% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=13 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 13:01:25.891 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 13:01:25.893 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=710,087KB HeapUsage: Max=786,432KB used=75,401KB committed=102,400KB NonHeapUsage: Max=0KB used=83,144KB committed=84,864KB
+2026-05-15 13:01:26.894 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.08% 10 min avg=0.08% 5 min avg=0.09% 1 min avg=0.10%
+GC:called=13 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 13:06:25.903 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 13:06:25.903 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=705,329KB HeapUsage: Max=786,432KB used=80,521KB committed=102,400KB NonHeapUsage: Max=0KB used=83,149KB committed=84,864KB
+2026-05-15 13:06:26.905 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.08% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.08%
+GC:called=13 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 13:11:25.914 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 13:11:25.916 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=700,802KB HeapUsage: Max=786,432KB used=84,617KB committed=102,400KB NonHeapUsage: Max=0KB used=83,185KB committed=84,864KB
+2026-05-15 13:11:26.935 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.09% 30 min avg=0.08% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=14 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 13:16:25.919 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 13:16:25.919 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=747,928KB HeapUsage: Max=786,432KB used=37,479KB committed=102,400KB NonHeapUsage: Max=0KB used=83,194KB committed=84,928KB
+2026-05-15 13:16:26.921 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.08% 10 min avg=0.09% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=14 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 13:21:25.932 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 13:21:25.932 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=742,808KB HeapUsage: Max=786,432KB used=42,599KB committed=102,400KB NonHeapUsage: Max=0KB used=83,195KB committed=84,928KB
+2026-05-15 13:21:26.933 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.08% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=14 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 13:26:25.941 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 13:26:25.942 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=738,200KB HeapUsage: Max=786,432KB used=47,719KB committed=102,400KB NonHeapUsage: Max=0KB used=83,195KB committed=84,928KB
+2026-05-15 13:26:26.943 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=14 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 13:31:25.946 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 13:31:25.947 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=733,080KB HeapUsage: Max=786,432KB used=52,839KB committed=102,400KB NonHeapUsage: Max=0KB used=83,195KB committed=84,928KB
+2026-05-15 13:31:26.948 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.08% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=14 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 13:36:25.959 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 13:36:25.959 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=727,960KB HeapUsage: Max=786,432KB used=57,959KB committed=102,400KB NonHeapUsage: Max=0KB used=83,195KB committed=84,928KB
+2026-05-15 13:36:26.960 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.08% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.09%
+GC:called=14 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 13:41:25.968 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 13:41:25.969 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=723,795KB HeapUsage: Max=786,432KB used=62,055KB committed=102,400KB NonHeapUsage: Max=0KB used=83,197KB committed=84,928KB
+2026-05-15 13:41:26.970 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.08% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.09%
+GC:called=14 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 13:46:25.976 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 13:46:25.979 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=718,675KB HeapUsage: Max=786,432KB used=67,175KB committed=102,400KB NonHeapUsage: Max=0KB used=83,197KB committed=84,928KB
+2026-05-15 13:46:26.980 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.08% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.09%
+GC:called=14 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 13:51:25.987 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 13:51:25.987 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=713,690KB HeapUsage: Max=786,432KB used=72,295KB committed=102,400KB NonHeapUsage: Max=0KB used=83,198KB committed=84,928KB
+2026-05-15 13:51:26.989 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.09% 30 min avg=0.08% 10 min avg=0.08% 5 min avg=0.09% 1 min avg=0.08%
+GC:called=14 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 13:56:25.995 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 13:56:25.996 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=708,570KB HeapUsage: Max=786,432KB used=77,415KB committed=102,400KB NonHeapUsage: Max=0KB used=83,198KB committed=84,928KB
+2026-05-15 13:56:26.997 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.08% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=14 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 14:01:26.017 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 14:01:26.017 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=703,896KB HeapUsage: Max=786,432KB used=82,535KB committed=102,400KB NonHeapUsage: Max=0KB used=83,201KB committed=84,928KB
+2026-05-15 14:01:27.019 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.07% avg=0.09% 30 min avg=0.08% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=14 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 14:06:26.029 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 14:06:26.030 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=751,892KB HeapUsage: Max=786,432KB used=33,515KB committed=102,400KB NonHeapUsage: Max=0KB used=83,201KB committed=84,928KB
+2026-05-15 14:06:27.031 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.08% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=15 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 14:11:26.038 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 14:11:26.039 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=746,772KB HeapUsage: Max=786,432KB used=38,635KB committed=102,400KB NonHeapUsage: Max=0KB used=83,201KB committed=84,928KB
+2026-05-15 14:11:27.040 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.09% 30 min avg=0.08% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=15 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 14:16:26.047 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 14:16:26.048 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=742,094KB HeapUsage: Max=786,432KB used=43,755KB committed=102,400KB NonHeapUsage: Max=0KB used=83,201KB committed=84,928KB
+2026-05-15 14:16:27.050 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.08% 10 min avg=0.08% 5 min avg=0.08% 1 min avg=0.08%
+GC:called=15 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 14:21:26.052 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 14:21:26.055 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=737,044KB HeapUsage: Max=786,432KB used=48,875KB committed=102,400KB NonHeapUsage: Max=0KB used=83,209KB committed=84,928KB
+2026-05-15 14:21:27.057 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.10%
+GC:called=15 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 14:26:26.057 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 14:26:26.060 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=732,436KB HeapUsage: Max=786,432KB used=52,971KB committed=102,400KB NonHeapUsage: Max=0KB used=83,209KB committed=84,928KB
+2026-05-15 14:26:27.062 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.09% 30 min avg=0.09% 10 min avg=0.10% 5 min avg=0.10% 1 min avg=0.10%
+GC:called=15 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 14:31:26.068 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 14:31:26.069 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=727,758KB HeapUsage: Max=786,432KB used=58,091KB committed=102,400KB NonHeapUsage: Max=0KB used=83,209KB committed=84,928KB
+2026-05-15 14:31:27.070 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.10% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=15 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 14:36:26.085 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 14:36:26.086 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=722,708KB HeapUsage: Max=786,432KB used=63,211KB committed=102,400KB NonHeapUsage: Max=0KB used=83,209KB committed=84,928KB
+2026-05-15 14:36:27.088 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=15 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 14:41:26.094 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 14:41:26.095 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=717,643KB HeapUsage: Max=786,432KB used=68,331KB committed=102,400KB NonHeapUsage: Max=0KB used=83,210KB committed=84,928KB
+2026-05-15 14:41:27.096 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.09% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.08%
+GC:called=15 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 14:46:26.104 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 14:46:26.105 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=712,980KB HeapUsage: Max=786,432KB used=73,451KB committed=102,400KB NonHeapUsage: Max=0KB used=83,210KB committed=84,928KB
+2026-05-15 14:46:27.106 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=0.08% avg=0.09% 30 min avg=0.09% 10 min avg=0.09% 5 min avg=0.09% 1 min avg=0.09%
+GC:called=15 times CPU used=0.00%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=23 curr daemon=15
+2026-05-15 14:49:08.709 INFO  [JTS-Main] - ------------------------------- IB GATEWAY RESTART --------------------------------
+2026-05-15 14:49:08.719 INFO  [JTS-Main] - installer version: unknown, installer type: standalone, install dir: 'null', Jts dir: '/home/ibgateway/settings', VM options file: 'null'
+2026-05-15 14:49:08.720 INFO  [JTS-Main] - Verifying environment [entryPoint=IBGATEWAY_STANDALONE]...
+2026-05-15 14:49:08.838 INFO  [JTS-Main] - Install4jAutoUpdateService initialized [props=LauncherProperties[updateDownloadUrl=null,skipUpdateCheck=false,nightlyEnabled=false,channelNameArg=null,channelName=latest,channelChanged=false,jtsConfigDir=/home/ibgateway/settings,apiPort=null,sessionId=null,installDir=null,exeName=null]].
+2026-05-15 14:49:08.850 INFO  [JTS-Main] - PROXY Installed custom selector
+2026-05-15 14:49:08.852 INFO  [JTS-Main] - AB-DEBUG: ConManSettings is initialized from host = null and port = 0. [PEER] null:0
+2026-05-15 14:49:08.852 INFO  [JTS-Main] - AB-DEBUG: ConManSettings is initialized from peer = null. [HOST] null [PORT] 0
+2026-05-15 14:49:08.852 INFO  [JTS-Main] - AB-DEBUG: ConManSettings is initialized from peer = null. [HOST] null [PORT] 0
+2026-05-15 14:49:08.852 INFO  [JTS-Main] - AB-DEBUG: ConManSettings' PEER will not be initialized from Jts.ini file: /home/ibgateway/settings/jts.ini
+2026-05-15 14:49:08.860 INFO  [JTS-Main] - useSsl=true,FIX endPoint=ndc1.ibllc.com:4001
+2026-05-15 14:49:09.403 INFO  [JTS-Main] - Setting custom timezone: Africa/Abidjan
+2026-05-15 14:49:09.444 INFO  [JTS-Main] - LOCALE: Property locale_to_use=null JTS Locale=en_US  country=United States  variant=
+2026-05-15 14:49:09.447 INFO  [JTS-Main] - Region: Custom
+2026-05-15 14:49:09.449 WARN  [JTS-Main] - The locales jar directory resolved to '/home/ibgateway/settings/jars' ('installDir' system property is not set).
+2026-05-15 14:49:09.449 WARN  [JTS-Main] - The locales jar directory resolved to '/home/ibgateway/settings/jars' ('installDir' system property is not set).
+2026-05-15 14:49:09.449 INFO  [JTS-Main] - Locale from ini: en
+2026-05-15 14:49:09.450 INFO  [JTS-Main] - Locale=en_US  country=United States  variant=
+2026-05-15 14:49:09.464 INFO  [JTS-Main] - prohibiting class lookup [twslaunch.ji18n.LauncherLanguage]
+2026-05-15 14:49:09.470 INFO  [JTS-Main] - prohibiting class lookup [twslaunch.ji18n.LauncherLanguage_en]
+2026-05-15 14:49:09.470 INFO  [JTS-Main] - prohibiting class lookup [twslaunch.ji18n.LauncherLanguage_en_US]
+2026-05-15 14:49:09.472 INFO  [JTS-Main] - LOCALE:  type: launcher intended: en_US actual:  size: 512
+2026-05-15 14:49:09.474 INFO  [JTS-Main] - settings dir: '/home/ibgateway/settings'
+2026-05-15 14:49:10.544 ERROR [JTS-Main] - Error during FX Thread start up, this may result in problem described in bz87660 to reacquire
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at twslaunch.trader.common.g.l(g.java:988)
+	at ibgateway.GWClient.a(Unknown Source)
+	at ibgateway.GWClient.main(Unknown Source)
+	at ibcalpha.ibc.IbcTws.startGateway(Unknown Source)
+	at ibcalpha.ibc.IbcTws.startTwsOrGateway(Unknown Source)
+	at ibcalpha.ibc.IbcTws.load(Unknown Source)
+	at ibcalpha.ibc.IbcGateway.main(Unknown Source)
+Caused by: java.lang.UnsupportedOperationException: Unable to load glass GTK library.
+	at javafx.graphics/com.sun.glass.ui.gtk.GtkApplication.lambda$new$5(GtkApplication.java:176)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at javafx.graphics/com.sun.glass.ui.gtk.GtkApplication.<init>(GtkApplication.java:163)
+	at javafx.graphics/com.sun.glass.ui.gtk.GtkPlatformFactory.createApplication(GtkPlatformFactory.java:40)
+	at javafx.graphics/com.sun.glass.ui.Application.run(Application.java:145)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.startup(QuantumToolkit.java:290)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.startup(PlatformImpl.java:292)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.startup(PlatformImpl.java:162)
+	... 11 more
+2026-05-15 14:49:10.604 INFO  [JTS-Main] - LauncherFontUpdater: simulatehighdefscreen=false
+2026-05-15 14:49:10.611 INFO  [JTS-Main] - LauncherFontUpdater: Screen dimensions=1024x768
+2026-05-15 14:49:10.612 INFO  [JTS-Main] - LauncherFontUpdater: highres=false
+2026-05-15 14:49:10.612 INFO  [JTS-Main] - LauncherFontUpdater: FontSize=16
+2026-05-15 14:49:10.612 INFO  [JTS-Main] - initPreUI() - entry
+2026-05-15 14:49:10.650 INFO  [JTS-Main] - Build 10.45.1e, May 7, 2026 5:00:06 AM
+2026-05-15 14:49:10.739 INFO  [JTS-Main] - LookAndFeelChangedListener installed
+2026-05-15 14:49:10.745 INFO  [JTS-Main] - JtsLookAndFeel initialized
+2026-05-15 14:49:11.408 INFO  [JTS-Main] - Current LAF: TWS LAF
+2026-05-15 14:49:11.409 INFO  [JTS-Main] - initPreUI() - exit
+2026-05-15 14:49:11.414 INFO  [JTS-Main] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: null:0 (SSL)
+2026-05-15 14:49:12.459 INFO  [AWT-EventQueue-0] - Default timezone:Africa/Abidjan
+2026-05-15 14:49:12.462 INFO  [AWT-EventQueue-0] - Starting GstatMessageMgr...
+2026-05-15 14:49:12.464 WARN  [JTS-GstatMessageMgr-6] - Misc URLs have not been received. Resending request...
+2026-05-15 14:49:12.465 INFO  [JTS-GstatMessageMgr-6] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: null:0 (SSL)
+2026-05-15 14:49:12.542 INFO  [AWT-EventQueue-0] - Started on 20260515-14:49:12
+2026-05-15 14:49:12.542 INFO  [AWT-EventQueue-0] - Default timezone:Africa/Abidjan name:Greenwich Mean Time dst:0
+2026-05-15 14:49:12.543 INFO  [AWT-EventQueue-0] - java version = 17.0.16.0.101
+2026-05-15 14:49:12.543 INFO  [AWT-EventQueue-0] - sun.arch.data.model = 64
+2026-05-15 14:49:12.543 INFO  [AWT-EventQueue-0] - os = Linux
+2026-05-15 14:49:12.543 INFO  [AWT-EventQueue-0] - os version = 5.15.0-179-generic
+2026-05-15 14:49:12.543 INFO  [AWT-EventQueue-0] - os architecture = 32
+2026-05-15 14:49:12.543 INFO  [AWT-EventQueue-0] - runtime = OpenJDK Runtime Environment
+2026-05-15 14:49:12.543 INFO  [AWT-EventQueue-0] - vendor = Azul Systems, Inc.
+2026-05-15 14:49:12.543 INFO  [AWT-EventQueue-0] - vm name = OpenJDK 64-Bit Server VM
+2026-05-15 14:49:12.543 INFO  [AWT-EventQueue-0] - username = 'Unknown'
+2026-05-15 14:49:13.515 INFO  [AWT-EventQueue-0] - Stopping GstatMessageMgr...
+2026-05-15 14:49:13.517 INFO  [AWT-EventQueue-0] - Setting dir is /home/ibgateway/settings/
+2026-05-15 14:49:13.518 INFO  [AWT-EventQueue-0] - PROXY Cleared HTTP proxy: no valid proxy is present (passing on :0)
+2026-05-15 14:49:13.544 INFO  [AWT-EventQueue-0] - BaseIniFile.saveGatewayFixEndPoint() [host=ndc1.ibllc.com,port=4001]...
+2026-05-15 14:49:13.546 INFO  [AWT-EventQueue-0] - SPLASH Creating screen with 5 steps
+2026-05-15 14:49:13.621 INFO  [AWT-EventQueue-0] - SplashScreen: using ads manager
+2026-05-15 14:49:13.625 INFO  [AWT-EventQueue-0] - AdImageContainer: start build ads UI
+2026-05-15 14:49:13.642 INFO  [JTS-CachedThreadExecutor-7] - AdManager: NEXT_AD request https://api.ibkr.com/tws.proxy/info/next?platform=dTWS&size=1200x1000&lang=en&version=10451&build=latest
+2026-05-15 14:49:13.845 WARN  [JTS-DeadlockMonitor-2] - instance of control is not created yet
+2026-05-15 14:49:13.846 INFO  [JTS-DeadlockMonitor-2] - Memory:total=786,432KB free=741,551KB HeapUsage: Max=786,432KB used=44,880KB committed=80,896KB NonHeapUsage: Max=0KB used=69,726KB committed=71,808KB
+2026-05-15 14:49:13.927 INFO  [JTS-CachedThreadExecutor-7] - AdManager: sending request with header X-USERNAME
+2026-05-15 14:49:14.129 INFO  [AWT-EventQueue-0] - initAutoEncryptionMenu(): autoEncryption set to true
+2026-05-15 14:49:14.148 INFO  [AWT-EventQueue-0] - Contacting ndc1.ibllc.com:4000 as user NOT PRINTED
+2026-05-15 14:49:14.183 INFO  [AWT-EventQueue-0] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: ndc1.ibllc.com:4000 (SSL)
+2026-05-15 14:49:14.199 INFO  [AWT-EventQueue-0] - UserCredentials.sessionId() [this=1576532950,old=null,new=6a07326a.00b8].
+2026-05-15 14:49:14.199 INFO  [AWT-EventQueue-0] - CONN CALC: Last connection attempt time is cleared!
+2026-05-15 14:49:14.200 INFO  [AWT-EventQueue-0] - CONN CALC: Last connection set as now:14:49:14:199
+2026-05-15 14:49:14.200 INFO  [AWT-EventQueue-0] - Prelogin delay:0
+2026-05-15 14:49:14.212 INFO  [JTS-Login-9] - Starting launcher login thread
+2026-05-15 14:49:14.214 INFO  [JTS-Login-9] - LauncherLoginThread.runLoginWithUI()[hotBackupStrategy=ON,loginAttempt=1,socketDelay=20000].
+2026-05-15 14:49:14.214 INFO  [JTS-Login-9] - SPLASH Connecting to server
+2026-05-15 14:49:14.226 INFO  [AWT-EventQueue-0] - Network monitor is activated
+2026-05-15 14:49:14.230 INFO  [JTS-Order-Audit-10] - Starting async queue thread
+2026-05-15 14:49:14.234 INFO  [JTS-Login-9] - ### startLogin startTime=1778856554199
+2026-05-15 14:49:14.234 INFO  [JTS-Login-9] - ### loginAttempt loginAttempt=1
+2026-05-15 14:49:14.235 INFO  [JTS-Login-9] - Connecting ndc1.ibllc.com:4001 (SSL) timeout=20000...
+2026-05-15 14:49:14.262 INFO  [JTS-Login-9] - ### onSocketOpenStart socketOpenStart=1778856554235; endPoint=ndc1.ibllc.com; port=4001
+2026-05-15 14:49:14.287 INFO  [JTS-Login-9] - ### onSocketOpenEnd socketOpenEnd=1778856554287
+2026-05-15 14:49:14.288 INFO  [JTS-Login-9] - Connected to ndc1.ibllc.com:4001 (SSL)/64.190.197.40 remote-ip on local port 0 socket local addrs:port /172.18.0.2:44838
+2026-05-15 14:49:14.288 INFO  [JTS-Login-9] - Updating machine info [connectionAddress=/172.18.0.2]...
+2026-05-15 14:49:14.289 INFO  [JTS-Login-9] - Creating unique random...
+2026-05-15 14:49:14.290 INFO  [JTS-Login-9] - id=17dc816c
+2026-05-15 14:49:14.290 INFO  [JTS-Login-9] - Resolving MAC address...
+2026-05-15 14:49:14.291 INFO  [JTS-Login-9] - MACNetworkInfo created <17dc816c|BE:E4:75:48:77:91|172.18.0.2>.
+2026-05-15 14:49:14.298 INFO  [JTS-Login-9] - JTSAuthConnection.onConnected(): lastKnownCipherStatus=INSECURE
+2026-05-15 14:49:14.299 INFO  [JTS-Login-9] - Changing state for connection from PRELOGON to PRELOGON in C 327961406: SessionSocket:1
+2026-05-15 14:49:14.299 INFO  [JTS-Login-9] - Authenticating
+2026-05-15 14:49:14.315 INFO  [JTS-CCPListenerS1-12] - Starting listener thread [sessionID=1]...
+2026-05-15 14:49:14.343 INFO  [JTS-Login-9] - AuthTimeoutMonitor-CCP: deactivate
+2026-05-15 14:49:14.344 INFO  [JTS-Login-9] - AuthTimeoutMonitor-CCP: timeout=20000
+2026-05-15 14:49:14.349 INFO  [JTS-Login-9] - AuthTimeoutMonitor-CCP: activate
+2026-05-15 14:49:14.350 INFO  [JTS-Login-9] - LOGIN_TIME_MONITOR	 false 14:49:14:350 since start = 0 thread delay = 0 global delay = 0 tag=null, cls=AuthDispatcher method=connect
+2026-05-15 14:49:14.351 INFO  [JTS-AuthTimeoutMonitorThread-CCP-14] - Starting auth timeout monitor thread for CCP
+2026-05-15 14:49:14.354 INFO  [JTS-Login-9] - SPLASH -0001 step 1 AuthDispatcher.connect
+2026-05-15 14:49:14.355 INFO  [JTS-Login-9] - Sending connect request
+2026-05-15 14:49:14.356 INFO  [JTS-Login-9] - AuthDispatcher.initNSMsgVersionLimits: minVersion=38, maxVersion=50
+2026-05-15 14:49:14.358 INFO  [JTS-Login-9] - AuthDispatcher.NSConnectRequest: userSessionID=6a07326a.00b8, beeDemoType=NULL
+2026-05-15 14:49:14.359 INFO  [JTS-Login-9] - ### onNsMsg loginMessageReq=1778856554358; brandNewUser=true
+2026-05-15 14:49:14.359 INFO  [JTS-Login-9] - mapProdToPaper: In NSConnectRequest: sending PAPER_CONNECT=0x2000
+2026-05-15 14:49:14.361 INFO  [JTS-AuthDispatcherS1-13] - Starting dispatcher thread [sessionID=1]...
+2026-05-15 14:49:14.506 INFO  [JTS-Login-9] - SPLASH Authenticating
+2026-05-15 14:49:14.507 INFO  [JTS-CCPListenerS1-12] - Initial listener buffer size is 65536.
+2026-05-15 14:49:14.507 INFO  [JTS-CCPListenerS1-12] - Listener thread [sessionID=1] is ready to process messages.
+2026-05-15 14:49:14.508 INFO  [JTS-Login-9] - Terminating launcher login thread
+2026-05-15 14:49:14.524 INFO  [JTS-AuthDispatcherS1-13] - Received NS_REDIRECT
+2026-05-15 14:49:14.524 INFO  [JTS-AuthDispatcherS1-13] - ### onConmanRedirect
+2026-05-15 14:49:14.524 INFO  [JTS-AuthDispatcherS1-13] - Disconnecting ndc1.ibllc.com:4001 (SSL) [disconnectDetails=DisconnectDetails[sessionID=1,endPoint=ndc1.ibllc.com:4001 (SSL),reason=DISCONNECT_ON_REDIRECTION,cause=null,systemMessage=null,keepSocketOpen=false]]...
+2026-05-15 14:49:14.526 INFO  [JTS-AuthDispatcherS1-13] - Socket closed.
+2026-05-15 14:49:14.527 INFO  [JTS-AuthTimeoutMonitorThread-CCP-14] - Terminating auth timeout monitor thread for CCP
+2026-05-15 14:49:14.527 INFO  [JTS-CCPListenerS1-12] - Socket or stream for connection ndc1.ibllc.com:4001 (SSL) was closed by another thread.
+2026-05-15 14:49:14.527 INFO  [JTS-AuthDispatcherS1-13] - AuthTimeoutMonitor-CCP: deactivate
+2026-05-15 14:49:14.528 INFO  [JTS-AuthDispatcherS1-13] - SocketTracker[name=name=CCP(ndc1.ibllc.com:4001 (SSL)),usesCcpConMan=false,lastReadTimestamp=1778856554519,lastReadDateTime=2026-05-15T14:49:14.519,lastFixSendTime=].
+2026-05-15 14:49:14.528 INFO  [JTS-AuthDispatcherS1-13] - Interrupting dispatcher [sessionID=1]...
+2026-05-15 14:49:14.528 INFO  [JTS-AuthDispatcherS1-13] - Interrupting listener [sessionID=1,disconnectSocket=true]...
+2026-05-15 14:49:14.540 INFO  [JTS-DisconnectedS1-18] - IBGateway connection to ccp disconnected.
+2026-05-15 14:49:14.549 INFO  [JTS-AuthDispatcherS1-13] - AB-DEBUG: Connection is initialized from ConnectionEndPoint: ndc1.ibllc.com:4000 (SSL)
+2026-05-15 14:49:14.554 INFO  [JTS-AuthDispatcherS1-13] - Redirecting to hdc1.ibllc.com:4001 (SSL)
+2026-05-15 14:49:14.554 INFO  [JTS-AuthDispatcherS1-13] - UserCredentials.sessionId() [this=1576532950,old=6a07326a.00b8,new=6a07326a.00b8].
+2026-05-15 14:49:14.554 INFO  [JTS-MiscUlrsRequester-20] - Connecting ndc1.ibllc.com:4000 (SSL) timeout=10000...
+2026-05-15 14:49:14.556 INFO  [JTS-AuthDispatcherS1-13] - Prelogin delay:0
+2026-05-15 14:49:14.560 INFO  [JTS-AuthDispatcherS1-13] - Dispatcher thread terminating [sessionID=1,interrupted=true]...
+2026-05-15 14:49:14.561 INFO  [JTS-CCPListenerS1-12] - Listener thread terminating [sessionID=1] [seen=35,totalShifted=35,moreAvailable=0]
+2026-05-15 14:49:14.561 INFO  [JTS-Login-21] - Starting launcher login thread
+2026-05-15 14:49:14.562 INFO  [JTS-Login-21] - LauncherLoginThread.runLoginWithUI()[hotBackupStrategy=ON,loginAttempt=1,socketDelay=20000].
+2026-05-15 14:49:14.562 INFO  [JTS-Login-21] - SPLASH Connecting to server
+2026-05-15 14:49:14.565 INFO  [JTS-Login-21] - ### startLogin startTime=1778856554554
+2026-05-15 14:49:14.565 INFO  [JTS-Login-21] - ### loginAttempt loginAttempt=1
+2026-05-15 14:49:14.566 INFO  [JTS-Login-21] - AsyncDisconnectNotifiers: 1
+2026-05-15 14:49:14.566 INFO  [JTS-Login-21] - Connecting hdc1.ibllc.com:4001 (SSL) timeout=20000...
+2026-05-15 14:49:14.566 INFO  [JTS-Login-21] - ### onSocketOpenStart socketOpenStart=1778856554566; endPoint=hdc1.ibllc.com; port=4001
+2026-05-15 14:49:14.570 INFO  [JTS-MiscUlrsRequester-20] - Connected to ndc1.ibllc.com:4000 (SSL)/64.190.197.40 remote-ip on local port 0 socket local addrs:port /172.18.0.2:53032
+2026-05-15 14:49:14.570 INFO  [JTS-MiscUlrsRequester-20] - Updating machine info [connectionAddress=/172.18.0.2]...
+2026-05-15 14:49:14.571 INFO  [JTS-MISC URLsListenerS2-23] - Starting listener thread [sessionID=2]...
+2026-05-15 14:49:14.572 INFO  [JTS-MiscUlrsRequester-20] - Sending MiscUrls request
+2026-05-15 14:49:14.572 INFO  [JTS-MiscUlrsRequester-20] - SPLASH 0221 step 2 AuthDispatcher.send
+2026-05-15 14:49:14.574 INFO  [JTS-AuthDispatcherS2-24] - Starting dispatcher thread [sessionID=2]...
+2026-05-15 14:49:14.578 INFO  [JTS-AuthResponseMonitor-25] - Starting auth response monitor thread
+2026-05-15 14:49:14.588 ERROR [JTS-MiscUlrsRequester-20] - Cannot write to socket ndc1.ibllc.com:4000 (SSL). Service: JTS-AuthDispatcherS2-24. Error: class java.net.SocketException - Connection reset
+2026-05-15 14:49:14.588 INFO  [JTS-MiscUlrsRequester-20] - sendNSMessage error: Server disconnected, please try again
+2026-05-15 14:49:14.590 ERROR [JTS-MiscUlrsRequester-20] - Incorrect Misc URLs data ''
+2026-05-15 14:49:14.590 INFO  [JTS-MiscUlrsRequester-20] - Disconnecting ndc1.ibllc.com:4000 (SSL) [disconnectDetails=DisconnectDetails[sessionID=2,endPoint=ndc1.ibllc.com:4000 (SSL),reason=DISCONNECT_BY_DESIGN,cause=null,systemMessage=null,keepSocketOpen=false]]...
+2026-05-15 14:49:14.590 INFO  [JTS-MiscUlrsRequester-20] - Socket closed.
+2026-05-15 14:49:14.590 INFO  [JTS-MiscUlrsRequester-20] - SocketTracker[name=name=MISC URLs(ndc1.ibllc.com:4000 (SSL)),usesCcpConMan=false,lastReadTimestamp=0,lastReadDateTime=1970-01-01T00:00,lastFixSendTime=].
+2026-05-15 14:49:14.591 INFO  [JTS-MiscUlrsRequester-20] - Interrupting dispatcher [sessionID=2]...
+2026-05-15 14:49:14.591 INFO  [JTS-AuthDispatcherS2-24] - Dispatcher thread terminating [sessionID=2,interrupted=true]...
+2026-05-15 14:49:14.591 INFO  [JTS-MiscUlrsRequester-20] - Interrupting listener [sessionID=2,disconnectSocket=true]...
+2026-05-15 14:49:14.592 INFO  [JTS-AuthResponseMonitor-25] - Terminating auth response monitor thread
+2026-05-15 14:49:14.592 INFO  [JTS-MISC URLsListenerS2-23] - Initial listener buffer size is 0.
+2026-05-15 14:49:14.592 ERROR [JTS-MISC URLsListenerS2-23] - Connection is already closed. Terminating listener thread [sessionID=2]...
+2026-05-15 14:49:14.632 INFO  [JTS-CachedThreadExecutor-7] - AdManager: NEXT_AD ad is not available
+2026-05-15 14:49:14.633 ERROR [JTS-CachedThreadExecutor-7] - AdsManager: get next image failed with status 404
+2026-05-15 14:49:14.634 INFO  [AWT-EventQueue-0] - AdImageContainer: display regular background image without ads
+2026-05-15 14:49:14.634 INFO  [AWT-EventQueue-0] - Splashscreen: should not show ads
+2026-05-15 14:49:14.843 INFO  [JTS-Login-21] - ### onSocketOpenEnd socketOpenEnd=1778856554843
+2026-05-15 14:49:14.844 INFO  [JTS-Login-21] - Connected to hdc1.ibllc.com:4001 (SSL)/103.38.91.3 remote-ip on local port 0 socket local addrs:port /172.18.0.2:33624
+2026-05-15 14:49:14.844 INFO  [JTS-Login-21] - Updating machine info [connectionAddress=/172.18.0.2]...
+2026-05-15 14:49:14.844 INFO  [JTS-Login-21] - JTSAuthConnection.onConnected(): lastKnownCipherStatus=INSECURE
+2026-05-15 14:49:14.844 INFO  [JTS-Login-21] - Changing state for connection from PRELOGON to PRELOGON in C 327961406: SessionSocket:3
+2026-05-15 14:49:14.844 INFO  [JTS-Login-21] - Authenticating
+2026-05-15 14:49:14.844 INFO  [JTS-Login-21] - AuthTimeoutMonitor-CCP: deactivate
+2026-05-15 14:49:14.845 INFO  [JTS-Login-21] - AuthTimeoutMonitor-CCP: timeout=20000
+2026-05-15 14:49:14.845 INFO  [JTS-CCPListenerS3-27] - Starting listener thread [sessionID=3]...
+2026-05-15 14:49:14.845 INFO  [JTS-Login-21] - AuthTimeoutMonitor-CCP: activate
+2026-05-15 14:49:14.845 INFO  [JTS-Login-21] - SPLASH 0273 step 3 AuthDispatcher.connect
+2026-05-15 14:49:14.846 INFO  [JTS-AuthTimeoutMonitorThread-CCP-29] - Starting auth timeout monitor thread for CCP
+2026-05-15 14:49:14.846 INFO  [JTS-Login-21] - Sending connect request
+2026-05-15 14:49:14.846 INFO  [JTS-Login-21] - AuthDispatcher.initNSMsgVersionLimits: minVersion=38, maxVersion=50
+2026-05-15 14:49:14.847 INFO  [JTS-Login-21] - AuthDispatcher.NSConnectRequest: userSessionID=6a07326a.00b8, beeDemoType=NULL
+2026-05-15 14:49:14.847 INFO  [JTS-Login-21] - ### onNsMsg loginMessageReq=1778856554847; brandNewUser=true
+2026-05-15 14:49:14.847 INFO  [JTS-Login-21] - mapProdToPaper: In NSConnectRequest: sending PAPER_CONNECT=0x2000
+2026-05-15 14:49:14.851 INFO  [JTS-AuthDispatcherS3-28] - Starting dispatcher thread [sessionID=3]...
+2026-05-15 14:49:14.870 INFO  [JTS-DeadlockMonitor-2] - CPU:cur=29.87% avg=29.87% 30 min avg=29.87% 10 min avg=29.87% 5 min avg=29.87% 1 min avg=29.87%
+GC:called=9 times CPU used=1.06%
+Finalizer:cur=0.00% avg=0.00% 30 min avg=0.00% 10 min avg=0.00% 5 min avg=0.00% 1 min avg=0.00%
+Threads Count:curr live=30 curr daemon=17
+2026-05-15 14:49:15.693 INFO  [JTS-Login-21] - SPLASH Authenticating
+2026-05-15 14:49:15.693 INFO  [JTS-CCPListenerS3-27] - Initial listener buffer size is 65536.
+2026-05-15 14:49:15.693 INFO  [JTS-CCPListenerS3-27] - Listener thread [sessionID=3] is ready to process messages.
+2026-05-15 14:49:15.695 INFO  [JTS-Login-21] - Terminating launcher login thread
+2026-05-15 14:49:15.971 INFO  [JTS-AuthDispatcherS3-28] - SPLASH 1126 step 4 AuthDispatcher.processDataItr
+2026-05-15 14:49:15.971 INFO  [JTS-AuthDispatcherS3-28] - set nsMsgVersion: context=AuthStart; version=50
+2026-05-15 14:49:15.972 INFO  [JTS-AuthDispatcherS3-28] - Received NS_AUTH_START: 1
+2026-05-15 14:49:15.974 INFO  [JTS-AuthDispatcherS3-28] - pwd time to expiry ms: 2323519845000 days: 26893
+2026-05-15 14:49:15.974 INFO  [JTS-AuthDispatcherS3-28] - Long pwd allowed: true
+2026-05-15 14:49:15.974 INFO  [JTS-AuthDispatcherS3-28] -  NS_AUTH_START version=50 pwd=1 soft=0 token(s)=[token=0] initialTokenType=PWD authenticationType=MARKET_DATA_CONNECTION identityHashcode=507316338
+2026-05-15 14:49:15.975 INFO  [JTS-AuthDispatcherS3-28] - ### onStartAuthentication
+2026-05-15 14:49:15.975 INFO  [JTS-AuthDispatcherS3-28] - Starting password Authentication
+2026-05-15 14:49:15.975 INFO  [JTS-AuthDispatcherS3-28] - ### onXyzAuthQuery
+2026-05-15 14:49:15.975 INFO  [JTS-AuthDispatcherS3-28] - sendXYZMessage: 777
+2026-05-15 14:49:15.976 INFO  [JTS-AuthDispatcherS3-28] - UserCredentials.setFrom() [this=1576532950,other=1576532950,old=6a07326a.00b8,new=6a07326a.00b8].
+2026-05-15 14:49:16.254 INFO  [JTS-AuthDispatcherS3-28] - SPLASH 0283 step 4 AuthDispatcher.processDataItr
+2026-05-15 14:49:16.255 INFO  [JTS-AuthDispatcherS3-28] - Receiver: 777
+2026-05-15 14:49:16.255 ERROR [JTS-AuthDispatcherS3-28] - ERROR: Received twslaunch.jauthentication.P with userName NOT PRINTED in it - this is not expected
+2026-05-15 14:49:16.255 INFO  [JTS-AuthDispatcherS3-28] - processXYZMessage: 777, protocol version: 50
+2026-05-15 14:49:16.255 INFO  [JTS-AuthDispatcherS3-28] - Received AUTH_PARAMS
+2026-05-15 14:49:16.255 INFO  [JTS-AuthDispatcherS3-28] - ### onXyzAuthParams
+2026-05-15 14:49:16.256 INFO  [JTS-AuthDispatcherS3-28] - sendXYZMessage: 777
+2026-05-15 14:49:16.535 INFO  [JTS-AuthDispatcherS3-28] - SPLASH 0281 step 4 AuthDispatcher.processDataItr
+2026-05-15 14:49:16.535 INFO  [JTS-AuthDispatcherS3-28] - Receiver: 777
+2026-05-15 14:49:16.536 ERROR [JTS-AuthDispatcherS3-28] - ERROR: Received twslaunch.jauthentication.P with userName NOT PRINTED in it - this is not expected
+2026-05-15 14:49:16.537 INFO  [JTS-AuthDispatcherS3-28] - processXYZMessage: 777, protocol version: 50
+2026-05-15 14:49:16.537 INFO  [JTS-AuthDispatcherS3-28] - Received SERVER_PARAMS
+2026-05-15 14:49:16.543 INFO  [JTS-AuthDispatcherS3-28] - Session Token received in AuthenticationMessageXYZ=b2309XXXXX.., messageId=SERVER_KEY (4)
+2026-05-15 14:49:16.544 INFO  [JTS-AuthDispatcherS3-28] - sendXYZMessage: 777
+2026-05-15 14:49:16.822 INFO  [JTS-AuthDispatcherS3-28] - SPLASH 0287 step 4 AuthDispatcher.processDataItr
+2026-05-15 14:49:16.822 INFO  [JTS-AuthDispatcherS3-28] - Receiver: 777
+2026-05-15 14:49:16.822 ERROR [JTS-AuthDispatcherS3-28] - ERROR: Received twslaunch.jauthentication.P with userName NOT PRINTED in it - this is not expected
+2026-05-15 14:49:16.822 INFO  [JTS-AuthDispatcherS3-28] - processXYZMessage: 777, protocol version: 50
+2026-05-15 14:49:16.822 INFO  [JTS-AuthDispatcherS3-28] - Received AUTH_RESULT
+2026-05-15 14:49:16.822 INFO  [JTS-AuthDispatcherS3-28] - ### onXyzAuthServerProof
+2026-05-15 14:49:16.822 INFO  [JTS-AuthDispatcherS3-28] - Passed pwd authentication.
+2026-05-15 14:49:16.822 INFO  [JTS-AuthDispatcherS3-28] - Authentication completed.
+2026-05-15 14:49:16.823 INFO  [JTS-AuthDispatcherS3-28] - ### onAuthenticationCompleted tokenProtocol=0; authenticated=true
+2026-05-15 14:49:16.823 INFO  [JTS-AuthDispatcherS3-28] - setting session token in AuthenticationHandler: authenticationType=MARKET_DATA_CONNECTION hashCode=507316338 new=XYZSessionToken[type=SOFT,token=b2309XXXXX..] old=null ctciOld=null
+2026-05-15 14:49:16.823 INFO  [JTS-AuthDispatcherS3-28] - ccp session token non-CTCI is set as XYZSessionToken[type=SOFT,token=b2309XXXXX..] 
+2026-05-15 14:49:16.823 INFO  [JTS-AuthDispatcherS3-28] - Received NS_CONNECT_RESPONSE
+2026-05-15 14:49:16.823 INFO  [JTS-AuthDispatcherS3-28] - Creating new Pre-Logon SSO authenticator on connect...
+2026-05-15 14:49:16.825 INFO  [JTS-AuthDispatcherS3-28] - Received CCP connect features: [TST, ONELOGON].
+2026-05-15 14:49:16.826 INFO  [JTS-AuthDispatcherS3-28] - Log encryption support is enabled [authType=MARKET_DATA_CONNECTION,logKeyId=aaa,logKey=***,logUploadKey=dekjgsazsl].
+2026-05-15 14:49:16.827 INFO  [JTS-AuthDispatcherS3-28] - AuthDispatcher.newCommPort()[userDirname=idpacfclmkaffhpjbldlpblflidibalchlbjilin,restart=,authToken=null,ccpToken=XYZSessionToken[type=SOFT,token=b2309XXXXX..]].
+2026-05-15 14:49:16.827 INFO  [JTS-AuthDispatcherS3-28] - Daily auto-restart is not enabled.
+2026-05-15 14:49:16.828 INFO  [JTS-AuthDispatcherS3-28] - Sending NSNewcommPort [tokenMask=2,tokens=XYZSessionToken[type=SOFT,token=b2309XXXXX..]],shortTokenHashes=707c7ae]...
+2026-05-15 14:49:17.106 INFO  [JTS-AuthDispatcherS3-28] - SPLASH 0284 step 4 AuthDispatcher.processDataItr
+2026-05-15 14:49:17.106 INFO  [JTS-AuthDispatcherS3-28] - Received NS_FIX_START
+2026-05-15 14:49:17.107 INFO  [JTS-AuthDispatcherS3-28] - ### onNsFixStart
+2026-05-15 14:49:17.108 INFO  [JTS-PostAuthenticateS3-34] - Interrupting dispatcher [sessionID=3]...
+2026-05-15 14:49:17.108 INFO  [JTS-AuthDispatcherS3-28] - Dispatcher thread terminating [sessionID=3,interrupted=true]...
+2026-05-15 14:49:17.109 INFO  [JTS-PostAuthenticateS3-34] - AuthTimeoutMonitor-CCP: deactivate
+2026-05-15 14:49:17.109 INFO  [JTS-PostAuthenticateS3-34] - Authentication complete
+2026-05-15 14:49:17.109 INFO  [JTS-PostAuthenticateS3-34] - Creating a FixLogonHandlerFactory instance...
+2026-05-15 14:49:17.110 INFO  [JTS-PostAuthenticateS3-34] - Instance created.
+2026-05-15 14:49:17.111 INFO  [JTS-AuthTimeoutMonitorThread-CCP-29] - Terminating auth timeout monitor thread for CCP
+2026-05-15 14:49:17.115 INFO  [AWT-EventQueue-0] - initPreUI() - entry
+2026-05-15 14:49:17.115 INFO  [AWT-EventQueue-0] - jtsLookAndFeel uninitialized
+2026-05-15 14:49:17.116 INFO  [AWT-EventQueue-0] - JtsLookAndFeel initialized
+2026-05-15 14:49:17.117 INFO  [JTS-PostAuthenticateS3-34] - JDOMFactory Class =interface org.jdom.JDOMFactory
+2026-05-15 14:49:17.123 INFO  [AWT-EventQueue-0] - Current LAF: TWS LAF
+2026-05-15 14:49:17.123 INFO  [AWT-EventQueue-0] - initPreUI() - exit
+2026-05-15 14:49:17.128 INFO  [JTS-PostAuthenticateS3-34] - hsqldb jdbc =class org.hsqldb.jdbcDriver 2.4
+2026-05-15 14:49:17.131 INFO  [JTS-PostAuthenticateS3-34] - Changing state for connection from PRELOGON to PRELOGON in C 327961406: SessionSocket:3
+2026-05-15 14:49:17.131 INFO  [JTS-PostAuthenticateS3-34] - createOrRenameToNewStyleUserDirectory: create newDir=/home/ibgateway/settings/idpacfclmkaffhpjbldlpblflidibalchlbjilin
+2026-05-15 14:49:17.137 INFO  [JTS-PostAuthenticateS3-34] - performLogSwitch() [force=false]
+2026-05-15 14:49:17.138 INFO  [JTS-PostAuthenticateS3-34] - Switching to a new encrypted log...
