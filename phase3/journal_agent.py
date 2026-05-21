@@ -87,7 +87,7 @@ Respond ONLY with valid JSON, no markdown:
 
     try:
         msg = claude.messages.create(
-            model='claude-sonnet-4-20250514',
+            model='claude-opus-4-7',
             max_tokens=500,
             messages=[{'role': 'user', 'content': prompt}]
         )

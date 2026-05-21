@@ -132,7 +132,7 @@ def check_catalyst_exit(position, current_price, pnl_pct):
         days_held = 0
     try:
         msg = claude.messages.create(
-            model='claude-sonnet-4-20250514',
+            model='claude-opus-4-7',
             max_tokens=200,
             messages=[{'role': 'user', 'content': f"""Monitor Agent — catalyst exit check.
 
@@ -169,7 +169,7 @@ def check_invalidation(position, current_price):
         days_held = 0
     try:
         msg = claude.messages.create(
-            model='claude-sonnet-4-20250514',
+            model='claude-opus-4-7',
             max_tokens=200,
             messages=[{'role': 'user', 'content': f"""Monitor Agent — invalidation check.
 

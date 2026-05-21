@@ -36,68 +36,22 @@ from run_account_a import _run_monitor, _run_journal, should_run_journal, load_j
 
 def generate_learning_theses():
     """
-    Run the Analysis Agent with learning insights injected.
-    Reads from the same research data as Account A but enhances with journal.
-    Saves to phase2/data/trade_theses_b.json (separate from Account A's theses).
+    Account B's thesis generation — delegates to the v4 analysis_agent which has
+    all live data injections (prices, IV, EPS estimates, technical levels, earnings).
+    The only Account B-specific logic is the learning insights from journal data.
     """
-    import re, anthropic
+    import sys
+    sys.path.insert(0, PHASE2_DIR)
+    os.environ['PRICE_FETCHER_CLIENT_ID'] = '85'
+    os.environ['IV_FETCHER_CLIENT_ID']    = '84'
+    from analysis_agent import run as run_analysis
 
-    client = anthropic.Anthropic(api_key=os.getenv('ANTHROPIC_API_KEY'))
-    data_dir    = os.environ['PROMETHEUS_DATA_DIR']
-    config_path = os.path.join(ACCOUNT_DIR, 'prometheus_config.json')
+    data_dir = os.environ['PROMETHEUS_DATA_DIR']
 
-    SYSTEM_PROMPT = """You are the Analysis Agent for Prometheus Account B (LEARNING mode).
-
-CRITICAL RULE: Only recommend trades on individual US-listed stocks.
-NEVER trade sector ETFs (XLK, XLF, XLV etc.) or broad market ETFs (QQQ, SPY).
-
-ITPM rules:
-- Long the BEST stocks in the BEST sectors. Short WORST in WORST sectors.
-- Only generate ideas where AT LEAST 2 signals converge.
-- Every trade needs: thesis, catalyst, invalidation conditions, hard time limit.
-- IV below 30th percentile: buy calls/puts. IV above 70th: vertical spreads.
-- Entry: 45-60 DTE. Manage at 21 DTE.
-
-Output fields per trade: ticker, direction (LONG/SHORT), conviction (HIGH/MEDIUM/LOW),
-sector, core_thesis, catalyst, options_structure, invalidation_conditions,
-hard_time_limit, position_size_pct (max 5%).
-
-Generate 2-3 ideas. Respond ONLY with a valid JSON array. No markdown."""
-
-    # Build research prompt (same as Account A)
-    parts = []
-    for fname in ['sector_ranking.json', 'institutional_flow.json', 'unusual_whales_flow.json']:
-        path = os.path.join(PHASE2_DIR, 'data', fname)
-        if os.path.exists(path):
-            with open(path) as f:
-                d = json.load(f)
-            if 'sector_ranking' in fname:
-                top3 = d.get('top_sectors', [])[:3]
-                bot3 = d.get('bottom_sectors', [])
-                parts.append("=== SECTOR RANKING ===")
-                for s in top3:
-                    parts.append(f"  #{s['rank']} {s['ticker']} ({s['name']}) score:{s['composite_score']:+.2f}%")
-                parts.append("WORST:")
-                for s in bot3:
-                    parts.append(f"  #{s['rank']} {s['ticker']} score:{s['composite_score']:+.2f}%")
-            elif 'unusual_whales' in fname:
-                summ = d.get('summary', {})
-                parts.append("\n=== UNUSUAL WHALES FLOW ===")
-                dp = summ.get('top_darkpool_tickers', [])
-                fl = summ.get('top_flow_tickers', [])
-                if dp: parts.append(f"Dark pool: {', '.join(dp)}")
-                if fl: parts.append(f"Options flow: {', '.join(fl)}")
-            elif 'institutional' in fname:
-                summ = d.get('summary', {})
-                parts.append(f"\n=== INSTITUTIONAL ===")
-                parts.append(f"13F filings: {summ.get('total_13f',0)} | Insider: {summ.get('total_insider',0)}")
-
-    research_prompt = '\n'.join(parts)
-
-    # ── Inject learning insights ───────────────────────────────
+    # Build learning insights block from Account B's journal
     learning_block = ''
-    journal  = load_json(os.path.join(data_dir, 'trade_journal.json'), [])
-    stats    = load_json(os.path.join(data_dir, 'performance_stats.json'), {})
+    journal = load_json(os.path.join(data_dir, 'trade_journal.json'), [])
+    stats   = load_json(os.path.join(data_dir, 'performance_stats.json'), {})
 
     if len(journal) >= 1:
         lines = ["\n=== HISTORICAL LEARNING INSIGHTS (Account B — self-improving) ==="]
@@ -106,9 +60,9 @@ Generate 2-3 ideas. Respond ONLY with a valid JSON array. No markdown."""
         by_conv = stats.get('by_conviction', {})
         if by_conv:
             lines.append("CONVICTION PERFORMANCE:")
-            for conv, data in sorted(by_conv.items(), key=lambda x: x[1].get('avg_pnl',0), reverse=True):
-                if data.get('trades', 0) >= 1:
-                    lines.append(f"  {conv}: {data['trades']} trades | {data.get('win_rate',0)}% wins | avg {data.get('avg_pnl',0):+.1f}%")
+            for conv, d in sorted(by_conv.items(), key=lambda x: x[1].get('avg_pnl', 0), reverse=True):
+                if d.get('trades', 0) >= 1:
+                    lines.append(f"  {conv}: {d['trades']} trades | {d.get('win_rate', 0)}% wins | avg {d.get('avg_pnl', 0):+.1f}%")
 
         winning = stats.get('winning_patterns', {})
         if winning:
@@ -138,39 +92,24 @@ Generate 2-3 ideas. Respond ONLY with a valid JSON array. No markdown."""
     else:
         print("  No journal data yet — running as standard (first trade cycle)")
 
-    full_prompt = f"Today's research:\n\n{research_prompt}{learning_block}\n\nGenerate 2-3 ITPM trade theses as JSON array."
+    # Call v4 analysis agent — gets all live data injections automatically
+    output = run_analysis(learning_mode='with_learning', learning_insights=learning_block)
 
-    try:
-        msg = client.messages.create(
-            model='claude-sonnet-4-20250514', max_tokens=2000,
-            system=SYSTEM_PROMPT,
-            messages=[{'role': 'user', 'content': full_prompt}]
-        )
-        raw = msg.content[0].text.strip()
-        try:
-            theses = json.loads(raw)
-        except json.JSONDecodeError:
-            import re
-            match = re.search(r'\[.*\]', raw, re.DOTALL)
-            theses = json.loads(match.group()) if match else []
-
-        for thesis in theses:
-            thesis['learning_mode'] = 'with_learning'
-
-        output = {
-            'generated_at':  datetime.now().isoformat(),
-            'account':       'B',
-            'learning_mode': 'with_learning',
-            'theses':        theses,
-        }
-        save_path = os.path.join(PHASE2_DIR, 'data', 'trade_theses_b.json')
-        with open(save_path, 'w') as f:
-            json.dump(output, f, indent=2)
-        print(f"  {len(theses)} learning-enhanced theses generated")
-        return output
-    except Exception as e:
-        print(f"  Analysis Agent failed: {e}")
+    if not output:
+        print("  Analysis Agent failed")
         return {}
+
+    # Tag and save to Account B's separate file
+    for thesis in output.get('theses', []):
+        thesis['learning_mode'] = 'with_learning'
+    output['account']       = 'B'
+    output['learning_mode'] = 'with_learning'
+
+    save_path = os.path.join(PHASE2_DIR, 'data', 'trade_theses_b.json')
+    with open(save_path, 'w') as f:
+        json.dump(output, f, indent=2)
+    print(f"  {len(output.get('theses', []))} learning-enhanced theses generated (with full live data)")
+    return output
 
 
 def run():

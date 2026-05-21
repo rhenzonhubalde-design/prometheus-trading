@@ -299,7 +299,7 @@ Invalidation: {position.get('invalidation_conditions','')}
 Current price: ${current:.2f} | Entry: ${entry_price}
 Has any invalidation condition been triggered? JSON only:
 {{"invalidation_triggered":true/false,"condition_triggered":"..or null","recommended_action":"HOLD or EXIT"}}"""
-                msg = claude.messages.create(model='claude-sonnet-4-20250514', max_tokens=200,
+                msg = claude.messages.create(model='claude-opus-4-7', max_tokens=200,
                                              messages=[{'role':'user','content':prompt}])
                 result = json.loads(msg.content[0].text.strip())
                 if result.get('invalidation_triggered') and result.get('recommended_action') == 'EXIT':
@@ -358,7 +358,7 @@ def _run_journal(data_dir, config_path, learning_mode):
         trade_id = f"{trade.get('ticker')}_{trade.get('entry_date')}"
         try:
             msg = claude.messages.create(
-                model='claude-sonnet-4-20250514', max_tokens=400,
+                model='claude-opus-4-7', max_tokens=400,
                 messages=[{'role':'user','content':f"""Review this closed trade as Prometheus Journal Agent.
 Ticker:{trade.get('ticker')} Direction:{trade.get('direction')} P&L:{trade.get('pnl_pct')}%
 Thesis:{trade.get('core_thesis','')} Exit reason:{trade.get('exit_reason','')}
