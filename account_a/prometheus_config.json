@@ -5,11 +5,11 @@
   "self_improving": false,
   "ab_test": {
     "group": "no_learning",
-    "description": "Control group — standard Analysis Agent, no historical learning"
+    "description": "Control group \u2014 standard Analysis Agent, no historical learning"
   },
   "journal": {
     "runs_every_n_days": 7,
-    "last_run": null
+    "last_run": "2026-05-20"
   },
   "learning": {
     "max_patterns_to_inject": 5,

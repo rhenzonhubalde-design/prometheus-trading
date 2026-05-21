@@ -151,6 +151,7 @@ def run():
     ib = IB()
     try:
         ib.connect(IB_HOST, IB_PORT, clientId=IB_CLIENT_ID)
+        ib.reqMarketDataType(1)  # Real-time, fallback to frozen
         print(f"  Connected. Account: {ib.managedAccounts()}")
     except Exception as e:
         print(f"  IBKR connection failed: {e}")

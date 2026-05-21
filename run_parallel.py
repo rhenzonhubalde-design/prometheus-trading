@@ -19,6 +19,67 @@ sys.path.insert(0, PHASE2_DIR)
 from dotenv import load_dotenv
 load_dotenv(dotenv_path=os.path.expanduser('~/prometheus/.env'))
 
+def get_portfolio_snapshot(data_dir, ib_port, label):
+    """Fetch realized + unrealized P&L and risk exposure for an account."""
+    import json, math
+    from ib_insync import IB
+
+    closed = load_json(os.path.join(data_dir, 'closed_positions.json'), [])
+    open_p = load_json(os.path.join(data_dir, 'open_positions.json'), [])
+
+    # Realized P&L from closed trades
+    realized_pnl   = sum(float(p.get('pnl_pct', 0)) for p in closed)
+    wins           = [p for p in closed if float(p.get('pnl_pct', 0)) > 0]
+    losses         = [p for p in closed if float(p.get('pnl_pct', 0)) < 0]
+    win_rate       = round(len(wins) / len(closed) * 100, 1) if closed else 0
+
+    # Unrealized P&L from IBKR portfolio
+    unrealized_pnl = 0
+    account_value  = 100_000
+    positions_pnl  = []
+    try:
+        ib = IB()
+        ib.connect('127.0.0.1', ib_port, clientId=97)
+        for item in ib.portfolio():
+            unrealized_pnl += item.unrealizedPNL or 0
+            pct = ((item.unrealizedPNL or 0) / (item.averageCost * item.position) * 100) if item.position else 0
+            positions_pnl.append({
+                'ticker': item.contract.symbol,
+                'pnl_usd': round(item.unrealizedPNL or 0, 2),
+                'pct': round(pct, 2),
+                'market_value': round(item.marketValue or 0, 2),
+            })
+        for av in ib.accountValues():
+            if av.tag == 'NetLiquidation' and av.currency == 'USD':
+                account_value = float(av.value)
+        ib.disconnect()
+    except Exception as e:
+        print(f"  Portfolio fetch failed ({label}): {e}")
+
+    # Risk exposure
+    total_deployed = sum(float(p.get('position_size_pct', 0)) for p in open_p)
+    sectors = {}
+    for p in open_p:
+        s = p.get('sector', 'Unknown').split('(')[0].strip()
+        sectors[s] = sectors.get(s, 0) + float(p.get('position_size_pct', 0))
+    top_sector = max(sectors.items(), key=lambda x: x[1]) if sectors else ('None', 0)
+
+    return {
+        'label':          label,
+        'account_value':  account_value,
+        'realized_pnl':   round(realized_pnl, 2),
+        'unrealized_pnl': round(unrealized_pnl, 2),
+        'total_pnl':      round(realized_pnl + (unrealized_pnl / account_value * 100), 2),
+        'win_rate':        win_rate,
+        'closed_trades':  len(closed),
+        'open_trades':    len(open_p),
+        'deployed_pct':   round(total_deployed, 1),
+        'top_sector':     top_sector,
+        'positions_pnl':  positions_pnl,
+    }
+
+
+
 
 def load_json(path, default):
     if os.path.exists(path):
@@ -103,17 +164,19 @@ def run_all():
         approved_count=result_a.get('approved', 0) + result_b.get('approved', 0),
         closed_today=closed_a + closed_b,
     )
-
+    # Portfolio P&L snapshot
+    try:
+        snap_a = get_portfolio_snapshot(
+            os.path.join(ACCT_A_DIR, 'data'), 4002, 'A — BASELINE')
+        snap_b = get_portfolio_snapshot(
+            os.path.join(ACCT_B_DIR, 'data'), 4003, 'B — LEARNING')
+        tg.send_portfolio_snapshot(snap_a, snap_b)
+    except Exception as e:
+        print(f"  Portfolio snapshot failed: {e}")
     # ── Step 5: Weekly A/B comparison (if journal ran) ─────────
     stats_a = calc_stats(os.path.join(ACCT_A_DIR, 'data'))
     stats_b = calc_stats(os.path.join(ACCT_B_DIR, 'data'))
 
-    # Send weekly A/B summary on Mondays or if first run
-    if datetime.now().weekday() == 0 or (stats_a['closed'] > 0 and stats_b['closed'] > 0):
-        try:
-            tg.send_ab_weekly_summary(stats_a, stats_b)
-        except Exception as e:
-            print(f"  A/B summary failed: {e}")
 
     elapsed = (datetime.now() - start).seconds
     print(f"\n{'=' * 60}")

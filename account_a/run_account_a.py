@@ -92,6 +92,7 @@ def run():
 
         risk_result = {'approved': approved, 'rejected': rejected}
         print(f"  Approved: {len(approved)} | Rejected: {len(rejected)}")
+        tg.send_risk_summary(approved, rejected, 'A — BASELINE')
     except Exception as e:
         print(f"  Risk Manager failed: {e}")
 
@@ -107,6 +108,7 @@ def run():
             ib = IB()
             ib.connect('127.0.0.1', int(os.environ['IB_PORT']),
                        clientId=int(os.environ['IB_CLIENT_EXEC']))
+            ib.reqMarketDataType(4)  # Use delayed data
 
             open_positions = load_json(os.path.join(data_dir, 'open_positions.json'), [])
             account_vals   = ib.accountValues()
@@ -135,6 +137,17 @@ def run():
                             if v and not math.isnan(v) and v > 0:
                                 price = round(v, 2)
                                 break
+                    # ── yfinance fallback (after-hours / no live feed) ──
+                    if not price:
+                        try:
+                            import yfinance as yf
+                            hist = yf.Ticker(ticker).fast_info
+                            p = getattr(hist, 'last_price', None) or getattr(hist, 'previous_close', None)
+                            if p and p > 0:
+                                price = round(float(p), 2)
+                                print(f"  Using yfinance price for {ticker}: ${price}")
+                        except Exception as ye:
+                            print(f"  yfinance fallback failed for {ticker}: {ye}")
                     if not price:
                         print(f"  No price for {ticker} — skipping")
                         continue
@@ -226,8 +239,19 @@ def _run_monitor(data_dir):
     claude = anthropic.Anthropic(api_key=os.getenv('ANTHROPIC_API_KEY'))
     ib = IB()
     try:
-        ib.connect('127.0.0.1', int(os.environ['IB_PORT']),
-                   clientId=int(os.environ['IB_CLIENT_MONITOR']))
+        import time as _time
+        for attempt in range(3):
+            try:
+                ib.connect('127.0.0.1', int(os.environ['IB_PORT']),
+                           clientId=int(os.environ['IB_CLIENT_MONITOR']))
+                break
+            except Exception as ce:
+                if attempt < 2:
+                    print(f"  Monitor connect attempt {attempt+1} failed, retrying in 5s...")
+                    _time.sleep(5)
+                else:
+                    raise ce
+        ib.reqMarketDataType(4)  # Use delayed data (free tier)
     except Exception as e:
         print(f"  Monitor IBKR connect failed: {e}")
         return {'still_open': open_positions, 'closed': []}
