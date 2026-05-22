@@ -33,15 +33,16 @@ def get_portfolio_snapshot(data_dir, ib_port, label):
     losses         = [p for p in closed if float(p.get('pnl_pct', 0)) < 0]
     win_rate       = round(len(wins) / len(closed) * 100, 1) if closed else 0
 
-    # Unrealized P&L from IBKR portfolio
-    unrealized_pnl = 0
+    # Unrealized P&L from IBKR account summary (authoritative — not the sum of position-level PNLs).
+    # Reported in the account's base currency (e.g. SGD) to match what's shown in the IBKR account screen.
+    unrealized_pnl = 0.0
     account_value  = 100_000
+    currency       = 'USD'
     positions_pnl  = []
     try:
         ib = IB()
         ib.connect('127.0.0.1', ib_port, clientId=97)
         for item in ib.portfolio():
-            unrealized_pnl += item.unrealizedPNL or 0
             pct = ((item.unrealizedPNL or 0) / (item.averageCost * item.position) * 100) if item.position else 0
             positions_pnl.append({
                 'ticker': item.contract.symbol,
@@ -49,9 +50,22 @@ def get_portfolio_snapshot(data_dir, ib_port, label):
                 'pct': round(pct, 2),
                 'market_value': round(item.marketValue or 0, 2),
             })
+        # accountValues() can return rows for multiple accounts when a gateway has access
+        # to more than one — filter to the account this gateway manages.
+        managed = ib.managedAccounts()
+        my_account = managed[0] if managed else None
         for av in ib.accountValues():
-            if av.tag == 'NetLiquidation' and av.currency == 'USD':
-                account_value = float(av.value)
+            if my_account and av.account != my_account:
+                continue
+            # Detect base currency from any non-BASE row on this account
+            if av.tag == 'AccountReady' and av.currency and av.currency != 'BASE':
+                pass  # informational only
+            if av.tag == 'NetLiquidation':
+                if av.currency != 'BASE':
+                    currency = av.currency
+                    account_value = float(av.value)
+            elif av.tag == 'UnrealizedPnL' and av.currency == 'BASE':
+                unrealized_pnl = float(av.value)
         ib.disconnect()
     except Exception as e:
         print(f"  Portfolio fetch failed ({label}): {e}")
@@ -67,6 +81,7 @@ def get_portfolio_snapshot(data_dir, ib_port, label):
     return {
         'label':          label,
         'account_value':  account_value,
+        'currency':       currency,
         'realized_pnl':   round(realized_pnl, 2),
         'unrealized_pnl': round(unrealized_pnl, 2),
         'total_pnl':      round(realized_pnl + (unrealized_pnl / account_value * 100), 2),

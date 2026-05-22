@@ -204,16 +204,17 @@ def send_portfolio_snapshot(snap_a: dict, snap_b: dict):
     def account_block(s):
         is_b = 'LEARNING' in s['label']
         emoji = "🟣" if is_b else "⚪"
+        ccy = s.get('currency', 'USD')
         lines = [
             f"{emoji} <b>{s['label']}</b>",
-            f"  Account value:  ${s['account_value']:,.0f}",
+            f"  Account value:  {ccy} {s['account_value']:,.0f}",
             f"  Realized P&L:   {fmt_pnl(s['realized_pnl'])} ({s['closed_trades']} closed | {s['win_rate']}% WR)",
-            f"  Unrealized P&L: ${s['unrealized_pnl']:+,.2f}",
+            f"  Unrealized P&L: {ccy} {s['unrealized_pnl']:+,.2f}",
             f"  Open positions: {s['open_trades']} ({s['deployed_pct']}% deployed)",
             f"  Top sector:     {s['top_sector'][0]} ({s['top_sector'][1]:.1f}%)",
         ]
         if s['positions_pnl']:
-            lines.append("  <b>Open P&L:</b>")
+            lines.append("  <b>Open P&L (USD, per contract):</b>")
             for p in sorted(s['positions_pnl'], key=lambda x: x['pnl_usd'], reverse=True):
                 bar = "▲" if p['pnl_usd'] >= 0 else "▼"
                 lines.append(f"    {bar} {p['ticker']:<6} ${p['pnl_usd']:+,.2f} ({p['pct']:+.1f}%)")
