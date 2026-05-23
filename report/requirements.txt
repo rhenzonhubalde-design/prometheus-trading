@@ -10,3 +10,4 @@ python-dotenv>=1.0.0   # loads ~/prometheus/.env (optional — falls back to os.
 requests>=2.31.0       # Telegram HTTP POST (required to actually send messages)
 ib_insync>=0.9.86      # IBKR live prices and NetLiquidation (optional — uses yfinance fallback if missing)
 yfinance>=0.2.0        # price fallback when IBKR is unreachable (optional)
+anthropic>=0.40.0      # Plotus brief narrative generation (optional — falls back to template if missing)
