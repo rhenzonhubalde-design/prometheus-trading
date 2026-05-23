@@ -47,6 +47,25 @@ def _days_held(entry_date: Optional[str], reference: date) -> Optional[int]:
     return (reference - d).days if d else None
 
 
+def _desk_active_today(data_dir: str, today: date) -> bool:
+    """
+    True when the trading risk-gate appears to have run today, false when it
+    didn't (weekends, US holidays, or the run failed). Detected via the mtime
+    of approved_trades.json — that file is rewritten on every trading run
+    and survives if no run happened.
+
+    Date comparison is in SGT to match the rest of the pipeline.
+    """
+    path = os.path.join(data_dir, 'approved_trades.json')
+    if not os.path.exists(path):
+        return False
+    try:
+        mtime = datetime.fromtimestamp(os.path.getmtime(path), tz=_stats.SGT)
+    except OSError:
+        return False
+    return mtime.date() == today
+
+
 def _top_sectors(limit: int = 3) -> list[dict]:
     """Top sectors by composite score. Names + tickers only — no scores."""
     data = _load_optional_json(
@@ -120,12 +139,22 @@ def build_daily_payload(
     rejected_today: Sequence[Mapping] = (),
     conn: Optional[sqlite3.Connection] = None,
     today: Optional[date] = None,
+    data_dir: Optional[str] = None,
 ) -> dict:
     """
     Project `compute_daily_stats(...)` output (plus today's activity)
     into the publication-safe daily payload.
+
+    If `data_dir` is supplied, freshness of approved_trades.json determines
+    `desk_active_today`. On non-trading days (weekends, US holidays, or runs
+    that didn't fire), approved/rejected counts are zeroed out so the
+    narrative doesn't report stale Friday-evening numbers as today's activity.
     """
     today = today or _stats.today_sgt()
+    desk_active = _desk_active_today(data_dir, today) if data_dir else True
+    if not desk_active:
+        approved_today = ()
+        rejected_today = ()
 
     open_positions = [
         {
@@ -160,6 +189,7 @@ def build_daily_payload(
         "date":  today.isoformat(),
         "type":  "daily",
         "angle": None,                       # filled in by angles.pick_angle
+        "desk_active_today":       desk_active,
 
         "open_count":              int(daily_stats.get("open_trades") or 0),
         "open_positions":          open_positions,

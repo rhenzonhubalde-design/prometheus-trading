@@ -75,6 +75,7 @@ def main() -> int:
                 approved_today=approved,
                 rejected_today=rejected,
                 conn=conn,
+                data_dir=data_dir,
             )
             payload["angle"] = angles.pick_angle(payload)
             print(f"  [plotus.daily] angle={payload['angle']}  "

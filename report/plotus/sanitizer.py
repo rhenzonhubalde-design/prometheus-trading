@@ -24,6 +24,7 @@ from typing import Any
 # listed here. That's by design: public output is opt-in.
 PUBLIC_KEYS = frozenset({
     "date", "type", "angle",
+    "desk_active_today",
     "open_count", "trades_opened_today", "trades_closed_today",
     "closed_today",                # list of {ticker, direction, pnl_pct, exit_reason}
     "opened_today",                # list of {ticker, direction, conviction}

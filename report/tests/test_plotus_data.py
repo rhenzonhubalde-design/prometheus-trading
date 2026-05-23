@@ -188,6 +188,62 @@ class BuildWeeklyPayloadTests(unittest.TestCase):
         self.assertIsNone(payload["worst_trade"])
 
 
+class DeskActiveTodayTests(unittest.TestCase):
+
+    def test_defaults_to_true_when_no_data_dir(self):
+        # No data_dir → can't check freshness → assume desk was active.
+        payload = plotus_data.build_daily_payload(_daily_stats())
+        self.assertTrue(payload["desk_active_today"])
+
+    def test_false_when_approved_file_missing(self):
+        with tempfile.TemporaryDirectory() as d:
+            payload = plotus_data.build_daily_payload(
+                _daily_stats(), data_dir=d,
+            )
+            self.assertFalse(payload["desk_active_today"])
+
+    def test_true_when_approved_file_mtime_is_today(self):
+        with tempfile.TemporaryDirectory() as d:
+            with open(os.path.join(d, "approved_trades.json"), "w") as f:
+                f.write("{}")
+            # Note: file just created → mtime == now → today
+            payload = plotus_data.build_daily_payload(
+                _daily_stats(), data_dir=d,
+            )
+            self.assertTrue(payload["desk_active_today"])
+
+    def test_false_when_approved_file_is_stale(self):
+        with tempfile.TemporaryDirectory() as d:
+            path = os.path.join(d, "approved_trades.json")
+            with open(path, "w") as f:
+                f.write("{}")
+            # Backdate by 3 days
+            old = os.path.getmtime(path) - 3 * 86400
+            os.utime(path, (old, old))
+            payload = plotus_data.build_daily_payload(
+                _daily_stats(), data_dir=d,
+            )
+            self.assertFalse(payload["desk_active_today"])
+
+    def test_stale_data_zeroes_approved_rejected_counts(self):
+        # Critical regression: don't surface Friday's risk-gate output as today's.
+        with tempfile.TemporaryDirectory() as d:
+            path = os.path.join(d, "approved_trades.json")
+            with open(path, "w") as f:
+                f.write("{}")
+            old = os.path.getmtime(path) - 3 * 86400
+            os.utime(path, (old, old))
+            payload = plotus_data.build_daily_payload(
+                _daily_stats(),
+                approved_today=[{"ticker": "X"}, {"ticker": "Y"}],
+                rejected_today=[{"ticker": "Z"}, {"ticker": "W"}, {"ticker": "V"}],
+                data_dir=d,
+            )
+            self.assertFalse(payload["desk_active_today"])
+            self.assertEqual(payload["approved_today"], 0)
+            self.assertEqual(payload["rejected_today"], 0)
+
+
 class LeakRefusalTests(unittest.TestCase):
 
     def test_payload_passes_sanitizer_round_trip(self):

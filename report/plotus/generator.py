@@ -39,7 +39,13 @@ Voice + style rules — non-negotiable:
 - Plain text. No markdown headers, no bullet symbols, no emoji.
 - 2-4 short paragraphs. Aim for 120-220 words total.
 - Do not write a caption or hashtags. Hermes handles that downstream.
-- Never reference ITPM, Anton Kreil, or third-party methodologies."""
+- Never reference ITPM, Anton Kreil, or third-party methodologies.
+- desk_active_today indicates whether Plotus's trading pipeline actually ran
+  today (true on US trading days when the cron fires; false on weekends,
+  US market holidays, and days the run didn't fire). When false: do NOT
+  mention setups being filtered, approved, or rejected today — the desk
+  was dark. Frame the day as a quiet/non-trading session and focus on
+  the existing book."""
 
 
 _ANGLE_GUIDES = {
