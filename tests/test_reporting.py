@@ -476,39 +476,5 @@ class TestLegacyBugsAreFixed(unittest.TestCase):
         self.assertEqual(len(out), 1)
 
 
-class TestIsPastDeadline(unittest.TestCase):
-    """
-    Pins down the off-by-one fix for monitor_agent.check_hard_deadline.
-    Legacy bug: triggered the moment time crossed midnight of deadline_date,
-    so positions exited a calendar day early.
-    """
-
-    def test_on_deadline_day_does_not_trigger(self):
-        # Deadline 2026-05-25; at 23:59 that day, the day isn't over → no exit
-        triggered, _ = R.is_past_deadline("2026-05-25", datetime(2026, 5, 25, 23, 59))
-        self.assertFalse(triggered)
-
-    def test_midnight_of_next_day_triggers(self):
-        triggered, reason = R.is_past_deadline("2026-05-25", datetime(2026, 5, 26, 0, 0))
-        self.assertTrue(triggered)
-        self.assertIn("2026-05-25", reason)
-
-    def test_well_before_deadline_does_not_trigger(self):
-        triggered, _ = R.is_past_deadline("2026-05-25", datetime(2026, 5, 20, 12, 0))
-        self.assertFalse(triggered)
-
-    def test_blank_deadline_returns_false(self):
-        triggered, _ = R.is_past_deadline("", datetime(2026, 5, 26))
-        self.assertFalse(triggered)
-
-    def test_garbage_deadline_returns_false(self):
-        triggered, _ = R.is_past_deadline("not a date", datetime(2026, 5, 26))
-        self.assertFalse(triggered)
-
-    def test_iso_timestamp_deadline_parses(self):
-        triggered, _ = R.is_past_deadline("2026-05-25T15:30:00", datetime(2026, 5, 26, 0, 1))
-        self.assertTrue(triggered)
-
-
 if __name__ == "__main__":
     unittest.main()

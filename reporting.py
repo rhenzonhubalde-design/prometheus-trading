@@ -68,28 +68,6 @@ def parse_date(s: str) -> Optional[date]:
         return None
 
 
-def is_past_deadline(deadline_str: str, now: Optional[datetime] = None) -> tuple[bool, Optional[str]]:
-    """
-    True only AFTER the deadline day has fully passed.
-    `deadline_date` is the last valid day to hold the position; exit should
-    fire from midnight of (deadline + 1), not from midnight of deadline itself
-    (the legacy monitor_agent had this off-by-one).
-    """
-    if not deadline_str:
-        return False, None
-    d = parse_date(deadline_str)
-    if d is None:
-        return False, None
-    n = now or datetime.now()
-    end_of_day = datetime(d.year, d.month, d.day) + timedelta(days=1)
-    # Strip tz from n to compare cleanly if caller passed an aware datetime
-    n_naive = n.replace(tzinfo=None) if n.tzinfo else n
-    if n_naive >= end_of_day:
-        days_over = (n_naive - end_of_day).days
-        return True, f"Hard time limit reached ({deadline_str}) — {days_over} day(s) past deadline"
-    return False, None
-
-
 # ────────────────────────────────────────────────────────────────────
 # Numeric helpers
 # ────────────────────────────────────────────────────────────────────
