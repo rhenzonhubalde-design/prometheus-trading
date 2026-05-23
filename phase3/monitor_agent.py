@@ -77,16 +77,15 @@ def get_current_price(ib, ticker):
 
 
 def check_hard_deadline(position):
-    deadline = position.get('deadline_date', '')
-    if not deadline:
-        return False, None
-    try:
-        if datetime.now() > datetime.strptime(deadline[:10], '%Y-%m-%d'):
-            days_over = (datetime.now() - datetime.strptime(deadline[:10], '%Y-%m-%d')).days
-            return True, f"Hard time limit reached ({deadline}) — {days_over} day(s) over deadline"
-    except Exception:
-        pass
-    return False, None
+    """
+    Returns (triggered, reason). Delegates the date arithmetic to
+    reporting.is_past_deadline so the off-by-one rule lives in one
+    unit-tested location.
+    """
+    import sys as _sys, os as _os
+    _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+    from reporting import is_past_deadline
+    return is_past_deadline(position.get('deadline_date', ''))
 
 
 def check_21dte(position):
