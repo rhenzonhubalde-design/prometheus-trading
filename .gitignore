@@ -7,7 +7,21 @@ settings_a/
 settings_b/
 *.tar.gz
 
-# Keep data folder structure but not actual trade data
+# Live trade data + SQLite history (don't commit)
+data/account_a/*.json
+data/archive/**
+data/snapshots/**
+data/logs/**
+data/*.db
+data/*.db-journal
+
+# Research outputs (regenerated each run)
+trading/research/data/*.json
+
+# Migration backups
+data.backup.*/
+
+# Legacy paths (kept for users not yet migrated)
 phase2/data/*.json
 phase3/data/*.json
 account_a/data/*.json
