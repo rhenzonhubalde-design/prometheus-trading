@@ -1,12 +1,12 @@
 """
-Unit tests for reporting.py.
+Unit tests for reporting.stats.
 
 Run from repo root:
-    python3 -m unittest tests.test_reporting -v
+    python3 -m unittest reporting.tests.test_stats -v
 
 Each test pins down a bug the legacy daily/weekly pipeline had, or the
-contract the user asked for. If a test fails, the Telegram numbers will be
-wrong.
+contract for the new standalone reporting package. If a test fails, the
+Telegram numbers will be wrong.
 """
 import unittest
 from datetime import datetime, date, timezone
@@ -14,9 +14,10 @@ from zoneinfo import ZoneInfo
 
 import sys
 import os
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Repo root = three levels up: tests/ → reporting/ → repo
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
-import reporting as R
+from reporting import stats as R
 
 
 SGT = ZoneInfo("Asia/Singapore")

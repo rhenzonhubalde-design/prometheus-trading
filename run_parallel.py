@@ -19,72 +19,79 @@ sys.path.insert(0, PHASE2_DIR)
 from dotenv import load_dotenv
 load_dotenv(dotenv_path=os.path.expanduser('~/prometheus/.env'))
 
-def fetch_account_value_and_prices(data_dir, ib_port, account_label):
-    """
-    Fetch live prices for every open position and the account's NetLiquidation
-    value in the account's BASE currency. Returns (account_value, currency,
-    {ticker: current_price or None}).
+def get_portfolio_snapshot(data_dir, ib_port, label):
+    """Fetch realized + unrealized P&L and risk exposure for an account."""
+    import json, math
+    from ib_insync import IB
 
-    Currency handling: the IBKR account base currency is detected from any
-    NetLiquidation row whose currency tag is not 'BASE' and matches the gateway's
-    managed account. All $ amounts in the daily/weekly report use this currency.
-    """
-    import math
-    from ib_insync import IB, Stock
-
+    closed = load_json(os.path.join(data_dir, 'closed_positions.json'), [])
     open_p = load_json(os.path.join(data_dir, 'open_positions.json'), [])
-    prices = {p.get('ticker'): None for p in open_p if p.get('ticker')}
-    account_value, currency = 100_000.0, 'USD'
 
+    # Realized P&L from closed trades
+    realized_pnl   = sum(float(p.get('pnl_pct', 0)) for p in closed)
+    wins           = [p for p in closed if float(p.get('pnl_pct', 0)) > 0]
+    losses         = [p for p in closed if float(p.get('pnl_pct', 0)) < 0]
+    win_rate       = round(len(wins) / len(closed) * 100, 1) if closed else 0
+
+    # Unrealized P&L from IBKR account summary (authoritative — not the sum of position-level PNLs).
+    # Reported in the account's base currency (e.g. SGD) to match what's shown in the IBKR account screen.
+    unrealized_pnl = 0.0
+    account_value  = 100_000
+    currency       = 'USD'
+    positions_pnl  = []
     try:
         ib = IB()
-        ib.connect('127.0.0.1', ib_port, clientId=97, timeout=10)
-        ib.reqMarketDataType(4)   # delayed (free tier)
-
-        managed    = ib.managedAccounts()
+        ib.connect('127.0.0.1', ib_port, clientId=97)
+        for item in ib.portfolio():
+            pct = ((item.unrealizedPNL or 0) / (item.averageCost * item.position) * 100) if item.position else 0
+            positions_pnl.append({
+                'ticker': item.contract.symbol,
+                'pnl_usd': round(item.unrealizedPNL or 0, 2),
+                'pct': round(pct, 2),
+                'market_value': round(item.marketValue or 0, 2),
+            })
+        # accountValues() can return rows for multiple accounts when a gateway has access
+        # to more than one — filter to the account this gateway manages.
+        managed = ib.managedAccounts()
         my_account = managed[0] if managed else None
         for av in ib.accountValues():
             if my_account and av.account != my_account:
                 continue
-            if av.tag == 'NetLiquidation' and av.currency and av.currency != 'BASE':
-                currency      = av.currency
-                account_value = float(av.value)
-
-        for ticker in list(prices.keys()):
-            try:
-                contract = Stock(ticker, 'SMART', 'USD')
-                ib.qualifyContracts(contract)
-                td = ib.reqMktData(contract, '', False, False)
-                ib.sleep(2)
-                for attr in ['last', 'close', 'bid']:
-                    v = getattr(td, attr, None)
-                    if v and not math.isnan(v) and v > 0:
-                        prices[ticker] = float(v)
-                        break
-            except Exception:
-                pass
-
+            # Detect base currency from any non-BASE row on this account
+            if av.tag == 'AccountReady' and av.currency and av.currency != 'BASE':
+                pass  # informational only
+            if av.tag == 'NetLiquidation':
+                if av.currency != 'BASE':
+                    currency = av.currency
+                    account_value = float(av.value)
+            elif av.tag == 'UnrealizedPnL' and av.currency == 'BASE':
+                unrealized_pnl = float(av.value)
         ib.disconnect()
     except Exception as e:
-        print(f"  Price/account fetch failed ({account_label}): {e}")
+        print(f"  Portfolio fetch failed ({label}): {e}")
 
-    # yfinance fallback for tickers still missing
-    missing = [t for t, v in prices.items() if v is None]
-    if missing:
-        try:
-            import yfinance as yf
-            for t in missing:
-                try:
-                    fi = yf.Ticker(t).fast_info
-                    p_yf = getattr(fi, "last_price", None) or getattr(fi, "previous_close", None)
-                    if p_yf and not math.isnan(float(p_yf)) and float(p_yf) > 0:
-                        prices[t] = float(p_yf)
-                except Exception:
-                    pass
-        except ImportError:
-            pass
+    # Risk exposure
+    total_deployed = sum(float(p.get('position_size_pct', 0)) for p in open_p)
+    sectors = {}
+    for p in open_p:
+        s = p.get('sector', 'Unknown').split('(')[0].strip()
+        sectors[s] = sectors.get(s, 0) + float(p.get('position_size_pct', 0))
+    top_sector = max(sectors.items(), key=lambda x: x[1]) if sectors else ('None', 0)
 
-    return account_value, currency, prices
+    return {
+        'label':          label,
+        'account_value':  account_value,
+        'currency':       currency,
+        'realized_pnl':   round(realized_pnl, 2),
+        'unrealized_pnl': round(unrealized_pnl, 2),
+        'total_pnl':      round(realized_pnl + (unrealized_pnl / account_value * 100), 2),
+        'win_rate':        win_rate,
+        'closed_trades':  len(closed),
+        'open_trades':    len(open_p),
+        'deployed_pct':   round(total_deployed, 1),
+        'top_sector':     top_sector,
+        'positions_pnl':  positions_pnl,
+    }
 
 
 
@@ -94,6 +101,24 @@ def load_json(path, default):
         with open(path) as f:
             return json.load(f)
     return default
+
+
+def calc_stats(data_dir):
+    """Calculate quick stats for a given account's data directory"""
+    closed = load_json(os.path.join(data_dir, 'closed_positions.json'), [])
+    open_p = load_json(os.path.join(data_dir, 'open_positions.json'), [])
+    if not closed:
+        return {'total_trades': len(open_p), 'closed': 0,
+                'overall_win_rate': 0, 'overall_avg_pnl': 0}
+    wins    = [p for p in closed if float(p.get('pnl_pct', 0)) > 0]
+    avg_pnl = sum(float(p.get('pnl_pct', 0)) for p in closed) / len(closed)
+    return {
+        'total_trades':      len(open_p) + len(closed),
+        'closed':            len(closed),
+        'open':              len(open_p),
+        'overall_win_rate':  round(len(wins) / len(closed) * 100, 1),
+        'overall_avg_pnl':   round(avg_pnl, 2),
+    }
 
 
 def run_all():
@@ -142,39 +167,40 @@ def run_all():
         print(f"  Account B failed: {e}")
         import traceback; traceback.print_exc()
 
-    # ── Step 4: Per-account daily reports ─────────────────────
-    # Reads the source-of-truth files (open_positions.json) rather than relying
-    # on the monitor's in-memory result, so a monitor failure can't blank the
-    # daily report.
-    import reporting
+    # ── Step 4: Combined daily summary ────────────────────────
+    open_a   = result_a.get('monitor', {}).get('still_open', [])
+    open_b   = result_b.get('monitor', {}).get('still_open', [])
+    closed_a = result_a.get('monitor', {}).get('closed', [])
+    closed_b = result_b.get('monitor', {}).get('closed', [])
 
-    for acct_dir, port, label in [
-        (ACCT_A_DIR, 4002, 'A — BASELINE'),
-        (ACCT_B_DIR, 4003, 'B — LEARNING'),
-    ]:
-        try:
-            data_dir = os.path.join(acct_dir, 'data')
-            open_p   = load_json(os.path.join(data_dir, 'open_positions.json'), [])
-            acct_val, currency, prices = fetch_account_value_and_prices(data_dir, port, label)
-            stats = reporting.compute_daily_stats(
-                open_positions=open_p,
-                current_prices=prices,
-                account_value=acct_val,
-                account_label=label,
-                currency=currency,
-            )
-            tg.send_daily_account_report(stats)
-        except Exception as e:
-            print(f"  Daily report failed ({label}): {e}")
-            import traceback; traceback.print_exc()
+    tg.send_daily_summary(
+        open_positions=open_a + open_b,
+        theses_count=result_a.get('theses_count', 0) + result_b.get('theses_count', 0),
+        approved_count=result_a.get('approved', 0) + result_b.get('approved', 0),
+        closed_today=closed_a + closed_b,
+    )
+    # Portfolio P&L snapshot
+    try:
+        snap_a = get_portfolio_snapshot(
+            os.path.join(ACCT_A_DIR, 'data'), 4002, 'A — BASELINE')
+        snap_b = get_portfolio_snapshot(
+            os.path.join(ACCT_B_DIR, 'data'), 4003, 'B — LEARNING')
+        tg.send_portfolio_snapshot(snap_a, snap_b)
+    except Exception as e:
+        print(f"  Portfolio snapshot failed: {e}")
+    # ── Step 5: Weekly A/B comparison (if journal ran) ─────────
+    stats_a = calc_stats(os.path.join(ACCT_A_DIR, 'data'))
+    stats_b = calc_stats(os.path.join(ACCT_B_DIR, 'data'))
+
 
     elapsed = (datetime.now() - start).seconds
-    open_a = load_json(os.path.join(ACCT_A_DIR, 'data', 'open_positions.json'), [])
-    open_b = load_json(os.path.join(ACCT_B_DIR, 'data', 'open_positions.json'), [])
     print(f"\n{'=' * 60}")
     print(f"  PARALLEL PIPELINE COMPLETE — {elapsed}s")
     print(f"  Account A: {result_a.get('approved',0)} trades | {len(open_a)} open")
     print(f"  Account B: {result_b.get('approved',0)} trades | {len(open_b)} open")
+    print(f"\n  A/B Scorecard:")
+    print(f"  Account A win rate: {stats_a['overall_win_rate']}% over {stats_a['closed']} closed")
+    print(f"  Account B win rate: {stats_b['overall_win_rate']}% over {stats_b['closed']} closed")
     print(f"{'=' * 60}\n")
 
 
