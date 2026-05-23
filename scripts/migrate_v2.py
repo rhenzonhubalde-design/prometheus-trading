@@ -53,7 +53,7 @@ LEGACY_EMPTY_DIRS = [
     os.path.join(BASE_DIR, 'phase3'),
     os.path.join(BASE_DIR, 'dashboard'),
     os.path.join(BASE_DIR, 'reporting'),
-    os.path.join(BASE_DIR, 'reports'),
+    # NOTE: not removing reports/ — Plotus generator still writes there.
 ]
 
 
@@ -61,10 +61,37 @@ def _say(msg):
     print(f"  {msg}")
 
 
-def _confirm(prompt: str, yes: bool) -> bool:
-    if yes:
+def _confirm(prompt: str, yes: bool, dry_run: bool = False) -> bool:
+    """Skip prompts in dry-run (no harm can happen) and when --yes is passed."""
+    if yes or dry_run:
         return True
     return input(f"  {prompt} [y/N] ").strip().lower() == 'y'
+
+
+def _purge_pycache(root: str, dry_run: bool) -> int:
+    """Recursively delete __pycache__ dirs under `root`. Returns count removed."""
+    count = 0
+    for dirpath, dirnames, _ in os.walk(root, topdown=False):
+        if os.path.basename(dirpath) == '__pycache__':
+            if dry_run:
+                _say(f"DRY: rm -rf {dirpath}")
+            else:
+                shutil.rmtree(dirpath, ignore_errors=True)
+            count += 1
+    return count
+
+
+def _rmdir_if_empty(d: str, dry_run: bool) -> bool:
+    """rmdir d if it exists and is empty. Returns True if removed."""
+    if not os.path.isdir(d):
+        return False
+    if os.listdir(d):
+        return False
+    if dry_run:
+        _say(f"DRY: rmdir {d}")
+    else:
+        os.rmdir(d)
+    return True
 
 
 def step_make_dirs(dry_run: bool):
@@ -102,7 +129,7 @@ def step_move_account_a(dry_run: bool, yes: bool):
         return
 
     _say(f"will move {len(files)} file(s) from {OLD_ACCT_A_DATA}")
-    if not _confirm("proceed?", yes):
+    if not _confirm("proceed?", yes, dry_run):
         _say("aborted at user request")
         return
 
@@ -118,6 +145,9 @@ def step_move_account_a(dry_run: bool, yes: bool):
         shutil.move(src, dst)
         _say(f"moved {fname}")
 
+    # Source dir is now empty — drop it so the legacy folder can be cleaned in step 8.
+    _rmdir_if_empty(OLD_ACCT_A_DATA, dry_run)
+
 
 def step_archive_account_b(dry_run: bool, yes: bool):
     print("\n[4/8] Archive account_b/data/ → data/archive/account_b/...")
@@ -130,7 +160,7 @@ def step_archive_account_b(dry_run: bool, yes: bool):
         return
 
     _say(f"will archive {len(files)} file(s) from {OLD_ACCT_B_DATA}")
-    if not _confirm("proceed?", yes):
+    if not _confirm("proceed?", yes, dry_run):
         _say("aborted at user request")
         return
 
@@ -146,6 +176,8 @@ def step_archive_account_b(dry_run: bool, yes: bool):
         shutil.move(src, dst)
         _say(f"archived {fname}")
 
+    _rmdir_if_empty(OLD_ACCT_B_DATA, dry_run)
+
 
 def step_init_db(dry_run: bool):
     print("\n[5/8] Initialize SQLite database (data/prometheus.db)...")
@@ -159,9 +191,24 @@ def step_init_db(dry_run: bool):
     _say(f"OK   schema applied at {DB_PATH}")
 
 
+def _resolve_backfill_source(filename: str, dry_run: bool) -> str:
+    """
+    During dry-run, step 3 hasn't actually moved files yet — the backfill
+    source still lives at the OLD path. Pick whichever exists so dry-run
+    output reflects what the live run will see.
+    """
+    new_path = os.path.join(NEW_ACCT_A_DATA, filename)
+    old_path = os.path.join(OLD_ACCT_A_DATA, filename)
+    if os.path.exists(new_path):
+        return new_path
+    if dry_run and os.path.exists(old_path):
+        return old_path
+    return new_path   # for the "not found" message
+
+
 def step_backfill_closed(dry_run: bool):
     print("\n[6/8] Backfill closed_trades from closed_positions.json...")
-    src = os.path.join(NEW_ACCT_A_DATA, 'closed_positions.json')
+    src = _resolve_backfill_source('closed_positions.json', dry_run)
     if not os.path.exists(src):
         _say(f"skip — {src} not found")
         return
@@ -171,7 +218,7 @@ def step_backfill_closed(dry_run: bool):
         _say("skip — no closed trades to backfill")
         return
     if dry_run:
-        _say(f"DRY: would upsert {len(rows)} closed trade(s)")
+        _say(f"DRY: would upsert {len(rows)} closed trade(s) from {src}")
         return
 
     sys.path.insert(0, BASE_DIR)
@@ -185,7 +232,7 @@ def step_backfill_closed(dry_run: bool):
 
 def step_backfill_journal(dry_run: bool):
     print("\n[7/8] Backfill journal_entries from trade_journal.json...")
-    src = os.path.join(NEW_ACCT_A_DATA, 'trade_journal.json')
+    src = _resolve_backfill_source('trade_journal.json', dry_run)
     if not os.path.exists(src):
         _say(f"skip — {src} not found")
         return
@@ -195,7 +242,7 @@ def step_backfill_journal(dry_run: bool):
         _say("skip — no journal entries to backfill")
         return
     if dry_run:
-        _say(f"DRY: would upsert {len(rows)} journal entry/entries")
+        _say(f"DRY: would upsert {len(rows)} journal entry/entries from {src}")
         return
 
     sys.path.insert(0, BASE_DIR)
@@ -212,15 +259,31 @@ def step_remove_empty_legacy(dry_run: bool, yes: bool):
     for d in LEGACY_EMPTY_DIRS:
         if not os.path.isdir(d):
             continue
-        contents = os.listdir(d)
-        # Tolerate __pycache__ residue.
-        contents = [c for c in contents if c != '__pycache__']
+
+        # First: purge any __pycache__ left behind by previous python runs.
+        _purge_pycache(d, dry_run)
+
+        # Then: drop any now-empty subdirs (e.g. account_a/data/ after step 3
+        # already moved everything out of it).
+        for sub in os.listdir(d):
+            subpath = os.path.join(d, sub)
+            if os.path.isdir(subpath):
+                _rmdir_if_empty(subpath, dry_run)
+
+        # On dry-run we couldn't actually delete the subdirs above, so the
+        # parent will look non-empty. Report optimistically.
+        contents = [c for c in os.listdir(d) if c != '__pycache__'] if os.path.isdir(d) else []
+        if dry_run:
+            if contents:
+                _say(f"DRY: rm -rf {d}  (after empty subdirs cleared above)")
+            else:
+                _say(f"DRY: rm -rf {d}")
+            continue
+
         if contents:
             _say(f"skip {d} — not empty: {contents[:5]}{'…' if len(contents) > 5 else ''}")
             continue
-        if dry_run:
-            _say(f"DRY: rm -rf {d}")
-            continue
+
         if _confirm(f"remove empty {d}?", yes):
             shutil.rmtree(d, ignore_errors=True)
             _say(f"removed {d}")
