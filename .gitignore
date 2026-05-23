@@ -12,6 +12,7 @@ data/account_a/*.json
 data/archive/**
 data/snapshots/**
 data/logs/**
+data/plotus_briefs/**
 data/*.db
 data/*.db-journal
 

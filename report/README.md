@@ -37,7 +37,28 @@ python3 -m report.weekly     # per-account weekly summary (Mon→Sun SGT window)
 
 # Weekly — Sat 08:00 SGT, after Fri US close
 0 8 * * 6      cd ~/prometheus && /usr/bin/python3 -m report.weekly  >> data/logs/weekly.log 2>&1
+
+# Plotus IG brief — every day (incl. weekends, for reflective posts)
+15 5 * * *     cd ~/prometheus && /usr/bin/python3 -m report.plotus.daily  >> data/logs/plotus_daily.log  2>&1
+
+# Plotus IG weekly brief — Sat 08:15 SGT, after weekly Telegram
+15 8 * * 6     cd ~/prometheus && /usr/bin/python3 -m report.plotus.weekly >> data/logs/plotus_weekly.log 2>&1
 ```
+
+## Plotus (Instagram) briefs
+
+A separate output channel that emits a narrative + sanitized data drop to
+Google Drive for the Hermes content system to pick up. Daily runs every day
+(reflective posts on non-trading days); weekly runs Saturday after Fri close.
+
+| | |
+|---|---|
+| **Drop folder** | `gdrive:AI Trading/Plotus/Briefs/{YYYY-MM-DD}/` |
+| **brief.md** | 2-4 paragraph third-person narrative ("Plotus opened…"), tone varies by editorial angle |
+| **data.json** | Sanitized payload — percentages only, no $ figures, no NetLiq, no entry prices |
+| **Privacy** | `report/plotus/sanitizer.py` strips $-keys from the payload and refuses to ship `brief.md` with $-figures or NetLiq-style tokens in it |
+| **Angles** | `winning` / `losing` / `retrospective` / `milestone` / `quiet` / `reflective` — picked from what actually happened that day or week |
+| **Local mirror** | `data/plotus_briefs/{date}/` (gitignored) |
 
 ## Daily message contains
 
@@ -69,7 +90,7 @@ report/
 ├── daily.py             python3 -m report.daily
 ├── weekly.py            python3 -m report.weekly
 ├── dashboard/           FastAPI live dashboard (reads SQLite + live IBKR)
-├── plotus/              Plotus / Instagram daily report (separate pipeline)
+├── plotus/              Plotus / Instagram brief pipeline (daily + weekly drops to Google Drive)
 ├── requirements.txt     pip install -r report/requirements.txt
 └── tests/test_stats.py  50+ unit tests
 ```
