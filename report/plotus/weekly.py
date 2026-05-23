@@ -17,6 +17,14 @@ from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
+# Match the trading agents' pattern: load ANTHROPIC_API_KEY from ~/prometheus/.env
+# so Claude narrative writing works under cron (which doesn't inherit a shell env).
+try:
+    from dotenv import load_dotenv
+    load_dotenv(dotenv_path=os.path.expanduser('~/prometheus/.env'))
+except ImportError:
+    pass
+
 from report import stats as _stats
 from report import positions_loader, ibkr, db
 from report.plotus import angles, data, generator, uploader

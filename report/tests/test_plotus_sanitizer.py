@@ -5,9 +5,11 @@ from report.plotus.sanitizer import (
     LeakDetected,
     sanitize_payload,
     sanitize_position,
+    sanitize_sector,
     assert_no_dollar_leaks,
     PUBLIC_KEYS,
     POSITION_PUBLIC_KEYS,
+    SECTOR_PUBLIC_KEYS,
 )
 
 
@@ -60,6 +62,23 @@ class SanitizePayloadTests(unittest.TestCase):
         }
         out = sanitize_position(p)
         self.assertEqual(out, {"ticker": "MSFT", "direction": "LONG", "pnl_pct": 3.1})
+
+    def test_top_sectors_keep_ticker_and_name(self):
+        out = sanitize_payload({
+            "top_sectors": [
+                {"ticker": "XLK", "name": "Technology", "rank": 1, "composite_score": 3.2},
+                {"ticker": "XLE", "name": "Energy",     "rank": 2, "composite_score": 2.1},
+            ],
+        })
+        self.assertEqual(len(out["top_sectors"]), 2)
+        for s in out["top_sectors"]:
+            self.assertEqual(set(s.keys()), {"ticker", "name"})
+        self.assertEqual(out["top_sectors"][0]["name"], "Technology")
+
+    def test_sanitize_sector_helper(self):
+        s = {"ticker": "XLK", "name": "Technology", "composite_score": 3.2,
+             "return_1m": 5.0, "secret_internal_id": "abc"}
+        self.assertEqual(sanitize_sector(s), {"ticker": "XLK", "name": "Technology"})
 
     def test_best_worst_trade_are_sanitized(self):
         out = sanitize_payload({

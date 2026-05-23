@@ -73,5 +73,5 @@ After any change to `report/` or `trading/`, run:
 
     python3 -m unittest discover -s report/tests -v
 
-108 tests should pass (62 stats/db/messages + 46 plotus brief pipeline).
+110 tests should pass (62 stats/db/messages + 48 plotus brief pipeline).
 If any fail, fix before committing.

@@ -158,10 +158,13 @@ def generate_brief(payload: Mapping) -> str:
                 messages=[{"role": "user", "content": _build_prompt(payload)}],
             )
             text = msg.content[0].text.strip()
+            print(f"  [plotus] Claude narrative generated ({len(text)} chars)")
         except Exception as e:
-            print(f"  [plotus] Claude call failed, falling back: {e}")
+            print(f"  [plotus] Claude call failed, falling back to template: {e}")
             text = _fallback_narrative(payload)
     else:
+        print("  [plotus] ANTHROPIC_API_KEY not set — using template fallback "
+              "(check ~/prometheus/.env loaded)")
         text = _fallback_narrative(payload)
 
     assert_no_dollar_leaks(text)

@@ -50,6 +50,12 @@ POSITION_PUBLIC_KEYS = frozenset({
     "pnl_pct", "unrealized_pct", "exit_reason", "days_held",
 })
 
+# Sector context keys allowed inside `top_sectors`.
+SECTOR_PUBLIC_KEYS = frozenset({"ticker", "name"})
+
+# Lists whose elements use SECTOR_PUBLIC_KEYS instead of POSITION_PUBLIC_KEYS.
+_SECTOR_LIST_KEYS = frozenset({"top_sectors"})
+
 # Dollar-or-account-leak patterns: stripped/blocked at every layer.
 _LEAK_KEY_PATTERNS = re.compile(
     r"(_usd$|_dollar|account_value|netliq|entry_price|exit_price|"
@@ -82,6 +88,11 @@ def sanitize_position(p: dict) -> dict:
     return {k: v for k, v in p.items() if k in POSITION_PUBLIC_KEYS}
 
 
+def sanitize_sector(s: dict) -> dict:
+    """Keep only SECTOR_PUBLIC_KEYS (ticker + name)."""
+    return {k: v for k, v in s.items() if k in SECTOR_PUBLIC_KEYS}
+
+
 def sanitize_payload(payload: dict) -> dict:
     """
     Return a copy of `payload` with only PUBLIC_KEYS, with position-level
@@ -97,7 +108,8 @@ def sanitize_payload(payload: dict) -> dict:
                 raise LeakDetected(f"refusing to publish leak-shaped key: {k!r}")
             continue
         if isinstance(v, list) and v and isinstance(v[0], dict):
-            out[k] = [sanitize_position(p) for p in v]
+            stripper = sanitize_sector if k in _SECTOR_LIST_KEYS else sanitize_position
+            out[k] = [stripper(p) for p in v]
         elif isinstance(v, dict):
             out[k] = sanitize_position(v) if k in {"best_trade", "worst_trade"} else v
         else:
